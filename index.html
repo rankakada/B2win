@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2Win</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/swiper-bundle.min.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line short-line"></div>
+            </div>
+            <div class="logo">
+                <img src="static/assets/icons/logo.png" alt="logo">
+            </div>
+
+            <ul class="nav-middle">
+                <li class="nav-list">
+                    <img src="static/assets/icons/goal.png" alt="goals">
+                    <span>គ្រាប់បាល់</span>
+                </li>
+                <li class="nav-list">
+                    <img src="static/assets/icons/news.png" alt="news">
+                    <span>ព័ត៌មានកីឡា</span>
+                </li>
+                <li class="nav-list">
+                    <img src="static/assets/icons/conditions.png" alt="conditions">
+                    <span>លក្ខខណ្ឌ</span>
+                </li>
+            </ul>
+
+            <div class="nav-right">
+                <button class="btn btn-primary">ចូល</button>
+                <button class="btn btn-secondary">ចុះឈ្មោះ</button>
+                <button class="btn btn-image">
+                    <img src="static/assets/icons/cambodia_flag.png" alt="kh-flag">
+                </button>
+                <button class="btn btn-image">
+                    <img src="static/assets/icons/telegram.png" alt="telegram">
+                </button>
+            </div>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="hero">
+            <!-- Announcement Marquee -->
+            <div class="announcement">
+                <div class="announcement-icon">
+                    <img src="static/assets/icons/announcement.png" alt="announcement">
+                </div>
+                <marquee>សូមស្វាគមន៍មកកាន់ B2Win វេបសាយទំនុកចិត្តបំផុត មានហ្គេមសម្បូរបែប ផ្ដល់ជូនបងប្អូននូវ សេវាកម្មដកដាក់ប្រាក់រហ័ស ប្រម៉ូសិនការផ្ដល់ជូនច្រើនសន្ធឹកសន្ធាប់ ឈ្នះច្រើនដកច្រើនគ្មានដែនកំណត់ សុវត្ថិភាពបំផុតជាងគេ!</marquee>
+            </div>
+
+            <!-- Carousel -->
+            <div class="carousel-container">
+                <div class="swiper mySwiper carousel">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide slide"><img src="static/assets/images/banner1.jpg" alt="banner"></div>
+                        <div class="swiper-slide slide"><img src="static/assets/images/banner2.jpg" alt="banner"></div>
+                        <div class="swiper-slide slide"><img src="static/assets/images/banner1.jpg" alt="banner"></div>
+                        <div class="swiper-slide slide"><img src="static/assets/images/banner2.jpg" alt="banner"></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contents">
+            <!-- Button container -->
+            <div class="button-container">
+                <button class="button btn-primary" id="deposit">ដាក់ប្រាក់</button>
+                <button class="button btn-secondary" id="withdraw">ដកប្រាក់</button>
+            </div>
+            
+            <div class="box-container">
+                <h1 class="box-title">ហ្គេមពេញនិយម</h1>
+                <div class="game-container">
+                    <div class="game-card">
+                        <img src="static/assets/images/game1.jpg" alt="game">
+                    </div>
+                    <div class="game-card">
+                        <img src="static/assets/images/game2.jpg" alt="game">
+                    </div>
+                    <div class="game-card">
+                        <img src="static/assets/images/game3.jpg" alt="game">
+                    </div>
+                    <div class="game-card">
+                        <img src="static/assets/images/game4.jpg" alt="game">
+                    </div>
+                    <div class="game-card">
+                        <img src="static/assets/images/game5.jpg" alt="game">
+                    </div>
+                </div>
+            </div>
+            <div class="box-container">
+                <h1 class="box-title">គូប្រកួតសប្ដាហ៍នេះ</h1>
+                <div class="macth-container">
+                    <div class="swiper mySwiper myCarousel">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide match-card"><img src="static/assets/images/matchday1.png" alt="matchday"></div>
+                            <div class="swiper-slide match-card"><img src="static/assets/images/matchday2.png" alt="matchday"></div>
+                            <div class="swiper-slide match-card"><img src="static/assets/images/matchday3.png" alt="matchday"></div>
+                            <div class="swiper-slide match-card"><img src="static/assets/images/matchday4.png" alt="matchday"></div>
+                            <div class="swiper-slide match-card"><img src="static/assets/images/matchday2.png" alt="matchday"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box-container">
+                <h1 class="box-title">ការផ្ដល់ជូនពិសេស</h1>
+                <div class="promotion-container">
+                    <div class="swiper mySwiper myCarousel">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide promotion-card"><img src="static/assets/images/promotion1.jpg" alt="promotion"></div>
+                            <div class="swiper-slide promotion-card"><img src="static/assets/images/promotion1.jpg" alt="promotion"></div>
+                            <div class="swiper-slide promotion-card"><img src="static/assets/images/promotion1.jpg" alt="promotion"></div>
+                            <div class="swiper-slide promotion-card"><img src="static/assets/images/promotion1.jpg" alt="promotion"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <h3 class="footer-left">©២០២៤ B2WIN.com រក្សាសិទ្ធគ្រប់យ៉ាង ១៨+</h3>
+            <div class="footer-right">
+                <h3 class="text">ទូទាត់ប្រាក់ជាមួយ</h3>
+                <ul class="bank-container">
+                    <li class="bank"><img src="static/assets/icons/aba.png" alt="ABA"></li>
+                    <li class="bank"><img src="static/assets/icons/wing.png" alt="Wing"></li>
+                    <li class="bank"><img src="static/assets/icons/acleda.jpeg" alt="Acleda"></li>
+                    <li class="bank"><img src="static/assets/icons/truemoney.png" alt="TrueMoney"></li>
+                    <li class="bank"><img src="static/assets/icons/pipay.png" alt="PiPay"></li>
+                    <li class="bank"><img src="static/assets/icons/usdt.png" alt="Ustd"></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="static/js/app.js"></script>
+    <script src="static/js/swiper-bundle.min.js"></script>
+    <script>
+        let swiper = new Swiper(".mySwiper", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true,
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 5000,
+            },
+        });
+
+        let swiperMatchCarousel = new Swiper(".myCarousel", {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            loop: true, 
+            pagination: {
+                el: ".match-pagination",
+                clickable: true,
+            },
+            autoplay: {
+                delay: 5000,
+            },
+            breakpoints: {
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 40,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 50,
+            },
+        },
+        });
+      </script>
+</body>
+</html>
