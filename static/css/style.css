@@ -17,16 +17,16 @@
 }
 
 :root {
-    --primary-color: #ffb600;
-    --secondary-color: #3ceff4;
-    --darkgreen-color : #002233;
-    --green-color: #025352;
+    --primary-color: #eeb321;
+    --secondary-color: #68e8ea;
+    --darkgreen-color : #002223;
+    --green-color: #005253;
     --white-color: #fff;
     --black-color: #000;
 }
 
 body {
-    min-height: 100vh;
+    position: relative;
     width: 100%;
     background-color: var(--green-color);
     color: var(--white-color);
@@ -35,14 +35,14 @@ body {
 
 body::before {
     content: "";
-    height: 100%;
     width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
     background: url("../assets/images/pattern.png") no-repeat fixed center ;
     background-size: cover;
-    opacity: 0.1;
+    opacity: .1;
     z-index: -1;
 }
 .header {
@@ -53,7 +53,7 @@ body::before {
     justify-content: center;
 }
 
-.nav {
+.header .nav {
     height: 100px;
     width: 1280px;
     display: flex;
@@ -62,56 +62,56 @@ body::before {
     font-size: 1.2rem;
 }
 
-.hamburger {
+.header .nav .hamburger {
     display: none;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
 }
-.hamburger .line {
+.header .nav .hamburger .line {
     border-bottom: 1.5px solid white;
     width: 24px;
     height: 8px;
 }
 
-.hamburger .short-line {
+.header .nav .hamburger .short-line {
     width: 16px;
 }
 
-.logo img {
+.header .nav .logo img {
     height: 250px;
 }
 
-.nav-middle {
+.header .nav .nav-middle {
     list-style: none;
     display: flex; 
     gap: 3rem;
 }
 
-.nav-middle .nav-list {
+.header .nav .nav-middle .nav-list {
     display: flex;
     align-items: center;
     gap: .5rem;
     cursor: pointer;
 }
 
-.nav-middle .nav-list:hover {
+.header .nav .nav-middle .nav-list:hover {
     transition: all ease .5s;
     color: var(--secondary-color);
 }
 
-.nav-middle .nav-list img {
+.header .nav .nav-middle .nav-list img {
     width: 24px;
     height: 24px;
 }
 
-.nav-right {
+.header .nav .nav-right {
     display: flex;
     align-items: center;
     gap: .5rem;
 }
 
-.btn {
+.header .nav .nav-right .btn {
     padding: .5rem 1.5rem;
     font-family: krasar, sans-serif;
     font-size: 1.2rem;
@@ -122,7 +122,7 @@ body::before {
     transition: all ease .5s;
 }
 
-.btn:hover{
+.header .nav .nav-right .btn:hover{
     background-color: var(--green-color);
     color: var(--white-color);
 }
@@ -134,63 +134,65 @@ body::before {
     background-color: var(--secondary-color);
 }
 
-.btn-image {
+.header .nav .nav-right .btn-image {
     height: 50px;
     width: 50px;
-    background: transparent;
     padding: 0;
+    background-color: transparent;
 }
 
-.btn-image img{
+.header .nav .nav-right .btn-image img{
     height: 100%;
     width: 100%;
+    transform: scale(1.3);
+    background-color: transparent;
+}
+ 
+.main {
+    width: 100%;
+    margin: 0 auto;
 }
 
-.announcement {
+.main .hero .announcement {
     display: flex;
     align-items: center;
-    gap: 5px;
     background-color: var(--green-color);
-    font-size: 13px;
+    font-size: 15px;
     font-family: krasar, sans-serif;
 }
 
-.announcement-icon {
-    background-color: rgb(23, 62, 60);
-    transform: skew(30deg);
-    padding: 0 1rem;
-    margin-left: -8px;
+.main .hero .announcement .announcement-icon {
+    background-color: #003f3c;
+    padding: 5px;
+    border-radius: 5px;
 }
 
-.announcement-icon img {
-    transform: skew(-30deg);
+.main .hero .announcement .announcement-icon img {
     height: 24px;
-    margin-top: 5px;
-    margin-left: 1rem;
+    padding: 2px;
 }
 
-.carousel-container {
+.main .hero .carousel-container {
     width: 100%;
     height: 100%;
 }
 
-.slide {
+.main .hero .carousel-container .swiper .swiper-wrapper .slide {
     text-align: center;
     font-size: 18px;
-    background: #fff;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.slide img {
+.main .hero .carousel-container .swiper .swiper-wrapper .slide img {
     display: block;
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
 
-.contents {
+.main .contents {
     margin: 0 auto;
     width: 1280px;
     display: flex;
@@ -200,14 +202,14 @@ body::before {
     margin-top: 2rem;
 }
 
-.button-container {
+.main .contents .button-container {
     width: 100%;
     display: flex;
     justify-content: space-between;
     gap: 3rem;
 }
 
-.button-container .button {
+.main .contents .button-container .button {
     padding: .5rem 0;
     border-radius: 50px;
     border: none;
@@ -219,19 +221,20 @@ body::before {
     flex-grow: 1;
 }
 
-.button-container .button:hover {
+.main .contents .button-container .button:hover {
     background-color: var(--darkgreen-color);
     color: var(--white-color);
 }
 
-.box-container {
+.main .contents .box-container {
     width: 100%;
-    background-color: rgba(0, 34, 51, .6);
+    background-color: rgba(0, 34, 35, .3);
+    /* background-color: rgba(0, 82, 83, .3); */
     padding: 1.5rem;
     border-radius: 24px;
 }
 
-.box-title {
+.main .contents .box-container .box-title {
     position: relative;
     padding-left: 30px;
     display: inline-block;
@@ -239,7 +242,7 @@ body::before {
     margin-bottom: 1.5rem;
 }
 
-.box-title::before{
+.main .contents .box-container .box-title::before{
     content: '';
     position: absolute;
     left: 0;
@@ -251,45 +254,65 @@ body::before {
     border-radius: 50%;
 }
 
-.game-container {
+.main .contents .box-container .game-container {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
 }
 
-.game-card {
+.main .contents .box-container .game-container .game-card {
     height: 250px;
     transition: all ease .5s;
 }
 
-.game-card img {
+.main .contents .box-container .game-container .game-card img {
     width: 100%;
     height: 100%;
     border-radius: 16px;
 }
 
-.game-card:hover {
+.main .contents .box-container .game-container .game-card:hover {
     transform: scale(1.1);
     transition: all ease .5s;
 }
 
-.match-container, .promotion-container {
+.main .contents .box-container .match-container {
     width: 100%;
     height: 100%;
+    font-family: leelawui, sans-serif;
+    font-size: 16px;
 }
 
-.match-card, .promotion-card{
-    height: 250px;
+.main .contents .box-container .match-container .match-wrapper .match-card .match-item-wrapper{
+    width: 400px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: url("../assets/images/bg-match.jpg") no-repeat fixed center;
+    background-size: cover;
+    border-radius: 1rem;
 }
 
-.match-card img, .promotion-card img {
-    height: 100%;
-    width: 100%;
-    border-radius: 16px;
-    object-fit: cover;
+.main .contents .box-container .match-container .match-wrapper .match-card .team {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
+.main .contents .box-container .match-container .match-wrapper .match-card .team img{
+    height: 100px;
+}
+
+.main .contents .box-container .match-container .match-wrapper .match-card .league {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
 .footer {
     width: 100%;
     height: 100px;
@@ -302,27 +325,27 @@ body::before {
     margin-top: 2rem;
 }
 
-.footer-container {
+.footer .footer-container {
     width: 1280px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-.footer-right {
+.footer .footer-container .footer-right {
     display: flex;
     align-items: center;
     gap: 1rem;
 }
 
-.bank-container {
+.footer .footer-container .footer-right .bank-container {
     list-style: none;
     display: flex;
     align-items: center;
     gap: .5rem;  
 }
 
-.bank img{
+.footer .footer-container .footer-right .bank-container .bank img{
     width: 36px;
     height: 36px;
     border-radius: 8px;
