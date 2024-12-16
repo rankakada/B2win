@@ -313,6 +313,115 @@ body::before {
     align-items: center;
     justify-content: center;
 }
+
+.main .contents .box-container .promotion-container{
+    width: 100%;
+    height: 100%;
+}
+
+.main .contents .box-container .promotion-container .promotion-wrapper .promotion-card{
+    width: 400px;
+}
+
+.main .contents .box-container .promotion-container .promotion-wrapper .promotion-card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+}
+
+.promotion-modal {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  overflow: auto;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
+  top: 0; 
+  left: 0;
+  transition: all ease 1s;
+}
+
+.promotion-modal .promotion-modal-content {
+    width: 650px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--white-color);
+    border-radius: 8px;
+}
+
+.promotion-modal .promotion-modal-content .top-content {
+    display: flex;
+    justify-content: space-between;
+    color: var(--black-color);
+    border-bottom: .1px solid #999;
+    padding: 1.5rem;
+}
+
+.promotion-modal .promotion-modal-content .top-content h3 {
+    font-size: 1.2rem;
+}
+
+.promotion-modal .promotion-modal-content .top-content .btn-x {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #999;
+    font-size: 1.2rem;
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    transition: all ease .5s;
+}
+
+.promotion-modal .promotion-modal-content .top-content .btn-x:hover {
+    background-color: #9999993d;
+    color: var(--black-color);
+}
+
+.promotion-modal .promotion-modal-content .middle-content {
+    width: 100%;
+    padding: 1.5rem;
+}
+
+.promotion-modal .promotion-modal-content .middle-content img{
+    width: 100%;
+    border-radius: 8px;
+}
+
+.promotion-modal .promotion-modal-content .middle-content p {
+    color: var(--black-color);
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    margin-top: 1rem;
+}
+
+.promotion-modal .promotion-modal-content .bottom-content {
+    border-top: .1px solid #999;
+    padding: 1.5rem;
+}
+
+.promotion-modal .promotion-modal-content .bottom-content .btn-close {
+    padding: .8rem 1.5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 8px;
+    background-color:#1956db;
+    color: var(--white-color);
+    font-family: Arial, sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    transition: all ease .5s;
+}
+
+.promotion-modal .promotion-modal-content .bottom-content .btn-close:hover {
+    background-color: #24499a;
+}
+
 .footer {
     width: 100%;
     height: 100px;
@@ -338,14 +447,14 @@ body::before {
     gap: 1rem;
 }
 
-.footer .footer-container .footer-right .bank-container {
+.footer .footer-container .footer-right .bank-wrapper {
     list-style: none;
     display: flex;
     align-items: center;
     gap: .5rem;  
 }
 
-.footer .footer-container .footer-right .bank-container .bank img{
+.footer .footer-container .footer-right .bank-wrapper .bank img{
     width: 36px;
     height: 36px;
     border-radius: 8px;
