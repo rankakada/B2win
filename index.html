@@ -17,9 +17,9 @@
                 <div class="line"></div>
                 <div class="line short-line"></div>
             </div>
-            <div class="logo">
+            <a href="index.html" class="logo">
                 <img src="static/assets/icons/logo.png" alt="logo">
-            </div>
+            </a>
 
             <ul class="nav-middle">
                 <li class="nav-list">
@@ -60,9 +60,8 @@
 
             <!-- Carousel -->
             <div class="carousel-container">
-                <div class="swiper mySwiper carousel">
+                <div class="swiper homeSwiper">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide slide"><img src="static/assets/images/banner1.jpg" alt="banner"></div>
                         <div class="swiper-slide slide"><img src="static/assets/images/banner1.jpg" alt="banner"></div>
                         <div class="swiper-slide slide"><img src="static/assets/images/banner1.jpg" alt="banner"></div>
                         <div class="swiper-slide slide"><img src="static/assets/images/banner1.jpg" alt="banner"></div>
@@ -103,7 +102,7 @@
             </div>
             <div class="box-container">
                 <h1 class="box-title">គូប្រកួតសប្ដាហ៍នេះ</h1>
-                <div class="swiper mySwiper myCarousel match-container">
+                <div class="swiper matchSwiper match-container">
                     <div class="swiper-wrapper match-wrapper">
                         <div class="swiper-slide match-card">
                             <div class="match-item-wrapper">
@@ -191,7 +190,7 @@
 
             <div class="box-container">
                 <h1 class="box-title">ការផ្ដល់ជូនពិសេស</h1>
-                <div class="swiper mySwiper myCarousel promotion-container">
+                <div class="swiper promotionSwiper promotion-container">
                     <div class="swiper-wrapper promotion-wrapper">
                         <div class="swiper-slide promotion-card open-modal">
                             <img src="static/assets/images/promotion1.jpg" alt="promotion">
@@ -249,8 +248,9 @@
     <script src="static/js/app.js"></script>
     <script src="static/js/swiper-bundle.min.js"></script>
     <script>
-        let swiper = new Swiper(".mySwiper", {
+        let homeSwiper = new Swiper(".homeSwiper", {
             slidesPerView: 1,
+            slidesPerGroup: 1,
             spaceBetween: 30,
             loop: true,
             pagination: {
@@ -262,29 +262,48 @@
                 prevEl: '.swiper-button-prev',
             },
             autoplay: {
-                delay: 5000,
+                delay: 3000,
             },
         });
 
-        let swiperMatchCarousel = new Swiper(".myCarousel", {
+        let matchSwiper = new Swiper(".matchSwiper", {
             slidesPerView: 1,
-            spaceBetween: 16,
-            loop: true, 
-            // pagination: {
-            //     el: ".match-pagination",
-            //     clickable: true,
-            // },
+            slidesPerGroup: 1,
+            spaceBetween: 30,
+            loop: true,
             autoplay: {
-                delay: 5000,
+                delay: 3000,
             },
             breakpoints: {
             768: {
                 slidesPerView: 2,
-                spaceBetween: 16,
+                spaceBetween: 30,
+                loop: false,
             },
             1024: {
                 slidesPerView: 3,
-                spaceBetween: 16,
+                spaceBetween: 30,
+            },
+        },
+        });
+
+        let promotionSwiper = new Swiper(".promotionSwiper", {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+            spaceBetween: 30,
+            loop: true,
+            autoplay: {
+                delay: 3000,
+            },
+            breakpoints: {
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+                loop: false,
+            },
+            1024: {
+                slidesPerView: 3,
+                spaceBetween: 30,
             },
         },
         });
