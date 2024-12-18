@@ -1,14 +1,4 @@
-@font-face {
-    font-family: "Kantumruy", sans-serif;
-    src: url('../assets/fonts/KantumruyPro.ttf') format('truetype');
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'leelawui';
-    src: url('../assets/fonts/leelawui.ttf') format('truetype');
-    font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 *{
     margin: 0;
@@ -23,8 +13,8 @@
     --green-color: #005253;
     --white-color: #fff;
     --black-color: #222;
-    --khmer-font: Kantumruy, sans-serif;
-    --english-font: leelawui, sans-serif;
+    --khmer-font: "Kantumruy Pro", serif;
+    --english-font: "Roboto", serif;
 }
 
 html {
@@ -101,8 +91,8 @@ body::before {
     gap: .5rem;
     cursor: pointer;
     font-family: var(--khmer-font);
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .header .nav .nav-middle .nav-list:hover {
@@ -123,9 +113,9 @@ body::before {
 
 .header .nav .nav-right .btn {
     padding: .5rem 1.5rem;
-    font-size: 1.2rem;
+    font-size: 18px;
     font-family: var(--khmer-font);
-    font-weight: bold;
+    font-weight: 600;
     border: none;
     border-radius: 50px;
     color: var(--black-color);
@@ -147,8 +137,8 @@ body::before {
 }
 
 .header .nav .nav-right .btn-image {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     padding: 0;
     background-color: transparent;
 }
@@ -169,7 +159,6 @@ body::before {
     display: flex;
     align-items: center;
     background-color: var(--green-color);
-    font-size: 15px;
 }
 
 .main .hero .announcement-wrapper .announcement-icon {
@@ -190,8 +179,9 @@ body::before {
 }
 
 .main .hero .announcement-wrapper .marquee-wrapper .marquee {
+    font-size: 16px;
     font-family: var(--khmer-font);
-    font-weight: normal;
+    font-weight: 400;
     animation: scroll 40s linear infinite;
 }
 
@@ -238,13 +228,15 @@ body::before {
 }
 
 .main .contents .button-container .button {
-    padding: .5rem 0;
+    text-decoration: none;
+    text-align: center;
+    padding: 12px 0;
     border-radius: 50px;
     border: none;
     cursor: pointer;
     font-family: var(--khmer-font);
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 24px;
+    font-weight: 600;
     color: var(--black-color);
     transition: all ease 0.5s;
     flex-grow: 1;
@@ -276,7 +268,7 @@ body::before {
     display: inline-block;
     font-family: var(--khmer-font);
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 500;
     margin-bottom: 1.5rem;
 }
 
@@ -319,7 +311,7 @@ body::before {
     width: 100%;
     height: 100%;
     font-family: var(--english-font);
-    font-weight: normal;
+    font-weight: 500;
     font-size: 16px;
 }
 
@@ -399,8 +391,10 @@ body::before {
     padding: 1.5rem;
 }
 
-.promotion-modal .promotion-modal-content .top-content h3 {
-    font-size: 1.2rem;
+.promotion-modal .promotion-modal-content .top-content span {
+    font-size: 18px;
+    font-family: var(--english-font);
+    font-weight: 500;
 }
 
 .promotion-modal .promotion-modal-content .top-content .btn-x {
@@ -452,7 +446,7 @@ body::before {
     background-color:#1956db;
     color: var(--white-color);
     font-family: var(--english-font);
-    font-weight: normal;
+    font-weight: 500;
     font-size: 15px;
     transition: all ease .5s;
 }
@@ -468,10 +462,10 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: var(--khmer-font);
-    font-size: 1rem;
-    font-weight: bold;
     margin-top: 2rem;
+    font-family: var(--khmer-font);
+    font-weight: 500;
+    font-size: 18px;
 }
 
 .footer .footer-container {

@@ -36,7 +36,7 @@
             </ul>
 
             <div class="nav-right">
-                <a href="login.html" class="btn btn-login">ចូល</a>
+                <a href="login.html" class="btn btn-login">ចូលលេង</a>
                 <a href="register.html" class="btn btn-register">ចុះឈ្មោះ</a>
                 <a href="#" class="btn btn-image" id="language">
                     <img src="static/assets/icons/cambodia_flag.png" alt="kh-flag" >
@@ -51,7 +51,7 @@
     <main class="main">
         <section class="contents">
             <div class="container">
-                <h2 class="title">បង្កើតគណនីដោយខ្លួនឯង</h2>
+                <span class="title">បង្កើតគណនីដោយខ្លួនឯង</span>
                 <div class="box-wrapper">
                     <div class="box promotion-box">
                         <div class="promotion-image">
@@ -71,15 +71,17 @@
                         </div>
                     </div>
                     <div class="box login-box">
-                        <form action="#" class="form-login">
+                        <form action="#" class="form-register">
                             <div class="input-control">
                                 <label for="username">ឈ្មោះ​អ្នកប្រើប្រាស់</label>
-                                <input type="text" name="username" id="username" placeholder="បញ្ចូលឈ្មោះអ្នកប្រើប្រាស់">
+                                <input type="text" name="username" id="username" class="username" placeholder="បញ្ចូលឈ្មោះអ្នកប្រើប្រាស់" autocomplete="off">
                             </div>
                             <div class="input-control password-input">
                                 <label for="password">ពាក្យសម្ងាត់</label>
-                                <input type="password" name="password" id="password" placeholder="ពាក្យសម្ងាត់">
-                                <i class="fas fa-eye-slash eye"></i>
+                                <input type="password" name="password" id="password" class="password" placeholder="ពាក្យសម្ងាត់" autocomplete="off">
+                                <div class="toggleEye">
+                                    <i class="fas fa-eye-slash eye"></i>
+                                </div>
                             </div>
                             <div class="input-control">
                                 <label for="phone">លេខទូរសព្ទ</label>
@@ -121,9 +123,9 @@
 
     <footer class="footer">
         <div class="footer-container">
-            <h3 class="footer-left">©២០២៤ B2WIN.com រក្សាសិទ្ធគ្រប់យ៉ាង ១៨+</h3>
+            <span class="footer-left">©២០២៤ B2WIN.com រក្សាសិទ្ធគ្រប់យ៉ាង ១៨+</span>
             <div class="footer-right">
-                <h3 class="text">ទូទាត់ប្រាក់ជាមួយ</h3>
+                <span class="text">ទូទាត់ប្រាក់ជាមួយ</span>
                 <ul class="bank-wrapper">
                     <li class="bank"><img src="static/assets/icons/bank/aba.png" alt="ABA"></li>
                     <li class="bank"><img src="static/assets/icons/bank/wing.png" alt="Wing"></li>
@@ -135,6 +137,6 @@
             </div>
         </div>
     </footer>
-    <script src="static/js/app.js"></script>
+    <script src="static/js/register.js"></script>
 </body>
 </html>

@@ -1,3 +1,5 @@
+// Promotion Modal homepage
+
 const promotionModal = document.querySelector(".promotion-modal");
 const btnOpenModal = document.querySelectorAll(".open-modal");
 const btnCloseModal = document.querySelectorAll(".close-modal");
@@ -14,4 +16,3 @@ promotionModal.addEventListener("click", (e)=>{
         promotionModal.style.display = "none";
     }
 });
-

@@ -1,14 +1,4 @@
-@font-face {
-    font-family: "Kantumruy", sans-serif;
-    src: url('../assets/fonts/KantumruyPro.ttf') format('truetype');
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'leelawui';
-    src: url('../assets/fonts/leelawui.ttf') format('truetype');
-    font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
 *{
     margin: 0;
@@ -26,8 +16,8 @@
     --black-color: #222;
     --bg-linear : linear-gradient(#fbe50a, #e5b022);
     --bg-lightgreen: #0f787b;
-    --khmer-font: Kantumruy, sans-serif;
-    --english-font: leelawui, sans-serif;
+    --khmer-font: "Kantumruy Pro", serif;
+    --english-font: "Roboto", serif;
 }
 
 html {
@@ -40,7 +30,10 @@ body {
     min-height: 100vh;
     background-color: var(--green-color);
     color: var(--white-color);
-    font-family: var(--khmer-font);
+    font-family: "Kantumruy Pro", serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 body::before {
@@ -103,8 +96,8 @@ body::before {
     gap: .5rem;
     cursor: pointer;
     font-family: var(--khmer-font);
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-weight: 600;
+    font-size: 18px;
 }
 
 .header .nav .nav-middle .nav-list:hover {
@@ -126,8 +119,8 @@ body::before {
 .header .nav .nav-right .btn {
     padding: .5rem 1.5rem;
     font-family: var(--khmer-font);
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-weight: 600;
+    font-size: 18px;
     border: none;
     border-radius: 50px;
     color: var(--black-color);
@@ -149,8 +142,8 @@ body::before {
 }
 
 .header .nav .nav-right .btn-image {
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
     padding: 0;
     background-color: transparent;
 }
@@ -173,10 +166,11 @@ body::before {
 }
 
 .main .contents .container .title{
-  margin-bottom: 1rem;
-  font-size: 2rem;
+  font-size: 32px;
   font-family: var(--khmer-font);
-  font-weight: bold;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 1.5rem;
 }
 
 .main .contents .container .box-wrapper {
@@ -210,9 +204,9 @@ body::before {
 }
 
 .main .contents .container .box-wrapper .promotion-box .promotion-list .list-item {
-    font-size: 1rem;
-    font-weight: var(--khmer-font);
-    font-weight: normal;
+    font-size: 18px;
+    font-family: var(--khmer-font);
+    font-weight: 400;
     line-height: 2rem;
 }
 
@@ -220,7 +214,7 @@ body::before {
     border-top: 1px solid var(--white-color);
     margin-top: 1.5rem;
     padding-top: 1.5rem;
-    font-size: 1rem;
+    font-size: 18px;
 }
 
 .main .contents .container .box-wrapper .promotion-box .contact a {
@@ -235,27 +229,23 @@ body::before {
     width: 40%;
 }
 
-.main .contents .container .box-wrapper .login-box .form-login {
+.main .contents .container .box-wrapper .login-box .form-register {
     display: flex;
     flex-direction: column;
     gap: 1rem;
     font-family: var(--khmer-font);
-    font-weight: normal;
+    font-weight: 400;
+    font-size: 18px;
 }
 
-.main .contents .container .box-wrapper .login-box .form-login .input-control {
+.main .contents .container .box-wrapper .login-box .form-register .input-control {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 12px;
 }
 
-.main .contents .container .box-wrapper .login-box .form-login .input-control label {
-    font-size: 1rem;
-}
-
-.main .contents .container .box-wrapper .login-box .form-login .input-control input,
-.main .contents .container .box-wrapper .login-box .form-login .input-control select
- {
+.main .contents .container .box-wrapper .login-box .form-register .input-control input,
+.main .contents .container .box-wrapper .login-box .form-register .input-control select {
     font-size: 1rem;
     font-family: var(--khmer-font);
     border: none;
@@ -264,48 +254,60 @@ body::before {
     border-radius: 8px;
 }
 
-
-.main .contents .container .box-wrapper .login-box .form-login .input-control input:focus {
+.main .contents .container .box-wrapper .login-box .form-register .input-control input:focus {
     outline: 1.5px solid var(--black-color);
 }
 
-.main .contents .container .box-wrapper .login-box .form-login .input-control input::placeholder {
-    font-size: 1rem;
+.main .contents .container .box-wrapper .login-box .form-register .input-control input::placeholder {
+    font-size: 16px;
 }
 
-.main .contents .container .box-wrapper .login-box .form-login .password-input {
+.main .contents .container .box-wrapper .login-box .form-register .input-control .error {
+    outline: 2px solid var(--yellow-color);
+    border-radius: 8px;
+}
+
+.main .contents .container .box-wrapper .login-box .form-register .input-control .errorMsg {
+    color: var(--yellow-color);
+    font-family: var(--khmer-font);
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.main .contents .container .box-wrapper .login-box .form-register .password-input {
     position: relative;
 }
 
-.main .contents .container .box-wrapper .login-box .form-login .password-input .eye {
+.main .contents .container .box-wrapper .login-box .form-register .input-control .toggleEye {
     cursor: pointer;
     position: absolute;
-    right: 16px;
-    bottom: 12px;
+    top: 38px;
+    right: 8px;
+    font-size: 16px;
     color: var(--black-color);
 }
 
-.main .contents .container .box-wrapper .login-box .form-login .input-control input::-webkit-outer-spin-button,
-.main .contents .container .box-wrapper .login-box .form-login .input-control input::-webkit-inner-spin-button {
+.main .contents .container .box-wrapper .login-box .form-register .input-control input::-webkit-outer-spin-button,
+.main .contents .container .box-wrapper .login-box .form-register .input-control input::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-.main .contents .container .box-wrapper .login-box .form-login .input-control .code-control {
+.main .contents .container .box-wrapper .login-box .form-register .input-control .code-control {
     display: flex;
     width: 100%;
     gap: .5rem;
 }
 
-.main .contents .container .box-wrapper .login-box .form-login .input-control .code-control .code {
+.main .contents .container .box-wrapper .login-box .form-register .input-control .code-control .code {
     width: 60%;
 }
 
-.main .contents .container .box-wrapper .login-box .form-login .input-control .code-control .code-random {
+.main .contents .container .box-wrapper .login-box .form-register .input-control .code-control .code-random {
     background: var(--white-color);
     width: 40%;
 }
 
-.main .contents .container .box-wrapper .login-box .form-login .btn-submit {
+.main .contents .container .box-wrapper .login-box .form-register .btn-submit {
     width: 100%;
     padding: .5rem 0;
     margin: 1rem 0;
@@ -315,26 +317,26 @@ body::before {
     background: var(--bg-linear);
     color: var(--black-color);
     font-family: var(--khmer-font);
-    font-size: 1rem;
+    font-size: 18px;
     transition: all ease-in 0.5s;
     cursor: pointer;
 }
 
-.main .contents .container .box-wrapper .login-box .form-login .btn-submit:hover {
+.main .contents .container .box-wrapper .login-box .form-register .btn-submit:hover {
     background: var(--secondary-color);
 }
 
-.main .contents .container .box-wrapper .login-box .form-login .btn-go-login {
+.main .contents .container .box-wrapper .login-box .form-register .btn-go-login {
     text-align: center;
     color: var(--yellow-color);
-    font-size: 1rem;
+    font-size: 18px;
 }
 
-.main .contents .container .box-wrapper .login-box .form-login .btn-go-login:hover {
+.main .contents .container .box-wrapper .login-box .form-register .btn-go-login:hover {
     color: var(--secondary-color);
 }
 
-.main .contents .container .box-wrapper .login-box .form-login .text-content {
+.main .contents .container .box-wrapper .login-box .form-register .text-content {
     border-top: 1px solid var(--white-color);
     padding-top: 1rem;
     margin-top: 1rem;
@@ -342,7 +344,6 @@ body::before {
     text-align: center;
     line-height: 1.5rem;
 }
-
 
 .footer {
     width: 100%;
@@ -352,8 +353,8 @@ body::before {
     justify-content: center;
     align-items: center;
     font-family: var(--khmer-font);
-    font-weight: bold;
-    font-size: 1rem;
+    font-weight: 500;
+    font-size: 18px;
     margin-top: 2rem;
 }
 
