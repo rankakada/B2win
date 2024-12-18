@@ -237,6 +237,19 @@ body::before {
     font-weight: 400;
 }
 
+.main .contents .container .box-wrapper .login-box .form-login .loginError {
+    background: var(--bg-linear);
+    color: red;
+    padding: 12px 0;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.main .contents .container .box-wrapper .login-box .form-login .loginSuccess {
+    color: var(--secondary-color)
+}
+
 .main .contents .container .box-wrapper .login-box .form-login .input-control {
     display: flex;
     flex-direction: column;
@@ -306,15 +319,16 @@ body::before {
 
 .main .contents .container .box-wrapper .login-box .form-login .btn-submit {
     width: 100%;
-    padding: .5rem 0;
-    margin: 1rem 0;
+    padding: 12px 0;
+    margin: .5rem 0;
     border: none;
     outline: none;
     border-radius: 8px;
     background: var(--bg-linear);
     color: var(--black-color);
     font-family: var(--khmer-font);
-    font-size: 1rem;
+    font-size: 18px;
+    font-weight: 600;
     transition: all ease-in 0.5s;
     cursor: pointer;
 }
@@ -326,7 +340,7 @@ body::before {
 .main .contents .container .box-wrapper .login-box .form-login .btn-go-register {
     text-align: center;
     color: var(--yellow-color);
-    font-size: 1rem;
+    font-size: 18px;
 }
 
 .main .contents .container .box-wrapper .login-box .form-login .btn-go-register:hover {

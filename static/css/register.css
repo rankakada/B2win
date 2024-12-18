@@ -309,8 +309,8 @@ body::before {
 
 .main .contents .container .box-wrapper .login-box .form-register .btn-submit {
     width: 100%;
-    padding: .5rem 0;
-    margin: 1rem 0;
+    padding: 12px 0;
+    margin: .5rem 0;
     border: none;
     outline: none;
     border-radius: 8px;
@@ -318,6 +318,7 @@ body::before {
     color: var(--black-color);
     font-family: var(--khmer-font);
     font-size: 18px;
+    font-weight: 600;
     transition: all ease-in 0.5s;
     cursor: pointer;
 }
