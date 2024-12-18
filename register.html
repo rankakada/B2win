@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>B2Win</title>
+    <link rel="shortcut icon" href="static/assets/icons/icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="static/css/register.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="nav">
+            <div class="hamburger">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line short-line"></div>
+            </div>
+            <a href="index.html" class="logo">
+                <img src="static/assets/icons/logo.png" alt="logo">
+            </a>
+
+            <ul class="nav-middle">
+                <li class="nav-list">
+                    <img src="static/assets/icons/goal.png" alt="goals">
+                    <span>គ្រាប់បាល់</span>
+                </li>
+                <li class="nav-list">
+                    <img src="static/assets/icons/news.png" alt="news">
+                    <span>ព័ត៌មានកីឡា</span>
+                </li>
+                <li class="nav-list">
+                    <img src="static/assets/icons/conditions.png" alt="conditions">
+                    <span>លក្ខខណ្ឌ</span>
+                </li>
+            </ul>
+
+            <div class="nav-right">
+                <a href="login.html" class="btn btn-login">ចូល</a>
+                <a href="register.html" class="btn btn-register">ចុះឈ្មោះ</a>
+                <a href="#" class="btn btn-image" id="language">
+                    <img src="static/assets/icons/cambodia_flag.png" alt="kh-flag" >
+                </a>
+                <a href="#" class="btn btn-image" id="telegram">
+                    <img src="static/assets/icons/telegram.png" alt="telegram">
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <section class="contents">
+            <div class="container">
+                <h2 class="title">បង្កើតគណនីដោយខ្លួនឯង</h2>
+                <div class="box-wrapper">
+                    <div class="box promotion-box">
+                        <div class="promotion-image">
+                            <img src="static/assets/images/promotion1.jpg" alt="promotion">
+                        </div>
+                        <ul class="promotion-list">
+                            <li class="list-item">ចុះឈ្មោះឥឡូវនេះទទួលបានប្រូម៉ូសិនភ្លាមៗ</li>
+                            <li class="list-item">ណែនាំសមាជិកថ្មីទទួលបាន​ 5% រៀងរាល់ថ្ងៃ</li>
+                            <li class="list-item">លុយទឹកទទួលបាន 0.25% រៀងរាល់ថ្ងៃ</li>
+                            <li class="list-item">សមាជិកថ្មីទទួលបានទឹកប្រាក់ស្វាគមន៍ 100%</li>
+                            <li class="list-item">ប្រាក់បង្វិលប្រចាំសប្តាហ៍ 5%</li>
+                            <li class="list-item">ចុះឈ្មោះឥឡូវនេះទទួលបានប្រូម៉ូសិនភ្លាមៗ</li>
+                        </ul>
+                        <div class="contact">
+                            <span>ទាក់ទងទៅកាន់តេឡេក្រាម </span>
+                            <a href="#">ផ្នែកបម្រើសេវាកម្មរបស់យើង</a>
+                        </div>
+                    </div>
+                    <div class="box login-box">
+                        <form action="#" class="form-login">
+                            <div class="input-control">
+                                <label for="username">ឈ្មោះ​អ្នកប្រើប្រាស់</label>
+                                <input type="text" name="username" id="username" placeholder="បញ្ចូលឈ្មោះអ្នកប្រើប្រាស់">
+                            </div>
+                            <div class="input-control password-input">
+                                <label for="password">ពាក្យសម្ងាត់</label>
+                                <input type="password" name="password" id="password" placeholder="ពាក្យសម្ងាត់">
+                                <i class="fas fa-eye-slash eye"></i>
+                            </div>
+                            <div class="input-control">
+                                <label for="phone">លេខទូរសព្ទ</label>
+                                <input type="number" name="phone" id="phone" placeholder="012-123-123">
+                            </div>
+                            <div class="input-control">
+                                <label for="currency">រូបិយប័ណ្ណ</label>
+                                <select name="currency" id="currency">
+                                    <option value="USD">USD</option>
+                                </select>
+                            </div>
+                            <div class="input-control">
+                                <label for="affiliate">អ្នកណែនាំ</label>
+                                <input type="text" name="affiliate" id="affiliate" placeholder="អ្នកណែនាំ">
+                            </div>
+                            <div class="input-control">
+                                <label for="code">លេខកូដសុវត្ថិភាព</label>
+                                <div class="code-control">
+                                    <input type="number" name="code" id="code" class="code" placeholder="លេខកូដសុវត្ថិភាព">
+                                    <input type="number" class="code-random" disabled>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn-submit">
+                                ចុះឈ្មោះ
+                            </button>
+                            <a href="login.html" class="btn-go-login">
+                                ចូលទៅកាន់ Login
+                            </a>
+                            <span class="text-content">
+                                ប្រសិនបើអ្នកជួបប្រទះបញ្ហាណាមួយនៅពេលចូល, សូមទំនាក់ទំនង ផ្នែកបម្រើសេវាកម្មរបស់យើង ដើម្បីជាជំនួយបន្ថែម។
+                            </span>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <h3 class="footer-left">©២០២៤ B2WIN.com រក្សាសិទ្ធគ្រប់យ៉ាង ១៨+</h3>
+            <div class="footer-right">
+                <h3 class="text">ទូទាត់ប្រាក់ជាមួយ</h3>
+                <ul class="bank-wrapper">
+                    <li class="bank"><img src="static/assets/icons/bank/aba.png" alt="ABA"></li>
+                    <li class="bank"><img src="static/assets/icons/bank/wing.png" alt="Wing"></li>
+                    <li class="bank"><img src="static/assets/icons/bank/acleda.jpeg" alt="Acleda"></li>
+                    <li class="bank"><img src="static/assets/icons/bank/truemoney.png" alt="TrueMoney"></li>
+                    <li class="bank"><img src="static/assets/icons/bank/pipay.png" alt="PiPay"></li>
+                    <li class="bank"><img src="static/assets/icons/bank/usdt.png" alt="Ustd"></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+    <script src="static/js/app.js"></script>
+</body>
+</html>

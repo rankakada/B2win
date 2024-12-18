@@ -14,3 +14,4 @@ promotionModal.addEventListener("click", (e)=>{
         promotionModal.style.display = "none";
     }
 });
+

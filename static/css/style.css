@@ -1,15 +1,15 @@
 @font-face {
-    font-family: 'krasar';
-    src: url('../assets/fonts/krasar-bold.ttf') format('truetype');
-    font-weight: normal;
+    font-family: "Kantumruy", sans-serif;
+    src: url('../assets/fonts/KantumruyPro.ttf') format('truetype');
     font-style: normal;
 }
+
 @font-face {
     font-family: 'leelawui';
     src: url('../assets/fonts/leelawui.ttf') format('truetype');
-    font-weight: normal;
     font-style: normal;
 }
+
 *{
     margin: 0;
     padding: 0;
@@ -22,15 +22,22 @@
     --darkgreen-color : #002223;
     --green-color: #005253;
     --white-color: #fff;
-    --black-color: #000;
+    --black-color: #222;
+    --khmer-font: Kantumruy, sans-serif;
+    --english-font: leelawui, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
     position: relative;
     width: 100%;
+    min-height: 100vh;
     background-color: var(--green-color);
     color: var(--white-color);
-    font-family: krasar, sans-serif;
+    font-family: var(--khmer-font);
 }
 
 body::before {
@@ -45,6 +52,7 @@ body::before {
     opacity: .1;
     z-index: -1;
 }
+
 .header {
     height: 100px;
     width: 100%;
@@ -59,7 +67,6 @@ body::before {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-size: 1.2rem;
 }
 
 .header .nav .hamburger {
@@ -79,7 +86,7 @@ body::before {
 }
 
 .header .nav .logo img {
-    height: 250px;
+    width: 160px;
 }
 
 .header .nav .nav-middle {
@@ -93,6 +100,9 @@ body::before {
     align-items: center;
     gap: .5rem;
     cursor: pointer;
+    font-family: var(--khmer-font);
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .header .nav .nav-middle .nav-list:hover {
@@ -113,13 +123,15 @@ body::before {
 
 .header .nav .nav-right .btn {
     padding: .5rem 1.5rem;
-    font-family: krasar, sans-serif;
     font-size: 1.2rem;
+    font-family: var(--khmer-font);
+    font-weight: bold;
     border: none;
     border-radius: 50px;
     color: var(--black-color);
     cursor: pointer;
     transition: all ease .5s;
+    text-decoration: none;
 }
 
 .header .nav .nav-right .btn:hover{
@@ -127,10 +139,10 @@ body::before {
     color: var(--white-color);
 }
 
-.btn-primary {
+.header .nav .nav-right .btn-login {
     background-color: var(--primary-color);
 }
-.btn-secondary {
+.header .nav .nav-right .btn-register {
     background-color: var(--secondary-color);
 }
 
@@ -158,7 +170,6 @@ body::before {
     align-items: center;
     background-color: var(--green-color);
     font-size: 15px;
-    font-family: krasar, sans-serif;
 }
 
 .main .hero .announcement-wrapper .announcement-icon {
@@ -179,7 +190,8 @@ body::before {
 }
 
 .main .hero .announcement-wrapper .marquee-wrapper .marquee {
-    /* display: inline-block; */
+    font-family: var(--khmer-font);
+    font-weight: normal;
     animation: scroll 40s linear infinite;
 }
 
@@ -230,11 +242,20 @@ body::before {
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    font-family: krasar, sans-serif;
+    font-family: var(--khmer-font);
     font-size: 1.5rem;
+    font-weight: bold;
     color: var(--black-color);
     transition: all ease 0.5s;
     flex-grow: 1;
+}
+
+.main .contents .button-container .btn-deposit {
+    background: var(--secondary-color);
+}
+
+.main .contents .button-container .btn-withdraw {
+    background: var(--primary-color);
 }
 
 .main .contents .button-container .button:hover {
@@ -245,7 +266,6 @@ body::before {
 .main .contents .box-container {
     width: 100%;
     background-color: rgba(0, 34, 35, .3);
-    /* background-color: rgba(0, 82, 83, .3); */
     padding: 1.5rem;
     border-radius: 24px;
 }
@@ -254,7 +274,9 @@ body::before {
     position: relative;
     padding-left: 30px;
     display: inline-block;
+    font-family: var(--khmer-font);
     font-size: 1.5rem;
+    font-weight: bold;
     margin-bottom: 1.5rem;
 }
 
@@ -296,9 +318,9 @@ body::before {
 .main .contents .box-container .match-container {
     width: 100%;
     height: 100%;
-    font-family: leelawui, sans-serif;
+    font-family: var(--english-font);
+    font-weight: normal;
     font-size: 16px;
-    /* position: relative; */
 }
 
 .main .contents .box-container .match-container .match-wrapper .match-card .match-item-wrapper{
@@ -411,7 +433,7 @@ body::before {
 
 .promotion-modal .promotion-modal-content .middle-content p {
     color: var(--black-color);
-    font-family: Arial, sans-serif;
+    font-family: var(--english-font);
     font-size: 1rem;
     margin-top: 1rem;
 }
@@ -429,8 +451,8 @@ body::before {
     border-radius: 8px;
     background-color:#1956db;
     color: var(--white-color);
-    font-family: Arial, sans-serif;
-    font-weight: 500;
+    font-family: var(--english-font);
+    font-weight: normal;
     font-size: 15px;
     transition: all ease .5s;
 }
@@ -446,8 +468,9 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: krasar, sans-serif;
+    font-family: var(--khmer-font);
     font-size: 1rem;
+    font-weight: bold;
     margin-top: 2rem;
 }
 
