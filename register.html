@@ -75,6 +75,7 @@
                             <div class="input-control">
                                 <label for="username">ឈ្មោះ​អ្នកប្រើប្រាស់</label>
                                 <input type="text" name="username" id="username" class="username" placeholder="បញ្ចូលឈ្មោះអ្នកប្រើប្រាស់" autocomplete="off">
+                                <span class="errorMsg" id="userErrorMsg"></span>
                             </div>
                             <div class="input-control password-input">
                                 <label for="password">ពាក្យសម្ងាត់</label>
@@ -82,20 +83,23 @@
                                 <div class="toggleEye">
                                     <i class="fas fa-eye-slash eye"></i>
                                 </div>
+                                <span class="errorMsg" id="passErrorMsg"></span>
                             </div>
                             <div class="input-control">
-                                <label for="phone">លេខទូរសព្ទ</label>
-                                <input type="number" name="phone" id="phone" placeholder="012-123-123">
+                                <label for="numberPhone">លេខទូរសព្ទ</label>
+                                <input type="number" name="numberPhone" id="numberPhone" class="numberPhone" placeholder="012-123-123">
+                                <span class="errorMsg" id="phoneErrorMsg"></span>
                             </div>
                             <div class="input-control">
                                 <label for="currency">រូបិយប័ណ្ណ</label>
-                                <select name="currency" id="currency">
+                                <select name="currency" id="currency" class="currency">
                                     <option value="USD">USD</option>
                                 </select>
                             </div>
                             <div class="input-control">
                                 <label for="affiliate">អ្នកណែនាំ</label>
-                                <input type="text" name="affiliate" id="affiliate" placeholder="អ្នកណែនាំ">
+                                <input type="text" name="affiliate" id="affiliate" class="affiliate" placeholder="អ្នកណែនាំ">
+                                <span class="errorMsg" id="affiliateErrorMsg"></span>
                             </div>
                             <div class="input-control">
                                 <label for="code">លេខកូដសុវត្ថិភាព</label>
@@ -103,8 +107,9 @@
                                     <input type="number" name="code" id="code" class="code" placeholder="លេខកូដសុវត្ថិភាព">
                                     <input type="number" class="code-random" disabled>
                                 </div>
+                                <span class="errorMsg" id="codeErrorMsg"></span>
                             </div>
-                            
+                            <span id="registerStatus"></span>
                             <button type="submit" class="btn-submit">
                                 ចុះឈ្មោះ
                             </button>

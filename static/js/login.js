@@ -42,8 +42,8 @@ const validateInputs = () => {
     let passwordValue = password.value.trim();
     let userErrorMsg = document.getElementById("userErrorMsg");
     let passErrorMsg = document.getElementById("passErrorMsg");
-    const usernameRegex = /^[A-Z0-9]+$/;
-    const startsWithNumberRegex = /^\d/;
+    const textRegex = /^[A-Z0-9]+$/;
+    const numberRegex = /^\d/;
 
     // function to add and clear error messange
 
@@ -73,11 +73,11 @@ const validateInputs = () => {
         setError(username, "ឈ្មោះអ្នកប្រើប្រាស់ត្រូវមានតួអក្សរច្រើនបំផុត16តួ", userErrorMsg);
         isValid = false;
     }
-    else if (!usernameRegex.test(usernameValue)) { 
+    else if (!textRegex.test(usernameValue)) { 
         setError(username, "ឈ្មោះអ្នកប្រើប្រាស់ត្រូវមានតួអក្សរ និងលេខប៉ុណ្ណោះ", userErrorMsg);
         isValid = false;
     }
-    else if (startsWithNumberRegex.test(usernameValue)) { 
+    else if (numberRegex.test(usernameValue)) { 
         setError(username, "ឈ្មោះអ្នកប្រើប្រាស់មិនអាចចាប់ផ្តើមដោយលេខ", userErrorMsg);
         isValid = false;
     }
@@ -110,6 +110,7 @@ const validateInputs = () => {
         ) {
             loginStatus.innerHTML = "Login successful!";
             loginStatus.className = "loginSuccess";
+            loginForm.reset();
         } else {
             loginStatus.innerHTML = "ឈ្មោះអ្នកប្រើប្រាស់ ឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ";
             loginStatus.className = "loginError";

@@ -28,6 +28,9 @@ body {
     background-color: var(--green-color);
     color: var(--white-color);
     font-family: var(--khmer-font);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 body::before {
@@ -188,7 +191,17 @@ body::before {
 @keyframes scroll {
     0% { transform: translateX(100%); }
     100% { transform: translateX(-100%); }
-  }
+}
+
+@-webkit-keyframes scroll {
+    0% {
+        -webkit-transform: translateX(100%);
+    }
+    100% {
+        -webkit-transform: translateX(-100%);
+    }
+}
+
 
 .main .hero .carousel-container {
     width: 100%;
@@ -366,11 +379,10 @@ body::before {
   height: 100%;
   position: fixed;
   overflow: auto;
-  background: rgba(0, 0, 0, 0.7);
-  z-index: 9999;
   top: 0; 
   left: 0;
-  transition: all ease 1s;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 9999;
 }
 
 .promotion-modal .promotion-modal-content {
@@ -381,6 +393,26 @@ body::before {
     transform: translate(-50%, -50%);
     background-color: var(--white-color);
     border-radius: 8px;
+    animation: fadeIn 0.3s ease;
+    -webkit-animation: fadeIn 0.3s ease; 
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
 
 .promotion-modal .promotion-modal-content .top-content {
