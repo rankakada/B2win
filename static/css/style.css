@@ -188,6 +188,11 @@ body::before {
     font-family: var(--khmer-font);
     font-weight: 500;
     animation: scroll 40s linear infinite;
+    animation-play-state: running;
+}
+
+.main .hero .announcement-wrapper .marquee-wrapper .marquee:hover {
+    animation-play-state: paused;
 }
 
 @keyframes scroll {
@@ -315,7 +320,7 @@ body::before {
 }
 
 .main .contents .box-container .game-container .game-card {
-    height: 250px;
+    height: auto;
     transition: all ease .5s;
 }
 
@@ -326,7 +331,7 @@ body::before {
 }
 
 .main .contents .box-container .game-container .game-card:hover {
-    transform: scale(1.1);
+    transform: scale(.95);
     transition: all ease .5s;
 }
 
@@ -339,7 +344,7 @@ body::before {
 }
 
 .main .contents .box-container .match-container .match-wrapper .match-card .match-item-wrapper{
-    height: 200px;
+    height: 180px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -385,7 +390,8 @@ body::before {
 }
 
 .main .contents .box-container .promotion-container .promotion-wrapper .promotion-card{
-    height: 200px;
+    height: auto;
+    cursor: pointer;
 }
 
 .main .contents .box-container .promotion-container .promotion-wrapper .promotion-card img {
