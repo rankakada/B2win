@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-*{
+*,
+*::before,
+*::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -56,7 +58,7 @@ body::before {
 
 .header .nav {
     height: 100px;
-    width: 1280px;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -184,7 +186,7 @@ body::before {
 .main .hero .announcement-wrapper .marquee-wrapper .marquee {
     font-size: 16px;
     font-family: var(--khmer-font);
-    font-weight: 400;
+    font-weight: 500;
     animation: scroll 40s linear infinite;
 }
 
@@ -208,6 +210,14 @@ body::before {
     height: 100%;
 }
 
+.main .hero .carousel-container .desktop-banner {
+    display: block;
+}
+
+.main .hero .carousel-container .mobile-banner {
+    display: none;
+}
+
 .main .hero .carousel-container .swiper .swiper-wrapper .slide {
     text-align: center;
     font-size: 18px;
@@ -225,7 +235,7 @@ body::before {
 
 .main .contents {
     margin: 0 auto;
-    width: 1280px;
+    width: 80%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -299,8 +309,8 @@ body::before {
 
 .main .contents .box-container .game-container {
     width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr) ;
     gap: 1.5rem;
 }
 
@@ -329,25 +339,34 @@ body::before {
 }
 
 .main .contents .box-container .match-container .match-wrapper .match-card .match-item-wrapper{
-    width: 390px;
     height: 200px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between;
     background: url("../assets/images/bg-match.jpg") no-repeat fixed center;
     background-size: cover;
     border-radius: 1rem;
+    padding: 0 25px;
+    gap: 1rem;
 }
 
 .main .contents .box-container .match-container .match-wrapper .match-card .team {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+.main .contents .box-container .match-container .match-wrapper .match-card .team span {
+    font-size: 16px;
+    font-family: var(--english-font);
+    text-align: center;
+    margin-top: 1rem;
+}
+
 .main .contents .box-container .match-container .match-wrapper .match-card .team img{
-    height: 100px;
+    height: 80px;
 }
 
 .main .contents .box-container .match-container .match-wrapper .match-card .league {
@@ -356,6 +375,8 @@ body::before {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+    text-align: center;
+    line-height: 1.5rem;
 }
 
 .main .contents .box-container .promotion-container{
@@ -364,7 +385,7 @@ body::before {
 }
 
 .main .contents .box-container .promotion-container .promotion-wrapper .promotion-card{
-    width: 400px;
+    height: 200px;
 }
 
 .main .contents .box-container .promotion-container .promotion-wrapper .promotion-card img {
@@ -501,7 +522,7 @@ body::before {
 }
 
 .footer .footer-container {
-    width: 1280px;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -524,4 +545,16 @@ body::before {
     width: 36px;
     height: 36px;
     border-radius: 8px;
+}
+
+/* Responsive */
+
+@media screen and (max-width : 767px) {
+    .main .hero .carousel-container .desktop-banner {
+        display: none;
+    }
+
+    .main .hero .carousel-container .mobile-banner {
+        display: block;
+    }
 }

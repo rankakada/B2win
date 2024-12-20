@@ -62,15 +62,19 @@
 
             <!-- Carousel -->
             <div class="carousel-container">
-                <div class="swiper homeSwiper">
+                <div class="swiper homeSwiper desktop-banner">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide slide"><img src="static/assets/images/banner1.jpg" alt="banner"></div>
-                        <div class="swiper-slide slide"><img src="static/assets/images/banner1.jpg" alt="banner"></div>
-                        <div class="swiper-slide slide"><img src="static/assets/images/banner1.jpg" alt="banner"></div>
+                        <div class="swiper-slide slide"><img src="static/assets/images/desktop-banner.jpg" alt="desktop-banner"></div>
+                        <div class="swiper-slide slide"><img src="static/assets/images/desktop-banner.jpg" alt="desktop-banner"></div>
+                        <div class="swiper-slide slide"><img src="static/assets/images/desktop-banner.jpg" alt="desktop-banner"></div>
                     </div>
-                    <div class="swiper-button-next"></div>
-                    <div class="swiper-button-prev"></div>
-                    <div class="swiper-pagination"></div>
+                </div>
+                <div class="swiper homeSwiper mobile-banner">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide slide"><img src="static/assets/images/mobile-banner.jpg" alt="mobile-banner"></div>
+                        <div class="swiper-slide slide"><img src="static/assets/images/mobile-banner.jpg" alt="mobile-banner"></div>
+                        <div class="swiper-slide slide"><img src="static/assets/images/mobile-banner.jpg" alt="mobile-banner"></div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -85,21 +89,21 @@
             <div class="box-container">
                 <h1 class="box-title">ហ្គេមពេញនិយម</h1>
                 <div class="game-container">
-                    <div class="game-card">
+                    <a href="login.html" class="game-card">
                         <img src="static/assets/images/game1.jpg" alt="game">
-                    </div>
-                    <div class="game-card">
+                    </a>
+                    <a href="login.html" class="game-card">
                         <img src="static/assets/images/game2.jpg" alt="game">
-                    </div>
-                    <div class="game-card">
+                    </a>
+                    <a href="login.html" class="game-card">
                         <img src="static/assets/images/game3.jpg" alt="game">
-                    </div>
-                    <div class="game-card">
+                    </a>
+                    <a href="login.html" class="game-card">
                         <img src="static/assets/images/game4.jpg" alt="game">
-                    </div>
-                    <div class="game-card">
+                    </a>
+                    <a href="login.html" class="game-card">
                         <img src="static/assets/images/game5.jpg" alt="game">
-                    </div>
+                    </a>
                 </div>
             </div>
             <div class="box-container">
@@ -255,14 +259,6 @@
             slidesPerGroup: 1,
             spaceBetween: 30,
             loop: true,
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-            },
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            },
             autoplay: {
                 delay: 5000,
             },
@@ -283,7 +279,7 @@
                 loop: false,
             },
             1024: {
-                slidesPerView: 3,
+                slidesPerView: 4,
                 spaceBetween: 30,
             },
         },
@@ -304,7 +300,7 @@
                 loop: false,
             },
             1024: {
-                slidesPerView: 3,
+                slidesPerView: 4,
                 spaceBetween: 30,
             },
         },

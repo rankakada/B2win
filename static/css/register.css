@@ -60,7 +60,7 @@ body::before {
 
 .header .nav {
     height: 100px;
-    width: 1280px;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -162,7 +162,7 @@ body::before {
 }
 
 .main .contents {
-    width: 1280px;
+    width: 80%;
     margin: 0 auto;
     margin-top: 2rem;
 }
@@ -234,10 +234,24 @@ body::before {
 .main .contents .container .box-wrapper .login-box .form-register {
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: 12px;
     font-family: var(--khmer-font);
     font-weight: 400;
     font-size: 18px;
+}
+
+.main .contents .container .box-wrapper .login-box .form-register .registerError {
+    background: var(--bg-linear);
+    color: red;
+    padding: 12px 0;
+    text-align: center;
+    border-radius: 8px;
+    font-weight: 500;
+    margin-top: 1rem;
+}
+
+.main .contents .container .box-wrapper .login-box .form-register .registerSuccess {
+    color: var(--secondary-color)
 }
 
 .main .contents .container .box-wrapper .login-box .form-register .input-control {
@@ -248,12 +262,12 @@ body::before {
 
 .main .contents .container .box-wrapper .login-box .form-register .input-control input,
 .main .contents .container .box-wrapper .login-box .form-register .input-control select {
-    font-size: 1rem;
+    font-size: 18px;
     font-family: var(--khmer-font);
     border: none;
     outline: none;
     padding: .5rem;
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
 .main .contents .container .box-wrapper .login-box .form-register .input-control input:focus {
@@ -266,13 +280,13 @@ body::before {
 
 .main .contents .container .box-wrapper .login-box .form-register .input-control .error {
     outline: 2px solid var(--yellow-color);
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
 .main .contents .container .box-wrapper .login-box .form-register .input-control .errorMsg {
     color: var(--yellow-color);
     font-family: var(--khmer-font);
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
 }
 
@@ -283,7 +297,7 @@ body::before {
 .main .contents .container .box-wrapper .login-box .form-register .input-control .toggleEye {
     cursor: pointer;
     position: absolute;
-    top: 40px;
+    top: 42px;
     right: 8px;
     font-size: 16px;
     color: var(--black-color);
@@ -312,7 +326,7 @@ body::before {
 
 .main .contents .container .box-wrapper .login-box .form-register .btn-submit {
     width: 100%;
-    padding: 12px 0;
+    padding: 10px 0;
     margin: .5rem 0;
     border: none;
     outline: none;
@@ -321,7 +335,7 @@ body::before {
     color: var(--black-color);
     font-family: var(--khmer-font);
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
     transition: all ease-in 0.5s;
     cursor: pointer;
 }
@@ -334,6 +348,7 @@ body::before {
     text-align: center;
     color: var(--yellow-color);
     font-size: 18px;
+    margin: 12px 0;
 }
 
 .main .contents .container .box-wrapper .login-box .form-register .btn-go-login:hover {
@@ -363,7 +378,7 @@ body::before {
 }
 
 .footer .footer-container {
-    width: 1280px;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;

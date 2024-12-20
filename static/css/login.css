@@ -60,7 +60,7 @@ body::before {
 
 .header .nav {
     height: 100px;
-    width: 1280px;
+    width: 80%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -162,7 +162,7 @@ body::before {
 }
 
 .main .contents {
-    width: 1280px;
+    width: 80%;
     margin: 0 auto;
     margin-top: 2rem;
 }
@@ -246,6 +246,7 @@ body::before {
     text-align: center;
     border-radius: 8px;
     font-weight: 500;
+    margin-top: 1rem;
 }
 
 .main .contents .container .box-wrapper .login-box .form-login .loginSuccess {
@@ -259,16 +260,16 @@ body::before {
 }
 
 .main .contents .container .box-wrapper .login-box .form-login .input-control label {
-    font-size: 1rem;
+    font-size: 18px;
 }
 
 .main .contents .container .box-wrapper .login-box .form-login .input-control input {
-    font-size: 1rem;
+    font-size: 18px;
     font-family: var(--khmer-font);
     border: none;
     outline: none;
-    padding: .5rem;
-    border-radius: 8px;
+    padding: 8px;
+    border-radius: 5px;
 }
 
 .main .contents .container .box-wrapper .login-box .form-login .input-control input:focus {
@@ -281,13 +282,13 @@ body::before {
 
 .main .contents .container .box-wrapper .login-box .form-login .input-control .error {
     outline: 2px solid var(--yellow-color);
-    border-radius: 8px;
+    border-radius: 5px;
 }
 
 .main .contents .container .box-wrapper .login-box .form-login .input-control .errorMsg {
     color: var(--yellow-color);
     font-family: var(--khmer-font);
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 400;
 }
 
@@ -298,7 +299,7 @@ body::before {
 .main .contents .container .box-wrapper .login-box .form-login .input-control .toggleEye {
     cursor: pointer;
     position: absolute;
-    top: 38px;
+    top: 42px;
     right: 8px;
     font-size: 16px;
     color: var(--black-color);
@@ -316,12 +317,12 @@ body::before {
 }
 
 .main .contents .container .box-wrapper .login-box .form-login .check-box label {
-    font-size: 1rem;
+    font-size: 18px;
 }
 
 .main .contents .container .box-wrapper .login-box .form-login .btn-submit {
     width: 100%;
-    padding: 12px 0;
+    padding: 10px 0;
     margin: .5rem 0;
     border: none;
     outline: none;
@@ -330,7 +331,7 @@ body::before {
     color: var(--black-color);
     font-family: var(--khmer-font);
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
     transition: all ease-in 0.5s;
     cursor: pointer;
 }
@@ -343,6 +344,8 @@ body::before {
     text-align: center;
     color: var(--yellow-color);
     font-size: 18px;
+    font-weight: 400;
+    margin: 12px 0;
 }
 
 .main .contents .container .box-wrapper .login-box .form-login .btn-go-register:hover {
@@ -353,7 +356,7 @@ body::before {
     border-top: 1px solid var(--white-color);
     padding-top: 1rem;
     margin-top: 1rem;
-    font-size: 1rem;
+    font-size: 16px;
     text-align: center;
     line-height: 1.5rem;
 }
@@ -372,7 +375,7 @@ body::before {
 }
 
 .footer .footer-container {
-    width: 1280px;
+    width: 80%;
     display: flex;
     align-items: center;
     justify-content: space-between;
