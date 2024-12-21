@@ -87,7 +87,6 @@ body::before {
 }
 
 .header .nav .nav-middle {
-    list-style: none;
     display: flex; 
     gap: 3rem;
 }
@@ -100,6 +99,8 @@ body::before {
     font-family: var(--khmer-font);
     font-weight: 600;
     font-size: 18px;
+    text-decoration: none;
+    color: var(--white-color);
 }
 
 .header .nav .nav-middle .nav-list:hover {
@@ -155,6 +156,88 @@ body::before {
     width: 100%;
     transform: scale(1.3);
     background-color: transparent;
+}
+
+.header .nav .mobile-menu {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+    top: 0; 
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+    -webkit-animation: fadeIn 0.3s ease; 
+}
+
+.header .nav .mobile-menu .menu-modal {
+    background: var(--darkgreen-color);
+    height: 100%;
+    width: 320px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    padding: 1rem;
+}
+
+.header .nav .mobile-menu .menu-modal .nav-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .nav .mobile-menu .menu-modal .nav-top .logo img{
+    width: 160px;
+}
+
+.header .nav .mobile-menu .menu-modal .nav-top .btn-close-menu {
+    border: 2px solid var(--white-color);
+    border-radius: 8px;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+    background: transparent;
+    color: var(--white-color);
+    font-size: 24px;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+
+.header .nav .mobile-menu .menu-modal .nav-top .btn-close-menu:hover {
+    background: var(--white-color);
+    color: var(--black-color);
+}
+
+.header .nav .mobile-menu .menu-modal .mobile-nav {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1.5px solid var(--white-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.header .nav .mobile-menu .menu-modal .mobile-nav .nav-list {
+    display: flex;
+    align-items: center;
+    color: var(--white-color);
+    text-decoration: none;
+    gap: 8px;
+    font-family: var(--khmer-font);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.header .nav .mobile-menu .menu-modal .mobile-nav .nav-list:hover {
+    color: var(--secondary-color);
+}
+
+.header .nav .mobile-menu .menu-modal .mobile-nav .nav-list img {
+    width: 24px;
+    height: 24px;
 }
 
 .main {
@@ -398,4 +481,17 @@ body::before {
     width: 36px;
     height: 36px;
     border-radius: 8px;
+}
+
+/* Responsive */
+
+@media screen and (max-width: 1279px) {
+    .header .nav .nav-middle {
+        display: none; 
+    }
+
+    .header .nav .hamburger {
+        display: block;
+    }
+    
 }

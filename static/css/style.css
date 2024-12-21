@@ -85,7 +85,6 @@ body::before {
 }
 
 .header .nav .nav-middle {
-    list-style: none;
     display: flex; 
     gap: 3rem;
 }
@@ -98,6 +97,8 @@ body::before {
     font-family: var(--khmer-font);
     font-weight: 600;
     font-size: 18px;
+    text-decoration: none;
+    color: var(--white-color);
 }
 
 .header .nav .nav-middle .nav-list:hover {
@@ -153,6 +154,88 @@ body::before {
     width: 100%;
     transform: scale(1.3);
     background-color: transparent;
+}
+
+.header .nav .mobile-menu {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+    top: 0; 
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease;
+    -webkit-animation: fadeIn 0.3s ease; 
+}
+
+.header .nav .mobile-menu .menu-modal {
+    background: var(--darkgreen-color);
+    height: 100%;
+    width: 320px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    padding: 1rem;
+}
+
+.header .nav .mobile-menu .menu-modal .nav-top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .nav .mobile-menu .menu-modal .nav-top .logo img{
+    width: 160px;
+}
+
+.header .nav .mobile-menu .menu-modal .nav-top .btn-close-menu {
+    border: 2px solid var(--white-color);
+    border-radius: 8px;
+    outline: none;
+    width: 40px;
+    height: 40px;
+    padding: 4px;
+    background: transparent;
+    color: var(--white-color);
+    font-size: 24px;
+    cursor: pointer;
+    transition: all ease .3s;
+}
+
+.header .nav .mobile-menu .menu-modal .nav-top .btn-close-menu:hover {
+    background: var(--white-color);
+    color: var(--black-color);
+}
+
+.header .nav .mobile-menu .menu-modal .mobile-nav {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1.5px solid var(--white-color);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.header .nav .mobile-menu .menu-modal .mobile-nav .nav-list {
+    display: flex;
+    align-items: center;
+    color: var(--white-color);
+    text-decoration: none;
+    gap: 8px;
+    font-family: var(--khmer-font);
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.header .nav .mobile-menu .menu-modal .mobile-nav .nav-list:hover {
+    color: var(--secondary-color);
+}
+
+.header .nav .mobile-menu .menu-modal .mobile-nav .nav-list img {
+    width: 24px;
+    height: 24px;
 }
  
 .main {
@@ -344,14 +427,14 @@ body::before {
 }
 
 .main .contents .box-container .match-container .match-wrapper .match-card .match-item-wrapper{
-    height: 180px;
+    height: 160px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background: url("../assets/images/bg-match.jpg") no-repeat fixed center;
     background-size: cover;
     border-radius: 1rem;
-    padding: 0 25px;
+    padding: 0 15px;
     gap: 1rem;
 }
 
@@ -364,14 +447,14 @@ body::before {
 }
 
 .main .contents .box-container .match-container .match-wrapper .match-card .team span {
-    font-size: 16px;
+    font-size: 14px;
     font-family: var(--english-font);
     text-align: center;
-    margin-top: 1rem;
+    margin-top: 10px;
 }
 
 .main .contents .box-container .match-container .match-wrapper .match-card .team img{
-    height: 80px;
+    height: 60px;
 }
 
 .main .contents .box-container .match-container .match-wrapper .match-card .league {
@@ -400,7 +483,7 @@ body::before {
     border-radius: 16px;
 }
 
-.promotion-modal {
+.main .contents .box-container .promotion-modal {
   display: none;
   width: 100%;
   height: 100%;
@@ -409,10 +492,10 @@ body::before {
   top: 0; 
   left: 0;
   background: rgba(0, 0, 0, 0.7);
-  z-index: 9999;
+  z-index: 999;
 }
 
-.promotion-modal .promotion-modal-content {
+.main .contents .box-container .promotion-modal .promotion-modal-content {
     width: 650px;
     position: absolute;
     top: 50%;
@@ -442,7 +525,7 @@ body::before {
     }
 }
 
-.promotion-modal .promotion-modal-content .top-content {
+.main .contents .box-container .promotion-modal .promotion-modal-content .top-content {
     display: flex;
     justify-content: space-between;
     color: var(--black-color);
@@ -450,13 +533,13 @@ body::before {
     padding: 1.5rem;
 }
 
-.promotion-modal .promotion-modal-content .top-content span {
+.main .contents .box-container .promotion-modal .promotion-modal-content .top-content span {
     font-size: 18px;
     font-family: var(--english-font);
     font-weight: 500;
 }
 
-.promotion-modal .promotion-modal-content .top-content .btn-x {
+.main .contents .box-container .promotion-modal .promotion-modal-content .top-content .btn-x {
     cursor: pointer;
     border: none;
     outline: none;
@@ -469,34 +552,34 @@ body::before {
     transition: all ease .5s;
 }
 
-.promotion-modal .promotion-modal-content .top-content .btn-x:hover {
+.main .contents .box-container .promotion-modal .promotion-modal-content .top-content .btn-x:hover {
     background-color: #9999993d;
     color: var(--black-color);
 }
 
-.promotion-modal .promotion-modal-content .middle-content {
+.main .contents .box-container .promotion-modal .promotion-modal-content .middle-content {
     width: 100%;
     padding: 1.5rem;
 }
 
-.promotion-modal .promotion-modal-content .middle-content img{
+.main .contents .box-container .promotion-modal .promotion-modal-content .middle-content img{
     width: 100%;
     border-radius: 8px;
 }
 
-.promotion-modal .promotion-modal-content .middle-content p {
+.main .contents .box-container .promotion-modal .promotion-modal-content .middle-content p {
     color: var(--black-color);
     font-family: var(--english-font);
     font-size: 1rem;
     margin-top: 1rem;
 }
 
-.promotion-modal .promotion-modal-content .bottom-content {
+.main .contents .box-container .promotion-modal .promotion-modal-content .bottom-content {
     border-top: .1px solid #999;
     padding: 1.5rem;
 }
 
-.promotion-modal .promotion-modal-content .bottom-content .btn-close {
+.main .contents .box-container .promotion-modal .promotion-modal-content .bottom-content .btn-close {
     padding: .8rem 1.5rem;
     border: none;
     outline: none;
@@ -510,7 +593,7 @@ body::before {
     transition: all ease .5s;
 }
 
-.promotion-modal .promotion-modal-content .bottom-content .btn-close:hover {
+.main .contents .box-container .promotion-modal .promotion-modal-content .bottom-content .btn-close:hover {
     background-color: #24499a;
 }
 
@@ -554,6 +637,41 @@ body::before {
 }
 
 /* Responsive */
+
+@media screen and (max-width: 1279px) {
+    .header .nav .nav-middle {
+        display: none; 
+    }
+
+    .header .nav .hamburger {
+        display: block;
+    }
+    
+}
+
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
+    .main .contents .box-container .game-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .main .contents .box-container .game-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+    .main .contents .box-container .game-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 639px) {
+    .main .contents .box-container .game-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
 
 @media screen and (max-width : 767px) {
     .main .hero .carousel-container .desktop-banner {
