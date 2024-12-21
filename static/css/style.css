@@ -187,7 +187,7 @@ body::before {
 }
 
 .header .nav .mobile-menu .menu-modal .nav-top .logo img{
-    width: 160px;
+    width: 100px;
 }
 
 .header .nav .mobile-menu .menu-modal .nav-top .btn-close-menu {
@@ -639,6 +639,15 @@ body::before {
 /* Responsive */
 
 @media screen and (max-width: 1279px) {
+    .header .nav {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .header .nav .logo img {
+        width: 100px;
+    }
+
     .header .nav .nav-middle {
         display: none; 
     }
@@ -661,18 +670,6 @@ body::before {
     }
 }
 
-@media screen and (min-width: 640px) and (max-width: 1023px) {
-    .main .contents .box-container .game-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
-@media screen and (min-width: 320px) and (max-width: 639px) {
-    .main .contents .box-container .game-container {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
 @media screen and (max-width : 767px) {
     .main .hero .carousel-container .desktop-banner {
         display: none;
@@ -680,5 +677,38 @@ body::before {
 
     .main .hero .carousel-container .mobile-banner {
         display: block;
+    }
+}
+
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+    .main .contents .box-container .game-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media screen and (min-width: 320px) and (max-width: 639px) {
+    .header .nav .nav-right .btn {
+        padding: 4px 16px;
+        font-style: 1rem;
+    }
+
+    .header .nav .nav-right .btn-image {
+        height: 36px;
+        width: 36px;
+        padding: 0;
+    }
+
+    .main .contents {
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .main .contents .box-container .game-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer .footer-container {
+        width: 100%;
+        padding: 0 1rem;
     }
 }
