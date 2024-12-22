@@ -186,7 +186,7 @@ body::before {
     justify-content: space-between;
 }
 
-.header .nav .mobile-menu .menu-modal .nav-top .logo img{
+.header .nav .mobile-menu .menu-modal .nav-top .mobile-logo img{
     width: 100px;
 }
 
@@ -194,12 +194,12 @@ body::before {
     border: 2px solid var(--white-color);
     border-radius: 8px;
     outline: none;
-    width: 40px;
-    height: 40px;
+    width: 32px;
+    height: 32px;
     padding: 4px;
     background: transparent;
     color: var(--white-color);
-    font-size: 24px;
+    font-size: 16px;
     cursor: pointer;
     transition: all ease .3s;
 }
@@ -270,7 +270,7 @@ body::before {
     font-size: 16px;
     font-family: var(--khmer-font);
     font-weight: 500;
-    animation: scroll 40s linear infinite;
+    animation: scroll 50s linear infinite;
     animation-play-state: running;
 }
 
@@ -335,7 +335,7 @@ body::before {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    gap: 3rem;
+    gap: 12px;
 }
 
 .main .contents .button-container .button {
@@ -399,7 +399,7 @@ body::before {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(6, 1fr) ;
-    gap: 1.5rem;
+    gap: 1rem;
 }
 
 .main .contents .box-container .game-container .game-card {
@@ -534,7 +534,7 @@ body::before {
 }
 
 .main .contents .box-container .promotion-modal .promotion-modal-content .top-content span {
-    font-size: 18px;
+    font-size: 20px;
     font-family: var(--english-font);
     font-weight: 500;
 }
@@ -569,8 +569,9 @@ body::before {
 
 .main .contents .box-container .promotion-modal .promotion-modal-content .middle-content p {
     color: var(--black-color);
-    font-family: var(--english-font);
-    font-size: 1rem;
+    font-family: var(--khmer-font);
+    font-weight: 500;
+    font-size: 18px;
     margin-top: 1rem;
 }
 
@@ -599,7 +600,7 @@ body::before {
 
 .footer {
     width: 100%;
-    height: 100px;
+    height: 80px;
     background-color: var(--darkgreen-color);
     display: flex;
     justify-content: center;
@@ -638,10 +639,26 @@ body::before {
 
 /* Responsive */
 
+@media screen and (min-width: 1440px) {
+    .main .hero .announcement-wrapper .marquee-wrapper .marquee {
+        animation: scroll 60s linear infinite;
+    }
+} 
+
+@media screen and (min-width: 1280px) and (max-width: 1439px) {
+    .main .contents .box-container .game-container {
+        grid-template-columns: repeat(5, 1fr);
+    }
+}
+
 @media screen and (max-width: 1279px) {
+    .header {
+        height: 65px;
+    }
     .header .nav {
+        height: inherit;
         width: 100%;
-        padding: 0 1rem;
+        padding: 0 12px;
     }
 
     .header .nav .logo img {
@@ -655,22 +672,37 @@ body::before {
     .header .nav .hamburger {
         display: block;
     }
-    
-}
-
-@media screen and (min-width: 1280px) and (max-width: 1439px) {
-    .main .contents .box-container .game-container {
-        grid-template-columns: repeat(5, 1fr);
+    .footer .footer-container .footer-right .text{
+        display: none;
     }
 }
 
 @media screen and (min-width: 1024px) and (max-width: 1279px) {
+    .main .hero .announcement-wrapper .marquee-wrapper .marquee {
+        animation: scroll 40s linear infinite;
+    }
+
     .main .contents .box-container .game-container {
         grid-template-columns: repeat(4, 1fr);
     }
 }
 
+@media screen and (min-width: 640px) and (max-width: 1023px) {
+    .main .hero .announcement-wrapper .marquee-wrapper .marquee {
+        animation: scroll 30s linear infinite;
+    }
+
+    .main .contents .box-container .game-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
 @media screen and (max-width : 767px) {
+    .main .contents {
+        width: 100%;
+        padding: 0 20px;
+    }
+
     .main .hero .carousel-container .desktop-banner {
         display: none;
     }
@@ -678,11 +710,20 @@ body::before {
     .main .hero .carousel-container .mobile-banner {
         display: block;
     }
-}
 
-@media screen and (min-width: 640px) and (max-width: 1023px) {
-    .main .contents .box-container .game-container {
-        grid-template-columns: repeat(3, 1fr);
+    .main .contents .box-container .box-title {
+        font-size: 20px;
+        padding-left: 20px;
+    }
+
+    .main .contents .box-container .box-title::before{
+        width: 12px;
+        height: 12px;
+    }
+
+    .footer .footer-container {
+        width: 100%;
+        padding: 0 20px;
     }
 }
 
@@ -691,24 +732,52 @@ body::before {
         padding: 4px 16px;
         font-style: 1rem;
     }
-
     .header .nav .nav-right .btn-image {
-        height: 36px;
-        width: 36px;
+        height: 32px;
+        width: 32px;
         padding: 0;
+    }
+
+    .main .hero .announcement-wrapper .marquee-wrapper .marquee {
+        animation: scroll 20s linear infinite;
     }
 
     .main .contents {
         width: 100%;
-        padding: 0 1rem;
+        padding: 0 12px;
+    }
+
+    .main .contents .button-container .button {
+        font-size: 20px;
+        padding: 8px 0;
     }
 
     .main .contents .box-container .game-container {
         grid-template-columns: repeat(2, 1fr);
     }
 
+    .footer {
+        height: 120px;
+        font-size: 16px;
+    }
+
     .footer .footer-container {
         width: 100%;
-        padding: 0 1rem;
+        padding: 0 12px;
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .header .nav .mobile-menu .menu-modal {
+        width: 250px;
+    }
+
+    .header .nav .logo {
+        display: none;
+    }
+    .header .nav .nav-right{
+        gap: 3px;
     }
 }

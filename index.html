@@ -10,18 +10,21 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
+    <!-- Header -->
     <header class="header">
+        <!-- Navbar -->
         <nav class="nav">
+            <!-- hemburger button -->
             <div class="hamburger open-menu">
                 <div class="line"></div>
                 <div class="line"></div>
                 <div class="line short-line"></div>
             </div>
-
+            <!-- Mobile navbar -->
             <div class="mobile-menu">
                 <div class="menu-modal">
                     <div class="nav-top">
-                        <a href="index.html" class="logo">
+                        <a href="index.html" class="mobile-logo">
                             <img src="static/assets/icons/logo.png" alt="logo">
                         </a>
                         <button class="btn-close-menu">
@@ -44,7 +47,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- Desktop navbar  -->
             <a href="index.html" class="logo">
                 <img src="static/assets/icons/logo.png" alt="logo">
             </a>
@@ -76,6 +79,7 @@
             </div>
         </nav>
     </header>
+    <!-- Main contents -->
     <main class="main">
         <section class="hero">
             <!-- Announcement Marquee -->
@@ -113,7 +117,7 @@
                 <a href="login.html" class="button btn-deposit">ដាក់ប្រាក់</a>
                 <a href="login.html" class="button btn-withdraw">ដកប្រាក់</a>
             </div>
-            
+            <!-- Section Game -->
             <div class="box-container">
                 <h1 class="box-title">ហ្គេមពេញនិយម</h1>
                 <div class="game-container">
@@ -134,6 +138,7 @@
                     </a>
                 </div>
             </div>
+                <!-- Section match -->
             <div class="box-container">
                 <h1 class="box-title">គូប្រកួតសប្ដាហ៍នេះ</h1>
                 <div class="swiper matchSwiper match-container">
@@ -221,38 +226,37 @@
                     </div>
                 </div>
             </div>
-
+            <!-- Section promotion -->
             <div class="box-container">
                 <h1 class="box-title">ការផ្ដល់ជូនពិសេស</h1>
                 <div class="swiper promotionSwiper promotion-container">
                     <div class="swiper-wrapper promotion-wrapper">
-                        <div class="swiper-slide promotion-card open-modal">
-                            <img src="static/assets/images/promotion1.jpg" alt="promotion">
+                        <div class="swiper-slide promotion-card open-modal" data-title="Promotion #1"  data-description="លុយទឹកប្រចាំថ្ងៃ 2%" data-image="static/assets/images/promotion1.jpg">                
+                            <img src="static/assets/images/promotion1.jpg" alt="promotion 1">
                         </div>
-                        <div class="swiper-slide promotion-card open-modal">
-                            <img src="static/assets/images/promotion1.jpg" alt="promotion">
+                        <div class="swiper-slide promotion-card open-modal" data-title="Promotion #2"  data-description="សមាជិកថ្មីថែម 100%" data-image="static/assets/images/promotion2.jpg">
+                            <img src="static/assets/images/promotion2.jpg" alt="promotion 2">
                         </div>
-                        <div class="swiper-slide promotion-card open-modal">
-                            <img src="static/assets/images/promotion1.jpg" alt="promotion">
+                        <div class="swiper-slide promotion-card open-modal" data-title="Promotion #3"  data-description="ប្រាក់បង្វិលប្រចាំអាទិត្យ 5%" data-image="static/assets/images/promotion3.jpg">
+                            <img src="static/assets/images/promotion3.jpg" alt="promotion 3">
                         </div>
-                        <div class="swiper-slide promotion-card open-modal">
-                            <img src="static/assets/images/promotion1.jpg" alt="promotion">
+                        <div class="swiper-slide promotion-card open-modal" data-title="Promotion #4"  data-description="ណែនាំសមាជិកថ្មីទទួលបាន 5% រៀងរាល់ថ្ងៃ" data-image="static/assets/images/promotion4.jpg">
+                            <img src="static/assets/images/promotion4.jpg" alt="promotion 4">
                         </div>
                     </div>
                 </div>
+                <!-- Modal of promotion -->
                 <div class="promotion-modal">
                     <div class="promotion-modal-content">
                         <div class="top-content">
-                            <span class="promotion-id">
-                                Promotion #1
-                            </span>
+                            <span class="promotion-id"></span>
                             <button class="btn-x close-modal">
                                 <i class="fas fa-times"></i>
                             </button>
                         </div>
                         <div class="middle-content">
-                            <img src="static/assets/images/promotion1.jpg" alt="promotion">
-                            <p>Promotion 100%</p>
+                            <img src="" alt="promotion" class="promotion-image">
+                            <p class="promotion-description"></p>
                         </div>
                         <div class="bottom-content">
                             <button class="btn-close close-modal">Close</button>
@@ -262,7 +266,7 @@
             </div>
         </section>
     </main>
-
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-container">
             <span class="footer-left">©២០២៤ B2WIN.com រក្សាសិទ្ធគ្រប់យ៉ាង ១៨+</span>
@@ -285,7 +289,7 @@
         let homeSwiper = new Swiper(".homeSwiper", {
             slidesPerView: 1,
             slidesPerGroup: 1,
-            spaceBetween: 30,
+            spaceBetween: 16,
             loop: true,
             autoplay: {
                 delay: 5000,
@@ -295,47 +299,42 @@
         let matchSwiper = new Swiper(".matchSwiper", {
             slidesPerView: 1,
             slidesPerGroup: 1,
-            spaceBetween: 30,
+            spaceBetween: 16,
             loop: true,
             autoplay: {
                 delay: 5000,
             },
             breakpoints: {
-            768: {
-                slidesPerView: 2,
-            },
+                640: {
+                    slidesPerView: 2,
+                },
 
-            1280: {
-                slidesPerView: 3,
-            },
+                1280: {
+                    slidesPerView: 3,
+                },
 
-            1536: {
-                slidesPerView: 4,
+                1536: {
+                    slidesPerView: 4,
+                },
             },
-        },
         });
 
         let promotionSwiper = new Swiper(".promotionSwiper", {
-            slidesPerView: 1,
-            slidesPerGroup: 1,
-            spaceBetween: 30,
+            slidesPerView: 2,
+            spaceBetween: 16,
             loop: true,
             autoplay: {
                 delay: 5000,
             },
             breakpoints: {
-            768: {
-                slidesPerView: 2,
-            },
+                1280: {
+                    slidesPerView: 3,
+                },
 
-            1280: {
-                slidesPerView: 3,
+                1536: {
+                    slidesPerView: 4,
+                },
             },
-
-            1536: {
-                slidesPerView: 4,
-            },
-        },
         });
       </script>
 </body>
