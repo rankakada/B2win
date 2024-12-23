@@ -549,6 +549,10 @@ body::before {
         padding: 0;
     }
 
+    .main .contents .container .title{
+        font-size: 28px;
+    }
+
     .footer {
         height: 120px;
         font-size: 16px;
