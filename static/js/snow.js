@@ -4,17 +4,25 @@ const MAX_SNOWFLAKE_SPEED = 0.1;
 const SNOWFLAKE_COLOUR = '#ddd';
 const snowflakes = [];
 
+// Create the canvas
 const canvas = document.createElement('canvas');
-canvas.style.position = 'absolute';
-canvas.style.pointerEvents = 'none';
-canvas.style.top = '0px';
-canvas.style.left = '0px'; // Ensure it starts from the left
+canvas.style.position = 'fixed'; // Use fixed instead of absolute
+canvas.style.pointerEvents = 'none'; // Ensure it doesn't interfere with page interactions
+canvas.style.top = '0';
+canvas.style.left = '0';
 canvas.style.zIndex = "999";
-canvas.width = window.innerWidth;
-canvas.height = document.documentElement.clientHeight; // Use clientHeight for initial setup
 document.body.appendChild(canvas);
 
 const ctx = canvas.getContext('2d');
+
+// Function to set canvas size
+const adjustCanvasSize = () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight; // Always match the viewport height
+};
+
+// Initial canvas setup
+adjustCanvasSize();
 
 const createSnowflake = () => ({
     x: Math.random() * canvas.width,
@@ -36,8 +44,11 @@ const drawSnowflake = snowflake => {
 const updateSnowflake = snowflake => {
     snowflake.y += snowflake.speed;
     snowflake.x += snowflake.sway;
+
+    // Reset snowflake to the top if it falls out of view
     if (snowflake.y > canvas.height) {
-        Object.assign(snowflake, createSnowflake());
+        snowflake.y = 0; // Reset to top
+        snowflake.x = Math.random() * canvas.width; // Randomize x position
     }
 };
 
@@ -52,22 +63,13 @@ const animate = () => {
     requestAnimationFrame(animate);
 };
 
-// Create initial snowflakes
+// Create snowflakes
 for (let i = 0; i < NUMBER_OF_SNOWFLAKES; i++) {
     snowflakes.push(createSnowflake());
 }
 
-// Handle window resize
-const adjustCanvasSize = () => {
-    canvas.width = window.innerWidth;
-    canvas.height = document.documentElement.clientHeight; // Adjust height dynamically
-};
+// Adjust canvas size on resize
 window.addEventListener('resize', adjustCanvasSize);
-
-// Handle window scroll
-window.addEventListener('scroll', () => {
-    canvas.style.top = `${window.scrollY}px`;
-});
 
 // Start animation
 animate();
