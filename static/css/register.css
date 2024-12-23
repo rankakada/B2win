@@ -189,8 +189,11 @@ body::before {
     justify-content: space-between;
 }
 
+.header .nav .mobile-menu .menu-modal .nav-top .mobile-logo {
+    width: 100px;
+}
 .header .nav .mobile-menu .menu-modal .nav-top .logo img{
-    width: 160px;
+    width: 100%;
 }
 
 .header .nav .mobile-menu .menu-modal .nav-top .btn-close-menu {
