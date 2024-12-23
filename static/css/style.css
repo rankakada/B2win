@@ -165,7 +165,7 @@ body::before {
     top: 0; 
     left: 0;
     background: rgba(0, 0, 0, 0.7);
-    z-index: 1000;
+    z-index: 99;
     animation: fadeIn 0.3s ease;
     -webkit-animation: fadeIn 0.3s ease; 
 }
@@ -767,7 +767,7 @@ body::before {
     }
 
     .main .contents .box-container .game-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
 
     .footer {
