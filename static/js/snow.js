@@ -56,22 +56,10 @@ for (let i = 0; i < NUMBER_OF_SNOWFLAKES; i++) {
     snowflakes.push(createSnowflake());
 }
 
-// window.addEventListener('resize', () => {
-//     canvas.width = window.innerWidth;
-//     canvas.height = window.innerHeight;
-// });
-
-// window.addEventListener('scroll', () => {
-//     canvas.style.top = `${window.scrollY}px`;
-// });
-
-const updateCanvasSize = () => {
+window.addEventListener('resize', () => {
     canvas.width = window.innerWidth;
-    canvas.height = Math.max(document.documentElement.scrollHeight, window.innerHeight);
-};
-
-updateCanvasSize();
-window.addEventListener('resize', updateCanvasSize);
+    canvas.height = window.innerHeight;
+});
 
 window.addEventListener('scroll', () => {
     canvas.style.top = `${window.scrollY}px`;
