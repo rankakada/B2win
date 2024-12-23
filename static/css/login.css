@@ -36,6 +36,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow-x: hidden;
 }
 
 body::before {
@@ -405,7 +406,7 @@ body::before {
 
 .main .contents .container .box-wrapper .login-box .form-login .btn-submit {
     width: 100%;
-    padding: 10px 0;
+    padding: 8px 0;
     margin: .5rem 0;
     border: none;
     outline: none;
@@ -508,6 +509,28 @@ body::before {
     }
     .footer .footer-container .footer-right .text{
         display: none;
+    }
+}
+
+@media screen and (max-width: 1023px) {
+    .main .contents .container .box-wrapper {
+        flex-direction: column-reverse;
+    }
+    .main .contents .container .box-wrapper .promotion-box ,
+    .main .contents .container .box-wrapper .login-box {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width : 767px) {
+    .main .contents {
+        width: 100%;
+        padding: 0 20px;
+    }
+
+    .footer .footer-container {
+        width: 100%;
+        padding: 0 20px;
     }
 }
 
