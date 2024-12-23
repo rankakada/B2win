@@ -1,7 +1,7 @@
-const NUMBER_OF_SNOWFLAKES = 100;
-const MAX_SNOWFLAKE_SIZE = 5;
-const MAX_SNOWFLAKE_SPEED = 0.1; // Slightly increased speed for better visuals
-const SNOWFLAKE_COLOUR = '#ddd';
+const numberOfSnowflakes = 100;
+const maxSnowflakesSize = 5;
+const maxSnowflakesSpeed = 0.1; // Slightly increased speed for better visuals
+const snowflakeColor = '#ddd';
 const snowflakes = [];
 
 // Create canvas
@@ -28,9 +28,9 @@ adjustCanvasSize();
 const createSnowflake = () => ({
     x: Math.random() * canvas.width,
     y: Math.random() * canvas.height,
-    radius: Math.floor(Math.random() * MAX_SNOWFLAKE_SIZE) + 1,
-    color: SNOWFLAKE_COLOUR,
-    speed: Math.round((Math.random() * MAX_SNOWFLAKE_SPEED + 0.5) * 10) / 10, // Round to 1 decimal
+    radius: Math.floor(Math.random() * maxSnowflakesSize) + 1,
+    color: snowflakeColor,
+    speed: Math.round((Math.random() * maxSnowflakesSpeed + 0.5) * 10) / 10, // Round to 1 decimal
     sway: Math.round((Math.random() - 0.5) * 10) / 10, // Round to 1 decimal
 });
 
@@ -75,7 +75,7 @@ const animate = () => {
 };
 
 // Create snowflakes
-for (let i = 0; i < NUMBER_OF_SNOWFLAKES; i++) {
+for (let i = 0; i < numberOfSnowflakes; i++) {
     snowflakes.push(createSnowflake());
 }
 
