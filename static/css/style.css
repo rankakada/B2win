@@ -721,6 +721,16 @@ body::before {
         height: 12px;
     }
 
+    .main .contents .box-container .promotion-modal .promotion-modal-content {
+        width: 90%;
+    }
+
+    .main .contents .box-container .promotion-modal .promotion-modal-content .top-content,
+    .main .contents .box-container .promotion-modal .promotion-modal-content .middle-content,
+    .main .contents .box-container .promotion-modal .promotion-modal-content .bottom-content {
+        padding: 1rem;
+    }
+
     .footer .footer-container {
         width: 100%;
         padding: 0 20px;
