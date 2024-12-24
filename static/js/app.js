@@ -1,25 +1,100 @@
-// Menu Modal
-const mobileMenu = document.querySelector(".mobile-menu");
-const btnOpenMenu = document.querySelector(".open-menu");
-const btnCloseMenu = document.querySelector(".btn-close-menu");
+import data from "./data.js";
 
-const toggleMenu = (isVisible) => {
-    mobileMenu.style.display = isVisible ? "block" : "none";
-}
+const messageMarquee = document.querySelector('.message');
+const desktopBannerWrapper = document.querySelector('.desktop-banner-wrapper');
+const mobileBannerWrapper = document.querySelector('.mobile-banner-wrapper');
+const gameContainer = document.querySelector('.game-container');
+const matchWrapper = document.querySelector('.match-wrapper');
+const promotionWrapper = document.querySelector('.promotion-wrapper');
 
-btnOpenMenu.addEventListener("click", () => toggleMenu(true));
-btnCloseMenu.addEventListener("click", () => toggleMenu(false));
+const promotionModal = document.querySelector('.promotion-modal');
+const btnCloseModal = document.querySelectorAll('.close-modal');
 
-mobileMenu.addEventListener("click", (e) => {
-    if(e.target === mobileMenu) {
-        toggleMenu(false);
-    }
-});
+// Messgae
+messageMarquee.textContent = data.message;
 
-// Promotion Modal homepage
-const promotionModal = document.querySelector(".promotion-modal");
-const btnOpenModal = document.querySelectorAll(".open-modal");
-const btnCloseModal = document.querySelectorAll(".close-modal");
+// Function to create slides
+const createBannerSlides = (banners, wrapper) => {
+    banners.forEach((banner) => {
+        const slide = document.createElement('div');
+        slide.className = 'swiper-slide slide';
+        slide.innerHTML = `
+            <img src="${banner.image}" alt="${banner.alt}" class="banner-image">
+        `;
+        wrapper.appendChild(slide);
+    });
+};
+
+// Populate desktop and mobile banners
+createBannerSlides(data.desktopBanners, desktopBannerWrapper);
+createBannerSlides(data.mobileBanners, mobileBannerWrapper);
+
+// Games
+const populateGames = (games) => {
+    games.forEach((game) => {
+        const gameCard = document.createElement('div');
+        gameCard.className = 'game-card';
+        gameCard.innerHTML = `<a href="${game.link}" class="game-link"><img src="${game.image}" alt="${game.alt}" class="game-image"></a>`;
+        gameContainer.appendChild(gameCard);
+    });
+};
+
+// Populate game
+populateGames(data.games);
+
+// Matches
+
+const populateMatches = (matches) => {
+    matches.forEach(match => {
+        const matchCard = document.createElement('div');
+        matchCard.className = 'swiper-slide match-card';
+    
+        matchCard.innerHTML = `
+          <div class="match">
+            <div class="team">
+              <img src="${match.homeTeam.logo}" alt="${match.homeTeam.name}" class="team-logo">
+              <span class="team-name">${match.homeTeam.name}</span>
+            </div>
+            <div class="match-details">
+              <span class="league">${match.league}</span>
+              <span class="date">${match.date}</span>
+            </div>
+            <div class="team">
+              <img src="${match.awayTeam.logo}" alt="${match.awayTeam.name}" class="team-logo">
+              <span class="team-name">${match.awayTeam.name}</span>
+            </div>
+          </div>
+        `;
+    
+        matchWrapper.appendChild(matchCard);
+    });
+};
+
+// Populate matches
+populateMatches(data.matches);
+
+// Promotion
+
+const populatePromotions = (promotions) => {
+    promotions.forEach(promotion => {
+        const promotionCard = document.createElement('div');
+        promotionCard.className = 'swiper-slide promotion-card';
+        promotionCard.innerHTML = `<img src="${promotion.image}" alt="${promotion.title}">`;
+        
+        promotionCard.dataset.title = promotion.title;
+        promotionCard.dataset.description = promotion.description;
+        promotionCard.dataset.image = promotion.image;
+
+        // open modal when click
+        promotionCard.addEventListener("click", () => {
+            popupModal(promotionCard); // Popup modal with promotion data
+            toggleModal(true); // Open modal
+        });
+        promotionWrapper.appendChild(promotionCard);
+    });
+};
+// populate promotions
+populatePromotions(data.promotions);
 
 // Function to toggle modal visibility
 const toggleModal = (isVisible) => {
@@ -28,35 +103,27 @@ const toggleModal = (isVisible) => {
 
 // Function to popup modal
 const popupModal = (card) => {
-    const promotionImage = promotionModal.querySelector(".promotion-image");
-    const promotionDescription = promotionModal.querySelector(".promotion-description");
-    const promotionId = promotionModal.querySelector(".promotion-id");
+    const promotionId = document.querySelector('.promotion-id');
+    const promotionImage = document.querySelector('.promotion-image');
+    const promotionDescription = document.querySelector('.promotion-description');
 
-    // Get data from card
+    // Access data attributes from the clicked card
     const cardTitle = card.dataset.title;
     const cardDescription = card.dataset.description;
     const cardImage = card.dataset.image;
 
-    // Popup modal content
+    // Set modal content
     promotionImage.src = cardImage;
     promotionDescription.textContent = cardDescription;
     promotionId.textContent = cardTitle;
 };
 
-// btn for opening modal
-btnOpenModal.forEach((card) => {
-    card.addEventListener("click", () => {
-        popupModal(card); // Populate modal with card data
-        toggleModal(true); // Open the modal
-    });
-});
-
-// btn for closing modal
+// Button for closing modal
 btnCloseModal.forEach((btn) => {
     btn.addEventListener("click", () => toggleModal(false));
 });
 
-// close modal when click outside modal content
+// Close modal when clicking outside of the modal content
 promotionModal.addEventListener("click", (e) => {
     if (e.target === promotionModal) {
         toggleModal(false);

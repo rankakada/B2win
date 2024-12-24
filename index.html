@@ -7,7 +7,6 @@
     <link rel="shortcut icon" href="static/assets/icons/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="static/css/style.css">
     <link rel="stylesheet" href="static/css/swiper-bundle.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     <!-- Header -->
@@ -24,12 +23,10 @@
             <div class="mobile-menu">
                 <div class="menu-modal">
                     <div class="nav-top">
-                        <a href="index.html" class="mobile-logo">
-                            <img src="static/assets/icons/logo.png" alt="logo">
+                        <a href="index.html" class="logo mobile-logo">
+                            <img src="static/assets/icons/logo.png" alt="logo" class="logo-image">
                         </a>
-                        <button class="btn-close-menu">
-                            <i class="fas fa-times"></i>
-                        </button>
+                        <button class="btn-close-menu"> &times; </button>
                     </div>
                     <div class="mobile-nav">
                         <a href="#" class="nav-list">
@@ -48,8 +45,8 @@
                 </div>
             </div>
             <!-- Desktop navbar  -->
-            <a href="index.html" class="logo">
-                <img src="static/assets/icons/logo.png" alt="logo">
+            <a href="index.html" class="logo desktop-logo">
+                <img src="static/assets/icons/logo.png" alt="logo" class="logo-image">
             </a>
 
             <div class="nav-middle">
@@ -73,7 +70,7 @@
                 <a href="#" class="btn btn-image" id="language">
                     <img src="static/assets/icons/cambodia_flag.png" alt="kh-flag" >
                 </a>
-                <a href="https://t.me/wB2winvip" target="_blank" class="btn btn-image" id="telegram">
+                <a href="https://t.me/wB2winvip" target="_blank" class="btn btn-image telegram-link">
                     <img src="static/assets/icons/telegram.png" alt="telegram">
                 </a>
             </div>
@@ -88,24 +85,18 @@
                     <img src="static/assets/icons/announcement.png" alt="announcement">
                 </div>
                 <div class="marquee-wrapper">
-                    <div class="marquee">សូមស្វាគមន៍មកកាន់ B2Win វេបសាយទំនុកចិត្តបំផុត មានហ្គេមសម្បូរបែប ផ្ដល់ជូនបងប្អូននូវ សេវាកម្មដកដាក់ប្រាក់រហ័ស ប្រម៉ូសិនការផ្ដល់ជូនច្រើនសន្ធឹកសន្ធាប់ ឈ្នះច្រើនដកច្រើនគ្មានដែនកំណត់ សុវត្ថិភាពបំផុតជាងគេ!</div>
+                    <div class="message"></div>
                 </div>
             </div>
 
-            <!-- Carousel -->
-            <div class="carousel-container">
-                <div class="swiper homeSwiper desktop-banner">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide slide"><img src="static/assets/images/desktop-banner.jpg" alt="desktop-banner"></div>
-                        <div class="swiper-slide slide"><img src="static/assets/images/desktop-banner.jpg" alt="desktop-banner"></div>
-                        <div class="swiper-slide slide"><img src="static/assets/images/desktop-banner.jpg" alt="desktop-banner"></div>
+            <!-- Banner -->
+            <div class="banner-container">
+                <div class="swiper bannerSwiper desktop-banner">
+                    <div class="swiper-wrapper desktop-banner-wrapper">
                     </div>
                 </div>
-                <div class="swiper homeSwiper mobile-banner">
-                    <div class="swiper-wrapper">
-                        <div class="swiper-slide slide"><img src="static/assets/images/mobile-banner.jpg" alt="mobile-banner"></div>
-                        <div class="swiper-slide slide"><img src="static/assets/images/mobile-banner.jpg" alt="mobile-banner"></div>
-                        <div class="swiper-slide slide"><img src="static/assets/images/mobile-banner.jpg" alt="mobile-banner"></div>
+                <div class="swiper bannerSwiper mobile-banner">
+                    <div class="swiper-wrapper mobile-banner-wrapper">
                     </div>
                 </div>
             </div>
@@ -120,109 +111,13 @@
             <!-- Section Game -->
             <div class="box-container">
                 <h1 class="box-title">ហ្គេមពេញនិយម</h1>
-                <div class="game-container">
-                    <a href="login.html" class="game-card">
-                        <img src="static/assets/images/game1.jpg" alt="game">
-                    </a>
-                    <a href="login.html" class="game-card">
-                        <img src="static/assets/images/game2.jpg" alt="game">
-                    </a>
-                    <a href="login.html" class="game-card">
-                        <img src="static/assets/images/game3.jpg" alt="game">
-                    </a>
-                    <a href="login.html" class="game-card">
-                        <img src="static/assets/images/game4.jpg" alt="game">
-                    </a>
-                    <a href="login.html" class="game-card">
-                        <img src="static/assets/images/game5.jpg" alt="game">
-                    </a>
-                </div>
+                <div class="game-container"></div>
             </div>
                 <!-- Section match -->
             <div class="box-container">
                 <h1 class="box-title">គូប្រកួតសប្ដាហ៍នេះ</h1>
                 <div class="swiper matchSwiper match-container">
                     <div class="swiper-wrapper match-wrapper">
-                        <div class="swiper-slide match-card">
-                            <div class="match-item-wrapper">
-                                <div class="team home-team">
-                                    <img src="static/assets/images/barcelona.png" alt="home-team">
-                                    <span>Barcelona</span>
-                                </div>
-                                <div class="league">
-                                    <span>Laliga</span>
-                                    <span class="date">22 Dec 2024</span>
-                                </div>
-                                <div class="team away-team">
-                                    <img src="static/assets/images/AtleticoMadrid.png" alt="away-team">
-                                    <span>Atletico Madrid</span>
-                                </div>                                
-                            </div>
-                        </div>                          
-                        <div class="swiper-slide match-card">
-                            <div class="match-item-wrapper">
-                                <div class="team home-team">
-                                    <img src="static/assets/images/ManchesterCity.png" alt="home-team">
-                                    <span>Manchester City</span>
-                                </div>
-                                <div class="league">
-                                    <span>Premier League</span>
-                                    <span class="date">15 Dec 2024</span>
-                                </div>
-                                <div class="team away-team">
-                                    <img src="static/assets/images/ManchesterUnited.png" alt="away-team">
-                                    <span>Manchester United</span>
-                                </div>                                
-                            </div>
-                        </div>                          
-                        <div class="swiper-slide match-card">
-                            <div class="match-item-wrapper">
-                                <div class="team home-team">
-                                    <img src="static/assets/images/Arsenal.svg" alt="home-team">
-                                    <span>Arsenal</span>
-                                </div>
-                                <div class="league">
-                                    <span>Premier League</span>
-                                    <span class="date">22 Dec 2024</span>
-                                </div>
-                                <div class="team away-team">
-                                    <img src="static/assets/images/CrystalPalace.png" alt="away-team">
-                                    <span>Crystal Palace</span>
-                                </div>                                
-                            </div>
-                        </div>                          
-                        <div class="swiper-slide match-card">
-                            <div class="match-item-wrapper">
-                                <div class="team home-team">
-                                    <img src="static/assets/images/RealMadrid.webp" alt="home-team">
-                                    <span>Real Madrid</span>
-                                </div>
-                                <div class="league">
-                                    <span>Laliga</span>
-                                    <span class="date">22 Dec 2024</span>
-                                </div>
-                                <div class="team away-team">
-                                    <img src="static/assets/images/Sevilla.png" alt="away-team">
-                                    <span>Sevilla</span>
-                                </div>                                
-                            </div>
-                        </div>                          
-                        <div class="swiper-slide match-card">
-                            <div class="match-item-wrapper">
-                                <div class="team home-team">
-                                    <img src="static/assets/images/BayernMünchen.png" alt="home-team">
-                                    <span>Bayern</span>
-                                </div>
-                                <div class="league">
-                                    <span>Bundesliga</span>
-                                    <span class="date">22 Dec 2024</span>
-                                </div>
-                                <div class="team away-team">
-                                    <img src="static/assets/images/RBLeipzig.png" alt="away-team">
-                                    <span>RB Leipzig</span>
-                                </div>                                
-                            </div>
-                        </div>                          
                     </div>
                 </div>
             </div>
@@ -230,29 +125,14 @@
             <div class="box-container">
                 <h1 class="box-title">ការផ្ដល់ជូនពិសេស</h1>
                 <div class="swiper promotionSwiper promotion-container">
-                    <div class="swiper-wrapper promotion-wrapper">
-                        <div class="swiper-slide promotion-card open-modal" data-title="Promotion #1"  data-description="លុយទឹកប្រចាំថ្ងៃ 2%" data-image="static/assets/images/promotion1.jpg">                
-                            <img src="static/assets/images/promotion1.jpg" alt="promotion 1">
-                        </div>
-                        <div class="swiper-slide promotion-card open-modal" data-title="Promotion #2"  data-description="សមាជិកថ្មីថែម 100%" data-image="static/assets/images/promotion2.jpg">
-                            <img src="static/assets/images/promotion2.jpg" alt="promotion 2">
-                        </div>
-                        <div class="swiper-slide promotion-card open-modal" data-title="Promotion #3"  data-description="ប្រាក់បង្វិលប្រចាំអាទិត្យ 5%" data-image="static/assets/images/promotion3.jpg">
-                            <img src="static/assets/images/promotion3.jpg" alt="promotion 3">
-                        </div>
-                        <div class="swiper-slide promotion-card open-modal" data-title="Promotion #4"  data-description="ណែនាំសមាជិកថ្មីទទួលបាន 5% រៀងរាល់ថ្ងៃ" data-image="static/assets/images/promotion4.jpg">
-                            <img src="static/assets/images/promotion4.jpg" alt="promotion 4">
-                        </div>
-                    </div>
+                    <div class="swiper-wrapper promotion-wrapper"></div>
                 </div>
                 <!-- Modal of promotion -->
                 <div class="promotion-modal">
                     <div class="promotion-modal-content">
                         <div class="top-content">
                             <span class="promotion-id"></span>
-                            <button class="btn-x close-modal">
-                                <i class="fas fa-times"></i>
-                            </button>
+                            <button class="btn-x close-modal"> &times; </button>
                         </div>
                         <div class="middle-content">
                             <img src="" alt="promotion" class="promotion-image">
@@ -283,11 +163,12 @@
             </div>
         </div>
     </footer>
-    <script src="static/js/app.js"></script>
+    <script src="static/js/app.js" type="module"></script>
+    <script src="static/js/menu.js"></script>
     <script src="static/js/swiper-bundle.min.js"></script>
     <script src="static/js/snow.js"></script>
     <script>
-        let homeSwiper = new Swiper(".homeSwiper", {
+        let bannerSwiper = new Swiper(".bannerSwiper", {
             slidesPerView: 1,
             spaceBetween: 16,
             loop: false,

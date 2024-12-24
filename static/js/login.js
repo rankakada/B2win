@@ -2,6 +2,7 @@ const username = document.querySelector(".username");
 const password = document.querySelector(".password");
 const togglePassword = document.querySelector(".eye");
 const loginForm = document.querySelector(".form-login");
+const rememberMe = document.querySelector("#remember");
 const loginStatus = document.getElementById("loginStatus");
 
 const userStore = {
@@ -16,11 +17,15 @@ togglePassword.addEventListener("click", () => {
         togglePassword.classList.remove("fa-eye-slash");
         togglePassword.classList.add("fa-eye");
         password.type = "text";
+
+        console.log("The password was shown.");
     }
     else {
         togglePassword.classList.remove("fa-eye");
         togglePassword.classList.add("fa-eye-slash");
         password.type = "password";
+
+        console.log("The password was hidded.");
     }
 });
 
@@ -64,25 +69,31 @@ const validateInputs = () => {
     if(usernameValue === ""){
         setError(username, "សូមបំពេញឈ្មោះអ្នកប្រើប្រាស់", userErrorMsg);
         isValid = false;
+        console.log("Please enter your username.");
     }
     else if(usernameValue.length < 6 ) {
         setError(username, "ឈ្មោះអ្នកប្រើប្រាស់ត្រូវមានតួអក្សរយ៉ាងតិច6តួ", userErrorMsg);
         isValid = false;
+        console.log("The username must contain at least 6 characters.");
     }
     else if(usernameValue.length > 16 ) {
         setError(username, "ឈ្មោះអ្នកប្រើប្រាស់ត្រូវមានតួអក្សរច្រើនបំផុត16តួ", userErrorMsg);
         isValid = false;
+        console.log("The username must contain a maximum of 16 characters.")
     }
     else if (!textRegex.test(usernameValue)) { 
         setError(username, "ឈ្មោះអ្នកប្រើប្រាស់ត្រូវមានតួអក្សរ និងលេខប៉ុណ្ណោះ", userErrorMsg);
         isValid = false;
+        console.log("The username must contain only letters and numbers.");
     }
     else if (numberRegex.test(usernameValue)) { 
         setError(username, "ឈ្មោះអ្នកប្រើប្រាស់មិនអាចចាប់ផ្តើមដោយលេខ", userErrorMsg);
         isValid = false;
+        console.log("The username cannot start with a number.");
     }
     else {
         clearError(username, userErrorMsg);
+        console.log("The username is valid.")
     }
 
     // check password input
@@ -90,19 +101,27 @@ const validateInputs = () => {
     if(passwordValue === ""){
         setError(password, "សូមបំពេញលេខសម្ងាត់", passErrorMsg);
         isValid = false;
+        console.log("Please enter your password.")
     }
     else if(passwordValue.length < 6) {
         setError(password, "ពាក្យសម្ងាត់ត្រូវមានយ៉ាងតិច6តួ", passErrorMsg);
         isValid = false;
+        console.log("The password must contain at least 6 characters.");
     }
     else if(passwordValue.length > 16) {
         setError(password, "ពាក្យសម្ងាត់ត្រូវមានច្រើនបំផុត16តួ", passErrorMsg);
         isValid = false;
+        console.log("The password must contain a maximum of 16 characters.");
     }
     else {
        clearError(password, passErrorMsg);
+       console.log("The password is valid");
     }
 
+    // check remember me checkbox
+    rememberMe.checked ? console.log('Remember checkbox is ', true) : console.log('Remember checkbox is', false);
+
+    // Login status
     if (isValid) {
         if (
             usernameValue === userStore.username &&
@@ -111,9 +130,15 @@ const validateInputs = () => {
             loginStatus.innerHTML = "Login successful!";
             loginStatus.className = "loginSuccess";
             loginForm.reset();
+
+            console.table(`username : ${usernameValue}\npassword : ${passwordValue}`);
+            console.log("Login successful.")
         } else {
             loginStatus.innerHTML = "ឈ្មោះអ្នកប្រើប្រាស់ ឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ";
             loginStatus.className = "loginError";
+
+            console.table(`username : ${usernameValue}\npassword : ${passwordValue}`);
+            console.log("Login failed.")
         }
     } 
     else {
