@@ -1,4 +1,3 @@
-// import data  from "./json/data.json";
 import data from './data/data.js';
 import { Menu } from './modules/menu.js';
 import { Snowflake } from "./modules/snow.js";

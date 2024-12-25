@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #eeb321;
+    --secondary-color: #68e8ea;
+    --darkgreen-color : #002223;
+    --green-color: #005253;
+    --yellow-color: #f6d50d;
+    --white-color: #fff;
+    --black-color: #222;
+    --bg-linear : linear-gradient(#fbe50a, #e5b022);
+    --bg-lightgreen: #0f787b;
+    --khmer-font: "Kantumruy Pro", serif;
+    --english-font: "Roboto", serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--green-color);
+    color: var(--white-color);
+    font-family: "Kantumruy Pro", serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../assets/images/pattern.png") no-repeat fixed center ;
+    background-size: cover;
+    opacity: .1;
+    z-index: -1;
+}
