@@ -1,4 +1,11 @@
-import data from "./data.js";
+// import data  from "./json/data.json";
+import data from './data/data.js';
+import { Menu } from './modules/menu.js';
+import { Snowflake } from "./modules/snow.js";
+
+// Initialize the menu and snowfall function
+Menu();
+Snowflake();
 
 const messageMarquee = document.querySelector('.message');
 const desktopBannerWrapper = document.querySelector('.desktop-banner-wrapper');

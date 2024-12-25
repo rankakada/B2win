@@ -1,3 +1,10 @@
+import { Menu } from './modules/menu.js';
+import { Snowflake } from "./modules/snow.js";
+
+// Initialize the menu and snowfall function
+Menu();
+Snowflake();
+
 const registerForm = document.querySelector(".form-register");
 const togglePassword = document.querySelector(".eye");
 const username = document.querySelector(".username");
