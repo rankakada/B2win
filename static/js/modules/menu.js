@@ -18,3 +18,17 @@ export const Menu = () => {
     });
 };
 
+// activeMenu.js
+document.addEventListener("DOMContentLoaded", () => {
+    const navLinks = document.querySelectorAll('.nav-list'); 
+    const currentUrl = window.location.pathname;
+
+    navLinks.forEach(link => {
+        const linkHref = link.getAttribute('href'); 
+        if (currentUrl.endsWith(linkHref)) {
+            link.classList.add('active'); 
+        } else {
+            link.classList.remove('active'); 
+        }
+    });
+});

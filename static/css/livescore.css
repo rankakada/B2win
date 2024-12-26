@@ -35,9 +35,6 @@ body {
     background-color: var(--green-color);
     color: var(--white-color);
     font-family: "Kantumruy Pro", serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     overflow-x: hidden;
 }
 
@@ -52,4 +49,20 @@ body::before {
     background-size: cover;
     opacity: .1;
     z-index: -1;
+}
+
+.main {
+    width: 100%;
+}
+
+.main .contents {
+    width: 80%;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.main .contents .livescore-container iframe{
+    width: 100%;
+    min-height: 850px;
 }

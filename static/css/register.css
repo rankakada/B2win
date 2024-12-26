@@ -35,9 +35,6 @@ body {
     background-color: var(--green-color);
     color: var(--white-color);
     font-family: "Kantumruy Pro", serif;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     overflow-x: hidden;
 }
 

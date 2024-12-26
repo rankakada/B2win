@@ -1,4 +1,4 @@
-import data from './data/data.js';
+import data from './data/homeData.js';
 import { Menu } from './modules/menu.js';
 import { Snowflake } from "./modules/snow.js";
 
@@ -34,6 +34,8 @@ const createBannerSlides = (banners, wrapper) => {
 // Populate desktop and mobile banners
 createBannerSlides(data.desktopBanners, desktopBannerWrapper);
 createBannerSlides(data.mobileBanners, mobileBannerWrapper);
+console.table(data.desktopBanners);
+console.table(data.mobileBanners);
 
 // Games
 const populateGames = (games) => {
@@ -47,6 +49,7 @@ const populateGames = (games) => {
 
 // Populate game
 populateGames(data.games);
+console.table(data.games);
 
 // Matches
 
@@ -78,6 +81,7 @@ const populateMatches = (matches) => {
 
 // Populate matches
 populateMatches(data.matches);
+console.log(data.matches);
 
 // Promotion
 
@@ -95,12 +99,15 @@ const populatePromotions = (promotions) => {
         promotionCard.addEventListener("click", () => {
             popupModal(promotionCard); // Popup modal with promotion data
             toggleModal(true); // Open modal
+            
+            console.table(promotion);
         });
         promotionWrapper.appendChild(promotionCard);
     });
 };
 // populate promotions
 populatePromotions(data.promotions);
+console.table(data.promotions);
 
 // Function to toggle modal visibility
 const toggleModal = (isVisible) => {
