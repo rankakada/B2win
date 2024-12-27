@@ -12,9 +12,15 @@ const languages = {
         matchOfWeek: "Match of the week",
         promotion: "Promotion",
         privacy: "© 2024 B2WIN.com All Rights Reserved 18+",
-        peyment: "Payment Method"
+        payment: "Payment Method",
+        username: "Username",
+        usernamePlaceholder: "Enter your username",
+        passwordPlaceholder: "Password",
+        rememberMe: "Remember Me",
+        submit: "Submit",
+
     },
-    km: {
+    kh: {
         livescore: "គ្រាប់បាល់",
         sportNews: "ព័ត៌មានកីឡា",
         condition: "លក្ខខណ្ឌ",
@@ -27,11 +33,16 @@ const languages = {
         matchOfWeek: "គូប្រកួតសប្ដាហ៍នេះ",
         promotion: "ការផ្ដល់ជូនពិសេស",
         privacy: "© 2024 B2WIN.com រក្សាសិទ្ធគ្រប់យ៉ាង ១៨+",
-        peyment: "ទូទាត់ប្រាក់ជាមួយ"
+        payment: "ទូទាត់ប្រាក់ជាមួយ",
+        username: "ឈ្មោះ​អ្នកប្រើប្រាស់",
+        usernamePlaceholder: "បញ្ចូលឈ្មោះអ្នកប្រើប្រាស់",
+        passwordPlaceholder: "ពាក្យសម្ងាត់",
+        rememberMe: "ចងចាំខ្ញុំ",
+        submit: "ដាក់ស្នើ",
     }
 };
 
-function switchLanguage(language) {
+const switchLanguage = (language) => {
     const elements = document.querySelectorAll('[data-lang-key]');
     elements.forEach(element => {
         const langKey = element.getAttribute('data-lang-key');
@@ -41,25 +52,22 @@ function switchLanguage(language) {
     });
 }
 
-// Language toggle button
-const languageToggleButton = document.querySelector('.toggle-language');
+const toggleLanguage = document.querySelector('.toggle-language');
 
-// Check initial language (assuming Khmer as default)
-let currentLanguage = 'km';
+let currentLanguage = 'kh';
 
-languageToggleButton.addEventListener('click', () => {
-    // Toggle between Khmer and English
-    currentLanguage = currentLanguage === 'km' ? 'en' : 'km';
+toggleLanguage.addEventListener('click', () => {
+    currentLanguage = currentLanguage === 'kh' ? 'en' : 'kh';
     switchLanguage(currentLanguage);
 
-    // Optional: Toggle the language icon on the button
-    const icon = languageToggleButton.querySelector('img');
+    const icon = toggleLanguage.querySelector('img');
     if (currentLanguage === 'en') {
-        icon.src = 'static/assets/icons/en.svg'; // Change icon for English
+        icon.src = 'static/assets/icons/en.svg'; 
+        console.log("You changed language to English");
     } else {
-        icon.src = 'static/assets/icons/kh.svg'; // Change icon for Khmer
+        icon.src = 'static/assets/icons/kh.svg'; 
+        console.log("You changed language to Khmer");
     }
 });
 
-// Set the initial language
 switchLanguage(currentLanguage);
