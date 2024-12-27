@@ -109,9 +109,14 @@ main .contents .banner-container img{
     text-decoration: none;
 } 
 
-.main .contents .news-container .news-wrapper .title-wrapper .news-wrapper.news-title {
+.main .contents .news-container .news-wrapper .title-wrapper .news-title {
     font-size: 16px;
     font-weight: 500;
+}
+
+.main .contents .news-container .news-wrapper .title-wrapper .news-title:hover {
+    color: #fbe50a;
+    transition: all ease .3s;
 }
 
 .main .contents .news-container .news-wrapper .title-wrapper .date-wrapper {
@@ -153,6 +158,7 @@ main .contents .banner-container img{
     .main .contents .news-container .news-wrapper:first-child {
         grid-column: span 1;
         grid-row: span 1;
+        font-size: 16px;
     }
 }
 

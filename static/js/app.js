@@ -38,7 +38,7 @@ console.table(data.desktopBanners);
 console.table(data.mobileBanners);
 
 // Games
-const populateGames = (games) => {
+const renderGames = (games) => {
     games.forEach((game) => {
         const gameCard = document.createElement('div');
         gameCard.className = 'game-card';
@@ -48,12 +48,12 @@ const populateGames = (games) => {
 };
 
 // Populate game
-populateGames(data.games);
+renderGames(data.games);
 console.table(data.games);
 
 // Matches
 
-const populateMatches = (matches) => {
+const renderMatches = (matches) => {
     matches.forEach(match => {
         const matchCard = document.createElement('div');
         matchCard.className = 'swiper-slide match-card';
@@ -80,12 +80,12 @@ const populateMatches = (matches) => {
 };
 
 // Populate matches
-populateMatches(data.matches);
+renderMatches(data.matches);
 console.log(data.matches);
 
 // Promotion
 
-const populatePromotions = (promotions) => {
+const renderPromotions = (promotions) => {
     promotions.forEach(promotion => {
         const promotionCard = document.createElement('div');
         promotionCard.className = 'swiper-slide promotion-card';
@@ -106,7 +106,7 @@ const populatePromotions = (promotions) => {
     });
 };
 // populate promotions
-populatePromotions(data.promotions);
+renderPromotions(data.promotions);
 console.table(data.promotions);
 
 // Function to toggle modal visibility

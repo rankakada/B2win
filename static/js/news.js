@@ -8,7 +8,7 @@ Snowflake();
 
 const newsContainer = document.querySelector('.news-container');
 
-const PopulateNews = () =>{
+const renderNews = () =>{
     newsData.forEach(news => {
         const newsWrapper = document.createElement('a');
         newsWrapper.className = 'news-wrapper';
@@ -29,5 +29,5 @@ const PopulateNews = () =>{
     })
 }
 
-PopulateNews(newsData);
+renderNews(newsData);
 console.table(newsData);

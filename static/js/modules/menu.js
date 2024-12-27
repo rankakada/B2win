@@ -27,7 +27,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const linkHref = link.getAttribute('href'); 
         if (currentUrl.endsWith(linkHref)) {
             link.classList.add('active'); 
-        } else {
+        } 
+        else {
             link.classList.remove('active'); 
         }
     });
