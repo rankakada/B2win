@@ -2,7 +2,6 @@ import newsData from "./data/newsData.js";
 import { Menu } from './modules/menu.js';
 import { Snowflake } from "./modules/snow.js";
 
-// Initialize the menu and snowfall function
 Menu();
 Snowflake();
 

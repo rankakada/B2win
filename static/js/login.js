@@ -1,9 +1,9 @@
 import { Menu } from './modules/menu.js';
 import { Snowflake } from "./modules/snow.js";
 
-// Initialize the menu and snowfall function
 Menu();
 Snowflake();
+
 
 const username = document.querySelector(".username");
 const password = document.querySelector(".password");
