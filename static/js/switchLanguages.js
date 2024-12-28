@@ -68,8 +68,8 @@ const switchLanguage = (lang) => {
         const key = element.getAttribute('data-lang-key');
         const translation = languages[lang][key];
 
-        if(translation) {
-            if(element.tagName === "INPUT" && element.placeholder !== undefined) {
+        if (translation) {
+            if (element.hasAttribute('placeholder')) {
                 element.placeholder = translation;
             } else {
                 element.textContent = translation;

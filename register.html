@@ -104,7 +104,7 @@
                             <div class="input-control">
                                 <label for="username" data-lang-key="username">ឈ្មោះ​អ្នកប្រើប្រាស់</label>
                                 <input type="text" name="username" id="username" class="username" placeholder="បញ្ចូលឈ្មោះអ្នកប្រើប្រាស់" autocomplete="off" data-lang-key="usernamePlaceholder">
-                                <span class="errorMsg" id="userErrorMsg"></span>
+                                <span class="errorMsg" id="userErrorMsg" aria-live="polite"></span>
                             </div>
                             <div class="input-control password-input">
                                 <label for="password" data-lang-key="password">ពាក្យសម្ងាត់</label>
@@ -112,12 +112,12 @@
                                 <div class="toggleEye">
                                     <i class="fas fa-eye-slash eye"></i>
                                 </div>
-                                <span class="errorMsg" id="passErrorMsg"></span>
+                                <span class="errorMsg" id="passErrorMsg" aria-live="polite"></span>
                             </div>
                             <div class="input-control">
                                 <label for="phoneNumber" data-lang-key="phoneNumber">លេខទូរសព្ទ</label>
                                 <input type="tel" name="phoneNumber" id="phoneNumber" class="phoneNumber" placeholder="012-123-123" data-lang-key="phoneNumberPlaceholder">
-                                <span class="errorMsg" id="phoneErrorMsg"></span>
+                                <span class="errorMsg" id="phoneErrorMsg" aria-live="polite"></span>
                             </div>
                             <div class="input-control">
                                 <label for="currency" data-lang-key="currency">រូបិយប័ណ្ណ</label>
@@ -128,7 +128,7 @@
                             <div class="input-control">
                                 <label for="affiliate" data-lang-key="affiliate">អ្នកណែនាំ</label>
                                 <input type="text" name="affiliate" id="affiliate" class="affiliate" placeholder="អ្នកណែនាំ" data-lang-key="affiliatePlaceholder">
-                                <span class="errorMsg" id="affiliateErrorMsg"></span>
+                                <span class="errorMsg" id="affiliateErrorMsg" aria-live="polite"></span>
                             </div>
                             <div class="input-control">
                                 <label for="code" data-lang-key="code">លេខកូដសុវត្ថិភាព</label>
@@ -136,9 +136,9 @@
                                     <input type="number" name="code" id="code" class="code" placeholder="លេខកូដសុវត្ថិភាព" data-lang-key="codePlaceholder">
                                     <input type="number" class="code-random" disabled>
                                 </div>
-                                <span class="errorMsg" id="codeErrorMsg"></span>
+                                <span class="errorMsg" id="codeErrorMsg" aria-live="polite"></span>
                             </div>
-                            <span id="registerStatus"></span>
+                            <span id="registerStatus" aria-live="assertive"></span>
                             <button type="submit" class="btn-submit" data-lang-key="register">
                                 ចុះឈ្មោះ
                             </button>

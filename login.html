@@ -104,7 +104,7 @@
                             <div class="input-control">
                                 <label for="username" data-lang-key="username">ឈ្មោះ​អ្នកប្រើប្រាស់</label>
                                 <input type="text" name="username" id="username" class="username" placeholder="បញ្ចូលឈ្មោះអ្នកប្រើប្រាស់" autocomplete="username" data-lang-key="usernamePlaceholder">
-                                <span class="errorMsg" id="userErrorMsg"></span>
+                                <span class="errorMsg" id="userErrorMsg" aria-live="polite"></span>
                             </div>
                             <div class="input-control password-input">
                                 <label for="password" data-lang-key="password">ពាក្យសម្ងាត់</label>
@@ -112,13 +112,13 @@
                                 <div class="toggleEye">
                                     <i class="fas fa-eye-slash eye"></i>
                                 </div>
-                                <span class="errorMsg" id="passErrorMsg"></span>
+                                <span class="errorMsg" id="passErrorMsg" aria-live="polite"></span>
                             </div>
                             <div class="check-box">
                                 <input type="checkbox" name="remember" id="remember">
                                 <label for="remember" data-lang-key="rememberMe">ចងចាំ​ខ្ញុំ</label>
                             </div>
-                            <span id="loginStatus"></span>
+                            <span id="loginStatus" aria-live="assertive"></span>
                             <button type="submit" class="btn-submit" data-lang-key="submit">
                                 ដាក់ស្នើ
                             </button>
