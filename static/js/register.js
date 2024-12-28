@@ -9,7 +9,7 @@ const registerForm = document.querySelector(".form-register");
 const togglePassword = document.querySelector(".eye");
 const username = document.querySelector(".username");
 const password = document.querySelector(".password");
-const numberPhone = document.querySelector(".numberPhone");
+const phoneNumber = document.querySelector(".phoneNumber");
 const affiliate = document.querySelector(".affiliate");
 const code = document.querySelector(".code");
 const randomCode = document.querySelector(".code-random");
@@ -66,7 +66,7 @@ registerForm.onsubmit = (e) => {
 const validateInputs = () => {
     let usernameValue = username.value.trim();
     let passwordValue = password.value.trim();
-    let numberPhoneValue = numberPhone.value.trim();
+    let phoneNumberValue = phoneNumber.value.trim();
     let affiliateValue = affiliate.value.trim();
     let codeValue = code.value.trim();
     let randomCodeValue = randomCode.value.trim();
@@ -157,25 +157,25 @@ const validateInputs = () => {
 
     // Check phone number input
 
-    if(numberPhoneValue === "") {
-        setError(numberPhone, "សូមបំពេញលេខទូរសព្ទ", phoneErrorMsg);
+    if(phoneNumberValue === "") {
+        setError(phoneNumber, "សូមបំពេញលេខទូរសព្ទ", phoneErrorMsg);
         isValid = false;
 
         console.log("Please enter your phone nnumber.");
     }
-    else if (!numberPhoneValue.startsWith("+855") && !numberPhoneValue.startsWith("0")) {
-        setError(numberPhone, "លេខទូរសព្ទត្រូវចាប់ផ្ដើមដោយ +855 ឬ លេខ 0", phoneErrorMsg);
+    else if (!phoneNumberValue.startsWith("+855") && !phoneNumberValue.startsWith("0")) {
+        setError(phoneNumber, "លេខទូរសព្ទត្រូវចាប់ផ្ដើមដោយ +855 ឬ លេខ 0", phoneErrorMsg);
 
         console.log("The phone number must start with +855 or the number 0.");
     }
-    else if(!cambodianPhoneRegex.test(numberPhoneValue)) {
-        setError(numberPhone, "លេខទូរសព្ទមិនត្រឹមត្រូវ​ សូមពិនិត្យម្ដងទៀត", phoneErrorMsg);
+    else if(!cambodianPhoneRegex.test(phoneNumberValue)) {
+        setError(phoneNumber, "លេខទូរសព្ទមិនត្រឹមត្រូវ​ សូមពិនិត្យម្ដងទៀត", phoneErrorMsg);
         isValid = false;
 
         console.log("The phone number is invalid. Please check it again.");
     }
     else {
-        clearError(numberPhone, phoneErrorMsg);
+        clearError(phoneNumber, phoneErrorMsg);
         console.log("The phone number is valid");
     }
 
@@ -202,7 +202,7 @@ const validateInputs = () => {
             registerStatus.className = "registerSuccess";
             registerForm.reset();
 
-            console.table(`username : ${usernameValue}\npassword : ${passwordValue}\number phone : ${numberPhoneValue}\naffiliate : ${affiliateValue}`);
+            console.table(`username : ${usernameValue}\npassword : ${passwordValue}\number phone : ${phoneNumberValue}\naffiliate : ${affiliateValue}`);
             console.log("Register successful.")
         }
     }

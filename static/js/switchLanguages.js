@@ -2,7 +2,7 @@ const languages = {
     en: {
         livescore: "Live Score",
         sportNews: "Sports News",
-        condition: "Conditions",
+        condition: "Condition",
         login: "Login",
         register: "Register",
         message: "Welcome to B2Win, the most trusted website with a wide range of games, offering you fast deposit and withdrawal services, lots of promotions, unlimited winnings, and the safest!",
@@ -14,11 +14,20 @@ const languages = {
         privacy: "© 2024 B2WIN.com All Rights Reserved 18+",
         payment: "Payment Method",
         username: "Username",
+        password: "Password",
+        phoneNumber: "Phone number",
+        currency: "Currency",
+        affiliate: "Affiliate",
+        code: "Code",
         usernamePlaceholder: "Enter your username",
         passwordPlaceholder: "Password",
+        affiliatePlaceholder: "Affiliate",
+        codePlaceholder: "Code",
         rememberMe: "Remember Me",
         submit: "Submit",
-
+        goLogin: "Go to Login",
+        goRegister: "Don't have an account? Register an account",
+        registerByYourself: "Create Account By Yourself",
     },
     kh: {
         livescore: "គ្រាប់បាល់",
@@ -35,19 +44,36 @@ const languages = {
         privacy: "© 2024 B2WIN.com រក្សាសិទ្ធគ្រប់យ៉ាង ១៨+",
         payment: "ទូទាត់ប្រាក់ជាមួយ",
         username: "ឈ្មោះ​អ្នកប្រើប្រាស់",
+        password: "ពាក្យសម្ងាត់",
+        phoneNumber: "លេខទូរសព្ទ",
+        currency: "រូបិយប័ណ្ណ",
+        affiliate: "អ្នកណែនាំ",
+        code: "លេខកូដសុវត្ថិភាព",
         usernamePlaceholder: "បញ្ចូលឈ្មោះអ្នកប្រើប្រាស់",
         passwordPlaceholder: "ពាក្យសម្ងាត់",
+        affiliatePlaceholder: "ពាក្យសម្ងាត់",
+        codePlaceholder: "លេខកូដសុវត្ថិភាព",
         rememberMe: "ចងចាំខ្ញុំ",
         submit: "ដាក់ស្នើ",
+        goLogin: "ចូលទៅកាន់ Login",
+        goRegister: "មិនមានគណនីមែនទេ? បង្កើតគណនី",
+        registerByYourself: "បង្កើតគណនីដោយខ្លួនឯង",
     }
 };
 
-const switchLanguage = (language) => {
+const switchLanguage = (lang) => {
     const elements = document.querySelectorAll('[data-lang-key]');
+    
     elements.forEach(element => {
-        const langKey = element.getAttribute('data-lang-key');
-        if (languages[language] && languages[language][langKey]) {
-            element.textContent = languages[language][langKey];
+        const key = element.getAttribute('data-lang-key');
+        const translation = languages[lang][key];
+
+        if(translation) {
+            if(element.tagName === "INPUT" && element.placeholder !== undefined) {
+                element.placeholder = translation;
+            } else {
+                element.textContent = translation;
+            }
         }
     });
 }
