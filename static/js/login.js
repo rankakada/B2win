@@ -179,6 +179,7 @@ let currentLanguage = 'kh';
 toggleLanguage.addEventListener('click', () => {
     currentLanguage = currentLanguage === 'kh' ? 'en' : 'kh';
     switchLanguage(currentLanguage);
+    clearFormErrors();
 
     const icon = toggleLanguage.querySelector('img');
     if (currentLanguage === 'en') {
@@ -189,5 +190,12 @@ toggleLanguage.addEventListener('click', () => {
         console.log("You changed language to Khmer");
     }
 });
+
+const clearFormErrors = () => {
+    userErrorMsg.innerHTML = "";
+    passErrorMsg.innerHTML = "";
+    username.classList.remove("error");
+    password.classList.remove("error");
+};
 
 switchLanguage(currentLanguage);
