@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B2Win</title>
     <link rel="shortcut icon" href="static/assets/icons/icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="static/css/main.css">
+    <link rel="stylesheet" href="static/css/index.css">
     <link rel="stylesheet" href="static/css/vender/swiper-bundle.min.css">
 </head>
 <body>
+    <canvas id="snowflake"></canvas>
     <!-- Header -->
     <header class="header">
         <!-- Navbar -->
@@ -163,58 +164,9 @@
             </div>
         </div>
     </footer>
-    <script src="static/js/app.js" type="module"></script>
-    <script src="static/js/switchLanguages.js"></script>
+
+    <script type="module" src="static/js/index.js"></script>
+    <script src="static/js/app.js"></script>
     <script src="static/js/vender/swiper-bundle.min.js"></script>
-    <script>
-        let bannerSwiper = new Swiper(".bannerSwiper", {
-            slidesPerView: 1,
-            spaceBetween: 16,
-            loop: false,
-            autoplay: {
-                delay: 5000,
-            },
-        });
-
-        let matchSwiper = new Swiper(".matchSwiper", {
-            slidesPerView: 1,
-            spaceBetween: 16,
-            loop: false,
-            autoplay: {
-                delay: 5000,
-            },
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                },
-
-                1280: {
-                    slidesPerView: 3,
-                },
-
-                1536: {
-                    slidesPerView: 4,
-                },
-            },
-        });
-
-        let promotionSwiper = new Swiper(".promotionSwiper", {
-            slidesPerView: 2,
-            spaceBetween: 16,
-            loop: false,
-            autoplay: {
-                delay: 5000,
-            },
-            breakpoints: {
-                1280: {
-                    slidesPerView: 3,
-                },
-
-                1536: {
-                    slidesPerView: 4,
-                },
-            },
-        });
-    </script>
 </body>
 </html>

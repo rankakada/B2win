@@ -1,10 +1,3 @@
-import { Menu } from './modules/menu.js';
-import { Snowflake } from "./modules/snow.js";
-
-// Initialize the menu and snowfall function
-Menu();
-Snowflake();
-
 const languages = {
     en: {
         usernameEmpty: "Please enter your username.",
@@ -40,243 +33,250 @@ const languages = {
     }
 };
 
-const registerForm = document.querySelector(".form-register");
-const togglePassword = document.querySelector(".eye");
-const username = document.querySelector(".username");
-const password = document.querySelector(".password");
-const phoneNumber = document.querySelector(".phoneNumber");
-const affiliate = document.querySelector(".affiliate");
-const code = document.querySelector(".code");
-const randomCode = document.querySelector(".code-random");
-const registerStatus = document.getElementById("registerStatus");
-
-// toggle password visibility
-togglePassword.addEventListener("click", () => {
-    password.type = password.type === "password" ? "text" : "password";
-    togglePassword.classList.toggle("fa-eye-slash");
-    togglePassword.classList.toggle("fa-eye");
-});
-
-
-// Generate a random 5-digit code
-
-const generateRandomCode = () => {
-    return Math.floor(10000 + Math.random() * 90000);
-}
-
-randomCode.value = generateRandomCode();
-
-console.log("verify code is ", randomCode.value);
-
-//username input to uppercase
-
-username.addEventListener("input", () => {
-    username.value = username.value.toUpperCase();
-});
-
-// affiliate input to uppercase
-
-affiliate.addEventListener("input", () => {
-    affiliate.value = affiliate.value.toUpperCase();
-});
-
-// From validation
-
-registerForm.onsubmit = (e) => {
-    e.preventDefault();
-    validateInputs();
-}
-
-const validateInputs = () => {
-    let usernameValue = username.value.trim();
-    let passwordValue = password.value.trim();
-    let phoneNumberValue = phoneNumber.value.trim();
-    let affiliateValue = affiliate.value.trim();
-    let codeValue = code.value.trim();
-    let randomCodeValue = randomCode.value.trim();
-    let userErrorMsg = document.getElementById("userErrorMsg");
-    let passErrorMsg = document.getElementById("passErrorMsg");
-    let phoneErrorMsg = document.getElementById("phoneErrorMsg");
-    const affiliateStore = ["B2000000", "B2000001", "B2000002", "B2000003", "B2000004", "B2000005"];
-
-    const textRegex = /^[A-Z0-9]+$/;
-    const numberRegex = /^\d/;
-    const cambodianPhoneRegex = /^(?:\+855[1-9]\d{7,8}|0[1-9]\d{7,8})$/;
-
-    // function to add and clear error messange
-
-    const setError = (element, errorMsg, errorContainer) => {
-        element.classList.add("error");
-        errorContainer.innerHTML = errorMsg;
+document.addEventListener("DOMContentLoaded", () => {
+    const registerForm = document.querySelector(".form-register");
+    const togglePassword = document.querySelector(".eye");
+    const username = document.querySelector(".username");
+    const password = document.querySelector(".password");
+    const phoneNumber = document.querySelector(".phoneNumber");
+    const affiliate = document.querySelector(".affiliate");
+    const code = document.querySelector(".code");
+    const randomCode = document.querySelector(".code-random");
+    const registerStatus = document.getElementById("registerStatus");
+    
+    // toggle password visibility
+    togglePassword.addEventListener("click", () => {
+        password.type = password.type === "password" ? "text" : "password";
+        togglePassword.classList.toggle("fa-eye-slash");
+        togglePassword.classList.toggle("fa-eye");
+    });
+    
+    
+    // Generate a random 5-digit code
+    
+    const generateRandomCode = () => {
+        return Math.floor(10000 + Math.random() * 90000);
     }
-
-    const clearError = (element, errorContainer) => {
-        element.classList.remove("error");
-        errorContainer.innerHTML = "";
+    
+    randomCode.value = generateRandomCode();
+    
+    console.log("verify code is ", randomCode.value);
+    
+    //username input to uppercase
+    
+    username.addEventListener("input", () => {
+        username.value = username.value.toUpperCase();
+    });
+    
+    // affiliate input to uppercase
+    
+    affiliate.addEventListener("input", () => {
+        affiliate.value = affiliate.value.toUpperCase();
+    });
+    
+    // From validation
+    
+    registerForm.onsubmit = (e) => {
+        e.preventDefault();
+        validateInputs();
     }
-
-    let isValid = true; //Track overall validation
-
-    // Check username input
-
-    if(usernameValue === "") {
-        setError(username, languages[currentLanguage].usernameEmpty, userErrorMsg);
-        isValid = false;
-
-        console.log("Please enter your username.");
-    }
-    else if(usernameValue.length < 6 ) {
-        setError(username, languages[currentLanguage].usernameMin, userErrorMsg);
-        isValid = false;
-
-        console.log("The username must contain at least 6 characters.");
-    }
-    else if(usernameValue.length > 16 ) {
-        setError(username, languages[currentLanguage].usernameMax, userErrorMsg);
-        isValid = false;
-
-        console.log("The username must contain a maximum of 16 characters.")
-    }
-    else if (!textRegex.test(usernameValue)) { 
-        setError(username, languages[currentLanguage].usernameInvalid, userErrorMsg);
-        isValid = false;
-        console.log("The username must contain only letters and numbers.");
-    }
-    else if (numberRegex.test(usernameValue)) { 
-        setError(username, languages[currentLanguage].usernameStartsWithNumber, userErrorMsg);
-        isValid = false;
-
-        console.log("The username cannot start with a number.");
-    }
-    else {
-        clearError(username, userErrorMsg);
-        console.log("The username is valid.")
-    }
-
-    // Check password input
-
-    if(passwordValue === ""){
-        setError(password, languages[currentLanguage].passwordEmpty, passErrorMsg);
-        isValid = false;
-
-        console.log("Please enter your password.")
-    }
-    else if(passwordValue.length < 6) {
-        setError(password, languages[currentLanguage].passwordMin, passErrorMsg);
-        isValid = false;
-
-        console.log("The password must contain at least 6 characters.");
-    }
-    else if(passwordValue.length > 16) {
-        setError(password, languages[currentLanguage].passwordMax, passErrorMsg);
-        isValid = false;
-
-        console.log("The password must contain a maximum of 16 characters.");
-    }
-    else {
-       clearError(password, passErrorMsg);
-       console.log("The password is valid");
-    }
-
-    // Check phone number input
-
-    if(phoneNumberValue === "") {
-        setError(phoneNumber, languages[currentLanguage].phoneNumberEmpty, phoneErrorMsg);
-        isValid = false;
-
-        console.log("Please enter your phone nnumber.");
-    }
-    else if (!phoneNumberValue.startsWith("+855") && !phoneNumberValue.startsWith("0")) {
-        setError(phoneNumber, languages[currentLanguage].phoneNumberInvalidStart, phoneErrorMsg);
-
-        console.log("The phone number must start with +855 or the number 0.");
-    }
-    else if(!cambodianPhoneRegex.test(phoneNumberValue)) {
-        setError(phoneNumber, languages[currentLanguage].phoneNumberInvalid, phoneErrorMsg);
-        isValid = false;
-
-        console.log("The phone number is invalid. Please check it again.");
-    }
-    else {
-        clearError(phoneNumber, phoneErrorMsg);
-        console.log("The phone number is valid");
-    }
-
-    //  Register status
-
-    if(isValid) {
-        if(affiliateValue !== "" && !affiliateStore.includes(affiliateValue)) {
-            registerStatus.innerHTML = languages[currentLanguage].affiliateInvalid;
-            registerStatus.className = "registerError";
-            
-            console.log(`affiliate : ${affiliateValue}`);
-            console.log("The affiliate is incorrect.");
-            console.log("Register failed.")
+    
+    const validateInputs = () => {
+        let usernameValue = username.value.trim();
+        let passwordValue = password.value.trim();
+        let phoneNumberValue = phoneNumber.value.trim();
+        let affiliateValue = affiliate.value.trim();
+        let codeValue = code.value.trim();
+        let randomCodeValue = randomCode.value.trim();
+        let userErrorMsg = document.getElementById("userErrorMsg");
+        let passErrorMsg = document.getElementById("passErrorMsg");
+        let phoneErrorMsg = document.getElementById("phoneErrorMsg");
+        const affiliateStore = ["B2000000", "B2000001", "B2000002", "B2000003", "B2000004", "B2000005"];
+    
+        const textRegex = /^[A-Z0-9]+$/;
+        const numberRegex = /^\d/;
+        const cambodianPhoneRegex = /^(?:\+855[1-9]\d{7,8}|0[1-9]\d{7,8})$/;
+    
+        // function to add and clear error messange
+    
+        const setError = (element, errorMsg, errorContainer) => {
+            element.classList.add("error");
+            errorContainer.innerHTML = errorMsg;
         }
-        else if (codeValue === "" || codeValue!== randomCodeValue) {
-            registerStatus.innerHTML = languages[currentLanguage].codeInvalid;
-            registerStatus.className = "registerError";
-
-            console.log("The verify code is incorrect.");
-            console.log("Register failed.")
+    
+        const clearError = (element, errorContainer) => {
+            element.classList.remove("error");
+            errorContainer.innerHTML = "";
+        }
+    
+        let isValid = true; //Track overall validation
+    
+        // Check username input
+    
+        if(usernameValue === "") {
+            setError(username, languages[currentLanguage].usernameEmpty, userErrorMsg);
+            isValid = false;
+    
+            console.log("Please enter your username.");
+        }
+        else if(usernameValue.length < 6 ) {
+            setError(username, languages[currentLanguage].usernameMin, userErrorMsg);
+            isValid = false;
+    
+            console.log("The username must contain at least 6 characters.");
+        }
+        else if(usernameValue.length > 16 ) {
+            setError(username, languages[currentLanguage].usernameMax, userErrorMsg);
+            isValid = false;
+    
+            console.log("The username must contain a maximum of 16 characters.")
+        }
+        else if (!textRegex.test(usernameValue)) { 
+            setError(username, languages[currentLanguage].usernameInvalid, userErrorMsg);
+            isValid = false;
+            console.log("The username must contain only letters and numbers.");
+        }
+        else if (numberRegex.test(usernameValue)) { 
+            setError(username, languages[currentLanguage].usernameStartsWithNumber, userErrorMsg);
+            isValid = false;
+    
+            console.log("The username cannot start with a number.");
         }
         else {
-            registerStatus.innerHTML = languages[currentLanguage].registerSuccess;
-            registerStatus.className = "registerSuccess";
-            registerForm.reset();
-
-            console.table(`username : ${usernameValue}\npassword : ${passwordValue}\number phone : ${phoneNumberValue}\naffiliate : ${affiliateValue}`);
-            console.log("Register successful.")
+            clearError(username, userErrorMsg);
+            console.log("The username is valid.")
         }
-    }
-    else {
-        registerStatus.innerHTML = ""; 
-    }
-}
-
-const switchLanguage = (lang) => {
-    const elements = document.querySelectorAll('[data-lang-key]');
     
-    elements.forEach(element => {
-        const key = element.getAttribute('data-lang-key');
-        const translation = languages[lang][key];
+        // Check password input
     
-        if (translation) {
-            if (element.hasAttribute('placeholder')) {
-                element.placeholder = translation;
-            } else {
-                element.textContent = translation;
+        if(passwordValue === ""){
+            setError(password, languages[currentLanguage].passwordEmpty, passErrorMsg);
+            isValid = false;
+    
+            console.log("Please enter your password.")
+        }
+        else if(passwordValue.length < 6) {
+            setError(password, languages[currentLanguage].passwordMin, passErrorMsg);
+            isValid = false;
+    
+            console.log("The password must contain at least 6 characters.");
+        }
+        else if(passwordValue.length > 16) {
+            setError(password, languages[currentLanguage].passwordMax, passErrorMsg);
+            isValid = false;
+    
+            console.log("The password must contain a maximum of 16 characters.");
+        }
+        else {
+           clearError(password, passErrorMsg);
+           console.log("The password is valid");
+        }
+    
+        // Check phone number input
+    
+        if(phoneNumberValue === "") {
+            setError(phoneNumber, languages[currentLanguage].phoneNumberEmpty, phoneErrorMsg);
+            isValid = false;
+    
+            console.log("Please enter your phone nnumber.");
+        }
+        else if (!phoneNumberValue.startsWith("+855") && !phoneNumberValue.startsWith("0")) {
+            setError(phoneNumber, languages[currentLanguage].phoneNumberInvalidStart, phoneErrorMsg);
+    
+            console.log("The phone number must start with +855 or the number 0.");
+        }
+        else if(!cambodianPhoneRegex.test(phoneNumberValue)) {
+            setError(phoneNumber, languages[currentLanguage].phoneNumberInvalid, phoneErrorMsg);
+            isValid = false;
+    
+            console.log("The phone number is invalid. Please check it again.");
+        }
+        else {
+            clearError(phoneNumber, phoneErrorMsg);
+            console.log("The phone number is valid");
+        }
+    
+        //  Register status
+    
+        if(isValid) {
+            if(affiliateValue !== "" && !affiliateStore.includes(affiliateValue)) {
+                registerStatus.innerHTML = languages[currentLanguage].affiliateInvalid;
+                registerStatus.className = "registerError";
+                
+                console.log(`affiliate : ${affiliateValue}`);
+                console.log("The affiliate is incorrect.");
+                console.log("Register failed.")
+            }
+            else if (codeValue === "" || codeValue!== randomCodeValue) {
+                registerStatus.innerHTML = languages[currentLanguage].codeInvalid;
+                registerStatus.className = "registerError";
+    
+                console.log("The verify code is incorrect.");
+                console.log("Register failed.")
+            }
+            else {
+                registerStatus.innerHTML = languages[currentLanguage].registerSuccess;
+                registerStatus.className = "registerSuccess";
+                registerForm.reset();
+    
+                console.table(`username : ${usernameValue}\npassword : ${passwordValue}\number phone : ${phoneNumberValue}\naffiliate : ${affiliateValue}`);
+                console.log("Register successful.")
             }
         }
-    });
-
-    currentLanguage = lang; 
-}
-
-const toggleLanguage = document.querySelector('.toggle-language');
-
-let currentLanguage = 'kh';
-
-toggleLanguage.addEventListener('click', () => {
-    currentLanguage = currentLanguage === 'kh' ? 'en' : 'kh';
-    switchLanguage(currentLanguage);
-    clearFormErrors();
-
-    const icon = toggleLanguage.querySelector('img');
-    if (currentLanguage === 'en') {
-        icon.src = 'static/assets/icons/en.svg'; 
-        console.log("You changed language to English");
-    } else {
-        icon.src = 'static/assets/icons/kh.svg'; 
-        console.log("You changed language to Khmer");
+        else {
+            registerStatus.innerHTML = ""; 
+        }
     }
+    
+    const switchLanguage = (lang) => {
+        const elements = document.querySelectorAll('[data-lang-key]');
+        
+        elements.forEach(element => {
+            const key = element.getAttribute('data-lang-key');
+            const translation = languages[lang][key];
+        
+            if (translation) {
+                if (element.hasAttribute('placeholder')) {
+                    element.placeholder = translation;
+                } else {
+                    element.textContent = translation;
+                }
+            }
+        });
+    
+        currentLanguage = lang; 
+    }
+    
+    const toggleLanguage = document.querySelector('.toggle-language');
+    
+    let currentLanguage = 'kh';
+    
+    toggleLanguage.addEventListener('click', () => {
+        currentLanguage = currentLanguage === 'kh' ? 'en' : 'kh';
+        switchLanguage(currentLanguage);
+        clearFormErrors();
+    
+        const icon = toggleLanguage.querySelector('img');
+        if (currentLanguage === 'en') {
+            icon.src = 'static/assets/icons/en.svg'; 
+            console.log("You changed language to English");
+        } else {
+            icon.src = 'static/assets/icons/kh.svg'; 
+            console.log("You changed language to Khmer");
+        }
+    });
+    
+    const clearFormErrors = () => {
+        userErrorMsg.innerHTML = "";
+        passErrorMsg.innerHTML = "";
+        phoneErrorMsg.innerHTML = "";
+        registerStatus.innerHTML = "";
+        username.classList.remove("error");
+        password.classList.remove("error");
+        phoneNumber.classList.remove("error");
+        registerStatus.className = "";
+
+    };
+    
+    switchLanguage(currentLanguage);
 });
-
-const clearFormErrors = () => {
-    userErrorMsg.innerHTML = "";
-    passErrorMsg.innerHTML = "";
-    username.classList.remove("error");
-    password.classList.remove("error");
-};
-
-switchLanguage(currentLanguage);
