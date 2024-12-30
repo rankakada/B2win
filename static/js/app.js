@@ -211,7 +211,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const toggleLanguage = document.querySelector('.toggle-language');
-    let currentLanguage = localStorage.getItem('language') || 'en';
+    let currentLanguage = 'kh';
 
     toggleLanguage.addEventListener('click', () => {
         currentLanguage = currentLanguage === 'kh' ? 'en' : 'kh';
