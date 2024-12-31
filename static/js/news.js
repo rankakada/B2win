@@ -55,10 +55,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     <span class="title">អត្ថបទចុងក្រោយ</span>
                     <div class="latest-news-item-wrapper">
                         ${newsData.map((latestNews) => `
-                            <div onclick="viewNewsArticle(${latestNews.id})">
+                            <div onclick="viewNewsArticle(${latestNews.id})" class="news-items">
                                 <img src="${latestNews.img}" alt="${latestNews.title}">
                                 <div>
-                                    <p>${latestNews.title.slice(1, 6)}...</p>
+                                    <p>${latestNews.title.slice(0, 25)}...</p>
                                     <div class="date-wrapper">
                                         <div class="calendar-icon"><img src="static/assets/icons/calendar.svg" alt="calendar-icon"></div>
                                         <span class="news-date">${new Date(latestNews.date).toLocaleDateString()}</span>

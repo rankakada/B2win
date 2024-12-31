@@ -285,38 +285,38 @@ main .contents .banner-container img{
     grid-gap: 1rem;
 }
 
-.main .contents .news-container .main-news-wrapper .news-title.big-title {
+.main .contents .news-container .news-detail-container .main-news-wrapper .news-title.big-title {
     font-size: 24px;
     font-weight: 500;
     margin: 2.5rem 0;
 }
 
-.main .contents .news-container .main-news-wrapper .news-content-wrapper {
+.main .contents .news-container .news-detail-container .main-news-wrapper .news-content-wrapper {
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 1rem;
 }
 
-.main .contents .news-container .main-news-wrapper .news-content-wrapper .news-image img {
+.main .contents .news-container .news-detail-container .main-news-wrapper .news-content-wrapper .news-image img {
     width: 100%;
 }
 
-.main .contents .news-container .main-news-wrapper .news-content-wrapper .right-content .date-wrapper {
+.main .contents .news-container .news-detail-container .main-news-wrapper .news-content-wrapper .right-content .date-wrapper {
     display: flex;
     gap: 8px;
 }
 
-.main .contents .news-container .main-news-wrapper .news-content-wrapper .right-content .date-wrapper .news-date {
+.main .contents .news-container .news-detail-container .main-news-wrapper .news-content-wrapper .right-content .date-wrapper .news-date {
     font-size: 16px;
 }
 
-.main .contents .news-container .main-news-wrapper .news-content-wrapper .right-content .news-title.small-title {
+.main .contents .news-container .news-detail-container .main-news-wrapper .news-content-wrapper .right-content .news-title.small-title {
     font-size: 16px;
     font-weight: 500;
     margin-top: 1rem;
 }
 
-.main .contents .news-container .main-news-wrapper .news-description {
+.main .contents .news-container .news-detail-container .main-news-wrapper .news-description {
     font-size: 16px;
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
@@ -324,30 +324,30 @@ main .contents .banner-container img{
     white-space: pre-line;
 }
 
-.main .contents .news-container .latest-news-container .latest-news-wrapper  {
+.main .contents .news-container .news-detail-container .latest-news-container .latest-news-wrapper  {
     background: #292929;
     padding: 1.5rem;
 }
 
-.main .contents .news-container .latest-news-container .latest-news-wrapper .title {
+.main .contents .news-container .news-detail-container .latest-news-container .latest-news-wrapper .title {
     display: inline-block;
     margin-bottom: 0.5rem;
     font-size: 18px;
     font-weight: 500;
 }
 
-.main .contents .news-container .latest-news-container .latest-news-wrapper .latest-news-item-wrapper .latest-news-item {
+.main .contents .news-container .news-detail-container .latest-news-container .latest-news-wrapper .latest-news-item-wrapper .latest-news-item {
     display: grid;
     grid-template-columns: auto auto;
     grid-gap: 1rem;
     padding: 0.5rem 0;
 }
 
-.main .contents .news-container .latest-news-container .news-image img {
+.main .contents .news-container .news-detail-container .latest-news-container .news-image img {
     width: 100%;
 }
 
-.main .contents .news-container .latest-news-container .latest-news-wrapper .latest-news-item {
+.main .contents .news-container .news-detail-container .latest-news-container .latest-news-wrapper .latest-news-item {
     text-decoration: none;
     color: var(--white-color);
     line-height: 1.5rem;
@@ -355,16 +355,16 @@ main .contents .banner-container img{
 }
 
 
-.main .contents .news-container .latest-news-container .latest-news-wrapper .latest-news-item .content-wrapper .news-title {
+.main .contents .news-container .news-detail-container .latest-news-container .latest-news-wrapper .latest-news-item .content-wrapper .news-title {
     font-size: 16px;
 }
 
-.main .contents .news-container .latest-news-container .latest-news-wrapper .latest-news-item .content-wrapper .news-title:hover {
+.main .contents .news-container .news-detail-container .latest-news-container .latest-news-wrapper .latest-news-item .content-wrapper .news-title:hover {
     color: #fbe50a;
     transition: all ease 0.3s;
 }
 
-.main .contents .news-container .latest-news-container .latest-news-wrapper .latest-news-item .content-wrapper .date-wrapper{
+.main .contents .news-container .news-detail-container .latest-news-container .latest-news-wrapper .latest-news-item .content-wrapper .date-wrapper{
     display: flex;
     gap: 0.5rem;
     margin-top: 5px;
