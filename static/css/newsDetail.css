@@ -279,7 +279,7 @@ main .contents .banner-container img{
     width: 100%;
 }
 
-.main .contents .news-container {
+.main .contents .news-container .news-detail-container{
     display: grid;
     grid-template-columns: 2fr 1fr;
     grid-gap: 1rem;

@@ -1,5 +1,6 @@
 const newsData = [
     {
+        id: 1,
         img: "static/assets/images/news/news1.png",
         title: "Lamine Yamal ចង់​ឈ្នះ​​​ពាន​១​ក្នុង​ចំណោម​ពីរ​នេះ​ឲ្យ​បាន​សិន​មុន​ឈាន​ដល់ Ballon d'Or",
         date: "2024-12-19 16:21:30",
@@ -12,6 +13,7 @@ const newsData = [
         គិត​ត្រឹម​ពេល​នេះ​គេ​បាន​ចូល​លេង​ឲ្យ​ក្រុម​ Barcelona ​បាន​ចំនួន​៥៤​ប្រកួត​ហើយ​ និង​រក​បាន​១០​គ្រាប់​​ថែម​ទៀ​ត​ផង​។ ចំណែក​ជា​មួយ​ជម្រើស​ជាតិ​​វិញ​គេ​បាន​ចូល​លេង​បាន​​១៧​ប្រកួត ពោល​ក៏​រក​បា​ន​៣​គ្រាប់​ផង​ដែរ​​៕`,
     },
     {
+        id: 2,
         img: "static/assets/images/news/news2.jpg",
         title: "Arsenal និង Aston Villa ដណ្តេីម​គ្នាខ្ចីជេីងខ្សែបម្រើ Philippe​ Coutinho​...",
         date: "2024-12-25 12:12:30",
@@ -19,6 +21,7 @@ const newsData = [
         description: "«​មុន​ពេល​ខ្ញុំ​អាច​ឈ្នះ​ពាន Ballon d'Or ខ្ញុំ​ចង់​ឈ្នះ​ពាន​ Champions League ជាមួយ Barcelona ឬ​ក៏​ឈ្នះ​​ពាន World Cup ជាមួយ​ប្រទេស​អេស្ប៉ាញ​របស់​ខ្ញុំ​ឲ្យ​បាន​១​សិន​»។",
     },
     {
+        id: 3,
         img: "static/assets/images/news/news3.jpg",
         title: "ទៅស្គាល់ផ្ទះដ៏ប្រណិតទាំង៨ ដែលជាកម្មសិទ្ធិរបស់ Cristiano Ronaldo...",
         date: "2024-12-26 12:21:30",
@@ -26,6 +29,7 @@ const newsData = [
         description: "«​មុន​ពេល​ខ្ញុំ​អាច​ឈ្នះ​ពាន Ballon d'Or ខ្ញុំ​ចង់​ឈ្នះ​ពាន​ Champions League ជាមួយ Barcelona ឬ​ក៏​ឈ្នះ​​ពាន World Cup ជាមួយ​ប្រទេស​អេស្ប៉ាញ​របស់​ខ្ញុំ​ឲ្យ​បាន​១​សិន​»។",
     },
     {
+        id: 4,
         img: "static/assets/images/news/news4.jpg",
         title: "CHRISTIAN ERIKSEN​ បង្ហេីបបំណងចង់លេងអេាយជម្រេីសជាតិម្តងទៀត...",
         date: "2024-12-24 16:21:30",
@@ -33,13 +37,14 @@ const newsData = [
         description: "«​មុន​ពេល​ខ្ញុំ​អាច​ឈ្នះ​ពាន Ballon d'Or ខ្ញុំ​ចង់​ឈ្នះ​ពាន​ Champions League ជាមួយ Barcelona ឬ​ក៏​ឈ្នះ​​ពាន World Cup ជាមួយ​ប្រទេស​អេស្ប៉ាញ​របស់​ខ្ញុំ​ឲ្យ​បាន​១​សិន​»។",
     },
     {
+        id: 5,
         img: "static/assets/images/news/news5.jpg",
         title: "Marcos Rojo និយាយអំពី Zlatan Ibrahimovic កាលពួកគេឈ្លោះគ្នា...",
         date: "2024-12-24 16:21:30",
         url: "newsDetail.html",
         description: "«​មុន​ពេល​ខ្ញុំ​អាច​ឈ្នះ​ពាន Ballon d'Or ខ្ញុំ​ចង់​ឈ្នះ​ពាន​ Champions League ជាមួយ Barcelona ឬ​ក៏​ឈ្នះ​​ពាន World Cup ជាមួយ​ប្រទេស​អេស្ប៉ាញ​របស់​ខ្ញុំ​ឲ្យ​បាន​១​សិន​»។",
     },
-    {
+    {   id: 6,
         img: "static/assets/images/news/news6.jpg",
         title: "មិនគួរទេលោកឧកញ៉ា 💔 Neymar យល់ព្រមលក្ខណផ្ទាល់ខ្លួនជាមួយ Al Hilal",
         date: "2024-12-24 16:21:30",
@@ -47,6 +52,7 @@ const newsData = [
         description: "«​មុន​ពេល​ខ្ញុំ​អាច​ឈ្នះ​ពាន Ballon d'Or ខ្ញុំ​ចង់​ឈ្នះ​ពាន​ Champions League ជាមួយ Barcelona ឬ​ក៏​ឈ្នះ​​ពាន World Cup ជាមួយ​ប្រទេស​អេស្ប៉ាញ​របស់​ខ្ញុំ​ឲ្យ​បាន​១​សិន​»។",
     },
     {
+        id: 7,
         img: "static/assets/images/news/news6.jpg",
         title: "មិនគួរទេលោកឧកញ៉ា 💔 Neymar យល់ព្រមលក្ខណផ្ទាល់ខ្លួនជាមួយ Al Hilal",
         date: "2024-12-24 16:21:30",
@@ -54,6 +60,7 @@ const newsData = [
         description: "«​មុន​ពេល​ខ្ញុំ​អាច​ឈ្នះ​ពាន Ballon d'Or ខ្ញុំ​ចង់​ឈ្នះ​ពាន​ Champions League ជាមួយ Barcelona ឬ​ក៏​ឈ្នះ​​ពាន World Cup ជាមួយ​ប្រទេស​អេស្ប៉ាញ​របស់​ខ្ញុំ​ឲ្យ​បាន​១​សិន​»។",
     },
     {
+        id: 8,
         img: "static/assets/images/news/news4.jpg",
         title: "មិនគួរទេលោកឧកញ៉ា 💔 Neymar យល់ព្រមលក្ខណផ្ទាល់ខ្លួនជាមួយ Al Hilal",
         date: "2024-12-24 16:21:30",
@@ -61,6 +68,7 @@ const newsData = [
         description: "«​មុន​ពេល​ខ្ញុំ​អាច​ឈ្នះ​ពាន Ballon d'Or ខ្ញុំ​ចង់​ឈ្នះ​ពាន​ Champions League ជាមួយ Barcelona ឬ​ក៏​ឈ្នះ​​ពាន World Cup ជាមួយ​ប្រទេស​អេស្ប៉ាញ​របស់​ខ្ញុំ​ឲ្យ​បាន​១​សិន​»។",
     },
     {
+        id:9,
         img: "static/assets/images/news/news3.jpg",
         title: "មិនគួរទេលោកឧកញ៉ា 💔 Neymar យល់ព្រមលក្ខណផ្ទាល់ខ្លួនជាមួយ Al Hilal",
         date: "2024-12-24 16:21:30",

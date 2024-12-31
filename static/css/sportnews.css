@@ -282,6 +282,9 @@ main .contents .banner-container img{
 .main .contents .news-container {
     position: relative;
     width: 100%;
+}
+
+.main .contents .news-container .news-list-container{
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 1rem;
@@ -335,6 +338,12 @@ main .contents .banner-container img{
 
 .main .contents .news-container .news-wrapper .title-wrapper .date-wrapper .news-date {
     font-size: 14px;
+}
+
+.main .contents .news-container .news-detail-container{
+    display: grid;
+    /* grid-template-columns: 2fr 1fr; */
+    grid-gap: 1rem;
 }
 
 .footer {
