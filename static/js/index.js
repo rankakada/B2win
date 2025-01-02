@@ -133,7 +133,18 @@ const data = {
 document.addEventListener("DOMContentLoaded", () => {
     const welcomeModal = document.querySelector('.welcome-modal');
     const btnCloseWelcomeModal = document.querySelector('.btn-close-welcomeModal');
+
+    const modalShown = localStorage.getItem("modalShown");
   
+    if (!modalShown) {
+        // Show the modal
+        welcomeModal.style.display = "flex";
+
+        // Set localStorage key when modal is shown
+        localStorage.setItem("modalShown", "true");
+        console.log(localStorage);
+    }
+
     btnCloseWelcomeModal.addEventListener('click', () => {
       welcomeModal.style.display = 'none';
     });
