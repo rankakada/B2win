@@ -6,6 +6,7 @@
     <title>B2Win</title>
     <link rel="shortcut icon" href="static/assets/icons/icon.png" type="image/x-icon">
     <link rel="stylesheet" href="static/css/sportnews.css">
+    <link rel="stylesheet" href="static/css/vender/swiper-bundle.min.css">
 </head>
 <body>
     <canvas id="snowflake"></canvas>
@@ -79,9 +80,18 @@
     <!-- main contents -->
     <main class="main">
         <section class="contents">
-            <div class="banner-container">
+            <!-- <div class="banner-container">
                 <img src="static/assets/images/banners/banner.png" alt="banner">
+            </div> -->
+            <div class="swiper bannerSwiper banner-container">
+                <div class="swiper-wrapper banner-wrapper">
+                </div>
             </div>
+
+            <div class="swiper bannerSwiper banner-container">
+                <div class="swiper-wrapper banner-wrapper"></div>
+            </div>
+
             <div class="news-container">
             </div>
         </section>
@@ -105,7 +115,8 @@
         </div>
     </footer>
 
-    <script type="module" src="static/js/news.js"></script>
-    <script type="module" src="static/js/app.js"></script>
+    <script src="static/js/news.js"></script>
+    <script src="static/js/app.js"></script>
+    <script src="static/js/vender/swiper-bundle.min.js"></script>
 </body>
 </html>

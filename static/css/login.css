@@ -382,12 +382,12 @@ body::before {
 }
 
 .main .contents .container .box-wrapper .login-box .form-login .input-control .error {
-    outline: 2px solid var(--yellow-color);
+    outline: 2px solid red;
     border-radius: 5px;
 }
 
 .main .contents .container .box-wrapper .login-box .form-login .input-control .errorMsg {
-    color: var(--yellow-color);
+    color: red;
     font-family: var(--khmer-font);
     font-size: 18px;
     font-weight: 400;

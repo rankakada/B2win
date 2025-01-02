@@ -67,15 +67,22 @@ document.addEventListener("DOMContentLoaded", () => {
     username.addEventListener("input", () => {
         username.value = username.value.toUpperCase();
     });
-    
-    // affiliate input to uppercase
-    
-    affiliate.addEventListener("input", () => {
-        affiliate.value = affiliate.value.toUpperCase();
-    });
+        
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    // Retrieve 'fid' from the URL
+    const affiliateId = getQueryParam("fid");
+    if (affiliateId) {
+        const affiliateInput = document.getElementById("affiliate");
+        if (affiliateInput) {
+            affiliateInput.value = affiliateId;
+        }
+    }
     
     // From validation
-    
     registerForm.onsubmit = (e) => {
         e.preventDefault();
         validateInputs();
@@ -91,7 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
         let userErrorMsg = document.getElementById("userErrorMsg");
         let passErrorMsg = document.getElementById("passErrorMsg");
         let phoneErrorMsg = document.getElementById("phoneErrorMsg");
-        const affiliateStore = ["B2000000", "B2000001", "B2000002", "B2000003", "B2000004", "B2000005"];
     
         const textRegex = /^[A-Z0-9]+$/;
         const numberRegex = /^\d/;
@@ -199,7 +205,7 @@ document.addEventListener("DOMContentLoaded", () => {
         //  Register status
     
         if(isValid) {
-            if(affiliateValue !== "" && !affiliateStore.includes(affiliateValue)) {
+            if(affiliateValue !== affiliateId && affiliateValue !== "") {
                 registerStatus.innerHTML = languages[currentLanguage].affiliateInvalid;
                 registerStatus.className = "registerError";
                 

@@ -275,7 +275,7 @@ body::before {
     margin-bottom: 1rem;
 }
 
-main .contents .banner-container img{
+.main .contents .banner-container .banner-wrapper .banner-card img{
     width: 100%;
 }
 

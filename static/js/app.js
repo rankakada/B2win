@@ -185,7 +185,7 @@ document.addEventListener("DOMContentLoaded", () => {
             code: "លេខកូដសុវត្ថិភាព",
             usernamePlaceholder: "បញ្ចូលឈ្មោះអ្នកប្រើប្រាស់",
             passwordPlaceholder: "ពាក្យសម្ងាត់",
-            affiliatePlaceholder: "ពាក្យសម្ងាត់",
+            affiliatePlaceholder: "អ្នកណែនាំ",
             codePlaceholder: "លេខកូដសុវត្ថិភាព",
             rememberMe: "ចងចាំខ្ញុំ",
             submit: "ដាក់ស្នើ",
