@@ -133,16 +133,13 @@ const data = {
 document.addEventListener("DOMContentLoaded", () => {
     const welcomeModal = document.querySelector('.welcome-modal');
     const btnCloseWelcomeModal = document.querySelector('.btn-close-welcomeModal');
+    const REAPPEAR_TIME = 10 * 60 * 1000; // 10mn
+    const lastShownTime = localStorage.getItem("lastModalShown");
+    const currentTime = new Date().getTime();
 
-    const modalShown = localStorage.getItem("modalShown");
-  
-    if (!modalShown) {
-        // Show the modal
+    if (!lastShownTime || currentTime - lastShownTime > REAPPEAR_TIME) {
         welcomeModal.style.display = "flex";
-
-        // Set localStorage key when modal is shown
-        localStorage.setItem("modalShown", "true");
-        console.log(localStorage);
+        localStorage.setItem("lastModalShown", currentTime);
     }
 
     btnCloseWelcomeModal.addEventListener('click', () => {
