@@ -54,7 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
                 <div class="latest-news-wrapper">
                     <span class="title">អត្ថបទចុងក្រោយ</span>
                     <div class="latest-news-item-wrapper">
-                        ${newsData.map((latestNews) => `
+                        ${newsData
+                            .slice(1,6)
+                            .map((latestNews) => `
                             <div onclick="viewNewsArticle(${latestNews.id})" class="news-items">
                                 <img src="${latestNews.img}" alt="${latestNews.title}">
                                 <div>
