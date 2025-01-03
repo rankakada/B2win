@@ -626,8 +626,8 @@ body::before {
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
     z-index: 100;
-    /* display: none; */
-    display: flex;
+    display: none;
+    /* display: flex; */
     justify-content: center;
     align-items: center;
 }
@@ -654,6 +654,7 @@ body::before {
     width: 36px;
     height: 36px;
     background: var(--yellow-color);
+    color: var(--black-color);
     font-size: 32px;
     border: none;
     outline: none;
@@ -857,7 +858,7 @@ body::before {
         right: 50px;
         width: 24px;
         height: 24px;
-        font-size: 16px;
+        font-size: 21px;
     }
 }
 
