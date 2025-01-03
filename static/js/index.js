@@ -132,7 +132,7 @@ const data = {
 
 const welcomeModal = document.querySelector('.welcome-modal');
 const btnCloseWelcomeModal = document.querySelector('.btn-close-welcomeModal');
-const REAPPEAR_TIME = 10 * 60 * 1000; // 10mn
+const REAPPEAR_TIME = 1 * 60 * 60 * 1000; // 1h
 const lastShownTime = localStorage.getItem("lastModalShown");
 const currentTime = new Date().getTime();
 
@@ -287,51 +287,53 @@ promotionModal.addEventListener("click", (e) => {
     }
 });
 
-// Banner Swiper
-new Swiper(".bannerSwiper", {
-    slidesPerView: 1,
-    spaceBetween: 16,
-    loop: false,
-    autoplay: {
-        delay: 5000,
-    },
-});
+document.addEventListener("DOMContentLoaded", () => {
+    // Banner Swiper
+    new Swiper(".bannerSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        loop: false,
+        autoplay: {
+            delay: 5000,
+        },
+    });
 
-// Matches Swiper
-new Swiper(".matchSwiper", {
-    slidesPerView: 1,
-    spaceBetween: 16,
-    loop: false,
-    autoplay: {
-        delay: 5000,
-    },
-    breakpoints: {
-        640: {
-            slidesPerView: 2,
+    // Matches Swiper
+    new Swiper(".matchSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        loop: false,
+        autoplay: {
+            delay: 5000,
         },
-        1280: {
-            slidesPerView: 3,
+        breakpoints: {
+            640: {
+                slidesPerView: 2,
+            },
+            1280: {
+                slidesPerView: 3,
+            },
+            1536: {
+                slidesPerView: 4,
+            },
         },
-        1536: {
-            slidesPerView: 4,
-        },
-    },
-});
+    });
 
-// Promotion Swiper
-new Swiper(".promotionSwiper", {
-    slidesPerView: 2,
-    spaceBetween: 16,
-    loop: false,
-    autoplay: {
-        delay: 5000,
-    },
-    breakpoints: {
-        1280: {
-            slidesPerView: 3,
+    // Promotion Swiper
+    new Swiper(".promotionSwiper", {
+        slidesPerView: 2,
+        spaceBetween: 16,
+        loop: false,
+        autoplay: {
+            delay: 5000,
         },
-        1536: {
-            slidesPerView: 4,
+        breakpoints: {
+            1280: {
+                slidesPerView: 3,
+            },
+            1536: {
+                slidesPerView: 4,
+            },
         },
-    },
+    });
 });

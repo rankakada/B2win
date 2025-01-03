@@ -130,28 +130,30 @@ const bannerData = [
     },
 ];
 
-const bannerWrapper = document.querySelector('.banner-wrapper');
-const renderBanners = (banners) => {
-    banners.forEach(banner => {
-        const bannerCard = document.createElement('div');
-        bannerCard.className = 'swiper-slide banner-card';
-        bannerCard.innerHTML = `<img src="${banner.img}" alt="banner">`;
-        bannerWrapper.appendChild(bannerCard);
+document.addEventListener("DOMContentLoaded", () => {
+    const bannerWrapper = document.querySelector('.banner-wrapper');
+    const renderBanners = (banners) => {
+        banners.forEach(banner => {
+            const bannerCard = document.createElement('div');
+            bannerCard.className = 'swiper-slide banner-card';
+            bannerCard.innerHTML = `<img src="${banner.img}" alt="banner">`;
+            bannerWrapper.appendChild(bannerCard);
+        });
+    };
+
+    // Populate promotions
+    renderBanners(bannerData);
+    console.table(bannerData);
+
+    // Banner Swiper
+    new Swiper(".bannerSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 16,
+        loop: false,
+        autoplay: {
+            delay: 5000,
+        },
     });
-};
-
-// Populate promotions
-renderBanners(bannerData);
-console.table(bannerData);
-
-// Banner Swiper
-new Swiper(".bannerSwiper", {
-    slidesPerView: 1,
-    spaceBetween: 16,
-    loop: false,
-    autoplay: {
-        delay: 5000,
-    },
 });
 
 const newsContainer = document.querySelector('.news-container');
