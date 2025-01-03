@@ -91,44 +91,40 @@ document.addEventListener('DOMContentLoaded', () => {
     animate();
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const Menu = () => {
-        const mobileMenu = document.querySelector(".mobile-menu");
-        const btnOpenMenu = document.querySelector(".open-menu");
-        const btnCloseMenu = document.querySelector(".btn-close-menu");
+const Menu = () => {
+    const mobileMenu = document.querySelector(".mobile-menu");
+    const btnOpenMenu = document.querySelector(".open-menu");
+    const btnCloseMenu = document.querySelector(".btn-close-menu");
 
-        const toggleMenu = (isVisible) => {
-            mobileMenu.style.display = isVisible ? "block" : "none";
-        };
-
-        btnOpenMenu.addEventListener("click", () => toggleMenu(true));
-        btnCloseMenu.addEventListener("click", () => toggleMenu(false));
-
-        mobileMenu.addEventListener("click", (e) => {
-            if (e.target === mobileMenu) {
-                toggleMenu(false);
-            }
-        });
+    const toggleMenu = (isVisible) => {
+        mobileMenu.style.display = isVisible ? "block" : "none";
     };
 
-    Menu();
-});
+    btnOpenMenu.addEventListener("click", () => toggleMenu(true));
+    btnCloseMenu.addEventListener("click", () => toggleMenu(false));
+
+    mobileMenu.addEventListener("click", (e) => {
+        if (e.target === mobileMenu) {
+            toggleMenu(false);
+        }
+    });
+};
+
+Menu();
 
 
 // activeMenu.js
-document.addEventListener("DOMContentLoaded", () => {
-    const navLinks = document.querySelectorAll('.nav-list'); 
-    const currentUrl = window.location.pathname;
+const navLinks = document.querySelectorAll('.nav-list'); 
+const currentUrl = window.location.pathname;
 
-    navLinks.forEach(link => {
-        const linkHref = link.getAttribute('href'); 
-        if (currentUrl.endsWith(linkHref)) {
-            link.classList.add('active'); 
-        } 
-        else {
-            link.classList.remove('active'); 
-        }
-    });
+navLinks.forEach(link => {
+    const linkHref = link.getAttribute('href'); 
+    if (currentUrl.endsWith(linkHref)) {
+        link.classList.add('active'); 
+    } 
+    else {
+        link.classList.remove('active'); 
+    }
 });
 
 i18next.init({
@@ -251,6 +247,7 @@ function updateContent() {
 }
 
 const savedLanguage = localStorage.getItem("language") || "kh";
+console.log('saved language from storage: ',savedLanguage)
 const savedIcon = localStorage.getItem("icon") || "static/assets/icons/kh.svg"; 
 
 const icon = document.querySelector('.toggle-language img');

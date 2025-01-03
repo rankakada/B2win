@@ -130,55 +130,101 @@ const bannerData = [
     },
 ];
 
-document.addEventListener("DOMContentLoaded", () => {
-    const bannerWrapper = document.querySelector('.banner-wrapper');
-    const renderBanners = (banners) => {
-        banners.forEach(banner => {
-            const bannerCard = document.createElement('div');
-            bannerCard.className = 'swiper-slide banner-card';
-            bannerCard.innerHTML = `<img src="${banner.img}" alt="banner">`;
-            bannerWrapper.appendChild(bannerCard);
-        });
-    };
-
-    // Populate promotions
-    renderBanners(bannerData);
-    console.table(bannerData);
-
-    // Banner Swiper
-    new Swiper(".bannerSwiper", {
-        slidesPerView: 1,
-        spaceBetween: 16,
-        loop: false,
-        autoplay: {
-            delay: 5000,
-        },
+const bannerWrapper = document.querySelector('.banner-wrapper');
+const renderBanners = (banners) => {
+    banners.forEach(banner => {
+        const bannerCard = document.createElement('div');
+        bannerCard.className = 'swiper-slide banner-card';
+        bannerCard.innerHTML = `<img src="${banner.img}" alt="banner">`;
+        bannerWrapper.appendChild(bannerCard);
     });
+};
+
+// Populate promotions
+renderBanners(bannerData);
+console.table(bannerData);
+
+// Banner Swiper
+new Swiper(".bannerSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 16,
+    loop: false,
+    autoplay: {
+        delay: 5000,
+    },
 });
 
-document.addEventListener("DOMContentLoaded", () => {
-    const newsContainer = document.querySelector('.news-container');
+const newsContainer = document.querySelector('.news-container');
 
-    const renderNewsList = () => {
-        const urlSearchParams = new URLSearchParams(window.location.search);
-        urlSearchParams.delete("id");
-        history.replaceState(null, "", `?${urlSearchParams.toString()}`);
-        // Sort the news by date (latest first)
-        const sortedNewsData = [...newsData].sort((a, b) => new Date(b.date) - new Date(a.date));
+const renderNewsList = () => {
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    urlSearchParams.delete("id");
+    history.replaceState(null, "", `?${urlSearchParams.toString()}`);
+    // Sort the news by date (latest first)
+    const sortedNewsData = [...newsData].sort((a, b) => new Date(b.date) - new Date(a.date));
 
 
-        newsContainer.innerHTML = `
-            <div class="news-list-container">
-                ${sortedNewsData.map((news) => `    
-                    <div class="news-wrapper">
-                        <div onclick="viewNewsArticle(${news.id})">
-                            <div class="news-image">
-                                <img src="${news.img}" alt="${news.title}">
+    newsContainer.innerHTML = `
+        <div class="news-list-container">
+            ${sortedNewsData.map((news) => `    
+                <div class="news-wrapper">
+                    <div onclick="viewNewsArticle(${news.id})">
+                        <div class="news-image">
+                            <img src="${news.img}" alt="${news.title}">
+                        </div>
+                        <div class="title-wrapper">
+                            <p class="news-title">${news.title}</p>
+                            <div class="date-wrapper">
+                                <img src="static/assets/icons/calendar.svg" alt="date" class="calendar-icon">
+                                <span class="news-date"> 
+                                    ${new Date(news.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })} 
+                                    ${new Date(news.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}
+                                </span>
                             </div>
-                            <div class="title-wrapper">
-                                <p class="news-title">${news.title}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join("")}
+        </div>
+    `;
+};
+
+const renderNews = (news) => {
+    newsContainer.innerHTML = `
+        <div class="news-detail-container">
+            <div class="main-news-wrapper">
+                <div class="news-title big-title">${news.title}</div>
+                <div class="news-content-wrapper">
+                    <div class="news-image">
+                        <img src="${news.img}" alt="news">
+                    </div>
+                    <div class="right-content">
+                        <div class="date-wrapper">
+                            <div class="calendar-icon"><img src="static/assets/icons/calendar.svg" alt="calendar-icon"></div>
+                            <span class="news-date"> 
+                                ${new Date(news.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })} 
+                                ${new Date(news.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}
+                            </span>
+                        </div>
+                        <div class="news-title small-title">${news.title}</div>
+                    </div>
+                </div>
+                <div class="news-description">
+                    ${news.description}
+                </div>
+            </div>
+            <div class="latest-news-wrapper">
+                <span class="title">អត្ថបទចុងក្រោយ</span>
+                <div class="latest-news-item-wrapper">
+                    ${newsData
+                        .slice(-5)
+                        .map((latestNews) => `
+                        <div onclick="viewNewsArticle(${latestNews.id})" class="news-items">
+                            <img src="${latestNews.img}" alt="${latestNews.title}">
+                            <div>
+                                <p>${latestNews.title.slice(0, 25)}...</p>
                                 <div class="date-wrapper">
-                                    <img src="static/assets/icons/calendar.svg" alt="date" class="calendar-icon">
+                                    <div class="calendar-icon"><img src="static/assets/icons/calendar.svg" alt="calendar-icon"></div>
                                     <span class="news-date"> 
                                         ${new Date(news.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })} 
                                         ${new Date(news.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}
@@ -186,87 +232,37 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                `).join("")}
-            </div>
-        `;
-    };
-
-    const renderNews = (news) => {
-        newsContainer.innerHTML = `
-            <div class="news-detail-container">
-                <div class="main-news-wrapper">
-                    <div class="news-title big-title">${news.title}</div>
-                    <div class="news-content-wrapper">
-                        <div class="news-image">
-                            <img src="${news.img}" alt="news">
-                        </div>
-                        <div class="right-content">
-                            <div class="date-wrapper">
-                                <div class="calendar-icon"><img src="static/assets/icons/calendar.svg" alt="calendar-icon"></div>
-                                <span class="news-date"> 
-                                    ${new Date(news.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })} 
-                                    ${new Date(news.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}
-                                </span>
-                            </div>
-                            <div class="news-title small-title">${news.title}</div>
-                        </div>
-                    </div>
-                    <div class="news-description">
-                        ${news.description}
-                    </div>
-                </div>
-                <div class="latest-news-wrapper">
-                    <span class="title">អត្ថបទចុងក្រោយ</span>
-                    <div class="latest-news-item-wrapper">
-                        ${newsData
-                            .slice(-5)
-                            .map((latestNews) => `
-                            <div onclick="viewNewsArticle(${latestNews.id})" class="news-items">
-                                <img src="${latestNews.img}" alt="${latestNews.title}">
-                                <div>
-                                    <p>${latestNews.title.slice(0, 25)}...</p>
-                                    <div class="date-wrapper">
-                                        <div class="calendar-icon"><img src="static/assets/icons/calendar.svg" alt="calendar-icon"></div>
-                                       <span class="news-date"> 
-                                            ${new Date(news.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })} 
-                                            ${new Date(news.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}
-                                        </span>
-                                    </div>
-                                </div>
-                            </div>
-                        `).join("")}
-                    </div>
+                    `).join("")}
                 </div>
             </div>
-        `;
-    };
+        </div>
+    `;
+};
 
-    window.viewNewsArticle = (id) => {
+window.viewNewsArticle = (id) => {
+    const article = newsData.find((item) => item.id === id);
+    if (article) {
+        history.pushState(null, "", `?id=${id}`);
+        renderNews(article);
+    }
+};
+
+const initializeNews = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = parseInt(urlParams.get("id"), 10);
+
+    if (id) {
         const article = newsData.find((item) => item.id === id);
         if (article) {
-            history.pushState(null, "", `?id=${id}`);
             renderNews(article);
+            return;
         }
-    };
+    }
+    renderNewsList();
+};
 
-    const initializeNews = () => {
-        const urlParams = new URLSearchParams(window.location.search);
-        const id = parseInt(urlParams.get("id"), 10);
+// Initialize the page on load
+initializeNews();
 
-        if (id) {
-            const article = newsData.find((item) => item.id === id);
-            if (article) {
-                renderNews(article);
-                return;
-            }
-        }
-        renderNewsList();
-    };
-
-    // Initialize the page on load
-    initializeNews();
-
-    // Handle browser back/forward navigation
-    window.onpopstate = initializeNews;
-});
+// Handle browser back/forward navigation
+window.onpopstate = initializeNews;
