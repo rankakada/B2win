@@ -626,26 +626,31 @@ body::before {
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
     z-index: 100;
-    display: none;
+    /* display: none; */
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .welcome-modal .welcome-modal-content {
     position: relative;
-    height: 100%;
-    padding: 1rem;
+    width: 700px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
 .welcome-modal .welcome-modal-content img {
-    height: 100%;
+    width: 100%;
+    height: auto;
 }
 
 .btn-close-welcomeModal {
     position: absolute;
-    top: 50px;
-    right: 50px;
+    top: 40px;
+    right: 40px;
     width: 36px;
     height: 36px;
     background: var(--yellow-color);
@@ -740,6 +745,7 @@ body::before {
     .header .nav .hamburger {
         display: block;
     }
+
     .footer .footer-container .footer-right .text{
         display: none;
     }
@@ -763,11 +769,6 @@ body::before {
     .main .contents .box-container .game-container {
         grid-template-columns: repeat(3, 1fr);
     }
-
-    .welcome-modal .welcome-modal-content {
-        height: 90%;
-    }
-
 }
 
 @media screen and (max-width : 767px) {
@@ -804,6 +805,18 @@ body::before {
         padding: 1rem;
     }
 
+    .welcome-modal .welcome-modal-content {
+        width: 100%;
+        padding: 2rem;
+    }
+    .btn-close-welcomeModal {
+        top: 70px;
+        right: 70px;
+        width: 32px;
+        height: 32px;
+        font-size: 28px;
+    }
+
     .footer .footer-container {
         width: 100%;
         padding: 0 20px;
@@ -838,6 +851,14 @@ body::before {
     .main .contents .box-container .game-container {
         grid-template-columns: repeat(3, 1fr);
     }
+
+    .btn-close-welcomeModal {
+        top: 50px;
+        right: 50px;
+        width: 24px;
+        height: 24px;
+        font-size: 16px;
+    }
 }
 
 @media screen and (max-width: 424px) {
@@ -851,6 +872,14 @@ body::before {
     
     .header .nav .nav-right{
         gap: 3px;
+    }
+
+    .btn-close-welcomeModal {
+        top: 45px;
+        right: 45px;
+        width: 18px;
+        height: 18px;
+        font-size: 14px;
     }
 
     .footer {
