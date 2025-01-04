@@ -1,3 +1,4 @@
+// Snowflake handler
 document.addEventListener('DOMContentLoaded', () => {
     const numberOfSnowflakes = 100;
     const maxSnowflakesSize = 5;
@@ -91,6 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
     animate();
 });
 
+// Mobile menu handler
 const Menu = () => {
     const mobileMenu = document.querySelector(".mobile-menu");
     const btnOpenMenu = document.querySelector(".open-menu");
@@ -113,7 +115,7 @@ const Menu = () => {
 Menu();
 
 
-// activeMenu.js
+// active menu
 const navLinks = document.querySelectorAll('.nav-list'); 
 const currentUrl = window.location.pathname;
 
@@ -127,6 +129,7 @@ navLinks.forEach(link => {
     }
 });
 
+// translation handler
 i18next.init({
     lng: 'kh', // Default language
     resources: {
@@ -234,6 +237,7 @@ i18next.init({
     updateContent();
 });
 
+// update content handler
 function updateContent() {
     document.querySelectorAll('[data-i18n]').forEach(function(element) {
         const key = element.getAttribute('data-i18n');
@@ -245,16 +249,18 @@ function updateContent() {
         element.setAttribute('placeholder', i18next.t(key)); // Translate the placeholder
     });
 }
-
+// using localStorage to save language and icons
 const savedLanguage = localStorage.getItem("language") || "kh";
-console.log('saved language from storage: ',savedLanguage)
 const savedIcon = localStorage.getItem("icon") || "static/assets/icons/kh.svg"; 
-
 const icon = document.querySelector('.toggle-language img');
 icon.src = savedIcon;
+console.log('saved language from storage: ',savedLanguage)
+console.log('saved icons from storage: ',savedIcon)
+
+// change language handle
 i18next.changeLanguage(savedLanguage, updateContent);
 
-// Save the selected language
+// toggle language handler
 document.querySelector(".toggle-language").addEventListener("click", () => {
     const currentLanguage = i18next.language === "kh" ? "en" : "kh";
     const icon = document.querySelector('.toggle-language img');

@@ -1,3 +1,4 @@
+// initial home page data
 const data = {
     message : "សូមស្វាគមន៍មកកាន់ B2Win វេបសាយទំនុកចិត្តបំផុត មានហ្គេមសម្បូរបែប ផ្ដល់ជូនបងប្អូននូវ សេវាកម្មដកដាក់ប្រាក់រហ័ស ប្រម៉ូសិនការផ្ដល់ជូនច្រើនសន្ធឹកសន្ធាប់ ឈ្នះច្រើនដកច្រើនគ្មានដែនកំណត់ សុវត្ថិភាពបំផុតជាងគេ!" ,
   
@@ -130,27 +131,33 @@ const data = {
     ],
 };
 
+// Welcome modal
+
 const welcomeModal = document.querySelector('.welcome-modal');
 const btnCloseWelcomeModal = document.querySelector('.btn-close-welcomeModal');
 const REAPPEAR_TIME = 1 * 60 * 60 * 1000; // 1h
 const lastShownTime = localStorage.getItem("lastModalShown");
 const currentTime = new Date().getTime();
 
+// Load modal
 if (!lastShownTime || currentTime - lastShownTime > REAPPEAR_TIME) {
     welcomeModal.style.display = "flex";
     localStorage.setItem("lastModalShown", currentTime);
 }
 
+//Button for Closing modal 
 btnCloseWelcomeModal.addEventListener('click', () => {
     welcomeModal.style.display = 'none';
 });
 
+// Close modal when click outside of conntent
 welcomeModal.addEventListener('click', (e) => {
     if (e.target === welcomeModal) {
     welcomeModal.style.display = 'none';
     }
 });
 
+// inititial variables
 const messageMarquee = document.querySelector('.message');
 const desktopBannerWrapper = document.querySelector('.desktop-banner-wrapper');
 const mobileBannerWrapper = document.querySelector('.mobile-banner-wrapper');
@@ -161,7 +168,7 @@ const promotionWrapper = document.querySelector('.promotion-wrapper');
 const promotionModal = document.querySelector('.promotion-modal');
 const btnCloseModal = document.querySelectorAll('.close-modal');
 
-// Message
+//Render Message
 messageMarquee.textContent = data.message;
 
 // Function to create slides
@@ -176,13 +183,13 @@ const createBannerSlides = (banners, wrapper) => {
     });
 };
 
-// Populate desktop and mobile banners
+// Render desktop and mobile banners
 createBannerSlides(data.desktopBanners, desktopBannerWrapper);
 createBannerSlides(data.mobileBanners, mobileBannerWrapper);
 console.table(data.desktopBanners);
 console.table(data.mobileBanners);
 
-// Games
+// Render Games
 const renderGames = (games) => {
     games.forEach((game) => {
         const gameCard = document.createElement('div');
@@ -192,11 +199,10 @@ const renderGames = (games) => {
     });
 };
 
-// Populate games
 renderGames(data.games);
 console.table(data.games);
 
-// Matches
+//Render Matches
 const renderMatches = (matches) => {
     matches.forEach(match => {
         const matchCard = document.createElement('div');
@@ -223,11 +229,10 @@ const renderMatches = (matches) => {
     });
 };
 
-// Populate matches
 renderMatches(data.matches);
 console.log(data.matches);
 
-// Promotions
+//Render Promotions
 const renderPromotions = (promotions) => {
     promotions.forEach(promotion => {
         const promotionCard = document.createElement('div');
@@ -249,16 +254,15 @@ const renderPromotions = (promotions) => {
     });
 };
 
-// Populate promotions
 renderPromotions(data.promotions);
 console.table(data.promotions);
 
-// Function to toggle modal visibility
+// toggle modal visibility
 const toggleModal = (isVisible) => {
     promotionModal.style.display = isVisible ? "block" : "none";
 };
 
-// Function to popup modal
+//Promotion Popup modal
 const popupModal = (card) => {
     const promotionId = document.querySelector('.promotion-id');
     const promotionImage = document.querySelector('.promotion-image');
@@ -287,6 +291,7 @@ promotionModal.addEventListener("click", (e) => {
     }
 });
 
+// Swiper Handler
 document.addEventListener("DOMContentLoaded", () => {
     // Banner Swiper
     new Swiper(".bannerSwiper", {

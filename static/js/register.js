@@ -67,16 +67,19 @@ const validateInputs = () => {
     const numberRegex = /^\d/;
     const cambodianPhoneRegex = /^(?:\+855[1-9]\d{7,8}|0[1-9]\d{7,8})$/;
 
+    // Set error messages
     const setError = (element, errorMsgKey, errorContainer) => {
         element.classList.add("error");
         errorContainer.innerHTML = i18next.t(errorMsgKey);
     };
 
+    // Clear error messages
     const clearError = (element, errorContainer) => {
         element.classList.remove("error");
         errorContainer.innerHTML = "";
     };
 
+    // check valid value
     let isValid = true;
 
     // Username Validation
@@ -122,7 +125,6 @@ const validateInputs = () => {
     }
 
     // Phone number Validation
-
     if(phoneNumberValue === "") {
         setError(phoneNumber, "phoneNumberEmpty" , phoneErrorMsg);
         isValid = false;
@@ -145,6 +147,7 @@ const validateInputs = () => {
     
     // Register Logic
     if (isValid) {
+        // affiliate validation 
         if(affiliateValue !== affiliateId && affiliateValue !== "") {
             registerStatus.innerHTML = i18next.t("affiliateInvalid");
             registerStatus.className = i18next.t("registerError");
@@ -153,6 +156,7 @@ const validateInputs = () => {
             console.log("The affiliate is incorrect.");
             console.log("Register failed.")
         }
+        // virify code validation 
         else if (codeValue === "" || codeValue!== randomCodeValue) {
             registerStatus.innerHTML = i18next.t("codeInvalid");
             registerStatus.className = i18next.t("registerError");
@@ -160,6 +164,7 @@ const validateInputs = () => {
             console.log("The verify code is incorrect.");
             console.log("Register failed.")
         }
+        // register success message
         else {
             registerStatus.innerHTML = i18next.t("registerSuccess");
             registerStatus.className = "registerSuccess";

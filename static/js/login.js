@@ -1,3 +1,4 @@
+// initial variables
 const username = document.querySelector(".username");
 const password = document.querySelector(".password");
 const togglePassword = document.querySelector(".eye");
@@ -7,6 +8,7 @@ const loginStatus = document.getElementById("loginStatus");
 const userErrorMsg = document.getElementById("userErrorMsg");
 const passErrorMsg = document.getElementById("passErrorMsg");
 
+// Local user for test login
 const userStore = { username: "TEST123", password: "123123" };
 
 // Password visibility toggle
@@ -21,28 +23,32 @@ username.addEventListener("input", () => {
     username.value = username.value.toUpperCase();
 });
 
-// Validate and handle form submission
+// Validate and handle form submit
 loginForm.onsubmit = (e) => {
     e.preventDefault();
     validateInputs();
 };
 
+//  Input validations 
 const validateInputs = () => {
     let usernameValue = username.value.trim();
     let passwordValue = password.value.trim();
     const textRegex = /^[A-Z0-9]+$/;
     const numberRegex = /^\d/;
 
+    // Set error messages
     const setError = (element, errorMsgKey, errorContainer) => {
         element.classList.add("error");
         errorContainer.innerHTML = i18next.t(errorMsgKey);
     };
 
+    // Clear error messages
     const clearError = (element, errorContainer) => {
         element.classList.remove("error");
         errorContainer.innerHTML = "";
     };
 
+    // check valid value
     let isValid = true;
 
     // Username Validation
@@ -89,11 +95,14 @@ const validateInputs = () => {
 
     // Login Logic
     if (isValid) {
+        // check user password if valid login success
         if (usernameValue === userStore.username && passwordValue === userStore.password) {
             loginStatus.innerHTML = i18next.t("loginSuccess");
             loginStatus.className = "loginSuccess";
             loginForm.reset();
-        } else {
+        } 
+        // if invalid show error message
+        else {
             loginStatus.innerHTML = i18next.t("loginError");
             loginStatus.className = "loginError";
         }

@@ -1,3 +1,4 @@
+// initial news data
 const newsData = [
     {
         id: 1,
@@ -119,6 +120,7 @@ const newsData = [
     
 ];
 
+// initial banner data
 const bannerData = [
     {
         id: 1,
@@ -130,6 +132,7 @@ const bannerData = [
     },
 ];
 
+// Render banner slide
 document.addEventListener("DOMContentLoaded", () => {
     const bannerWrapper = document.querySelector('.banner-wrapper');
     const renderBanners = (banners) => {
@@ -141,7 +144,6 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     };
 
-    // Populate promotions
     renderBanners(bannerData);
     console.table(bannerData);
 
@@ -156,15 +158,15 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// get element class news container 
 const newsContainer = document.querySelector('.news-container');
-
+// Render news list
 const renderNewsList = () => {
     const urlSearchParams = new URLSearchParams(window.location.search);
     urlSearchParams.delete("id");
     history.replaceState(null, "", `?${urlSearchParams.toString()}`);
     // Sort the news by date (latest first)
     const sortedNewsData = [...newsData].sort((a, b) => new Date(b.date) - new Date(a.date));
-
 
     newsContainer.innerHTML = `
         <div class="news-list-container">
@@ -191,6 +193,7 @@ const renderNewsList = () => {
     `;
 };
 
+// Render news and latest news
 const renderNews = (news) => {
     newsContainer.innerHTML = `
         <div class="news-detail-container">
@@ -241,6 +244,7 @@ const renderNews = (news) => {
     `;
 };
 
+// view news article handler
 window.viewNewsArticle = (id) => {
     const article = newsData.find((item) => item.id === id);
     if (article) {
@@ -249,6 +253,7 @@ window.viewNewsArticle = (id) => {
     }
 };
 
+// intial news page
 const initializeNews = () => {
     const urlParams = new URLSearchParams(window.location.search);
     const id = parseInt(urlParams.get("id"), 10);
@@ -263,7 +268,6 @@ const initializeNews = () => {
     renderNewsList();
 };
 
-// Initialize the page on load
 initializeNews();
 
 // Handle browser back/forward navigation
