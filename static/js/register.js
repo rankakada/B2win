@@ -29,19 +29,29 @@ username.addEventListener("input", () => {
     username.value = username.value.toUpperCase();
 });
     
-// function getQueryParam(param) {
-//     const urlParams = new URLSearchParams(window.location.search);
-//     return urlParams.get(param);
-// }
+function getQueryParam(param) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(param);
+}
 
-// // Retrieve 'fid' from the URL
-// const affiliateId = getQueryParam("fid");
-// if (affiliateId) {
-//     const affiliateInput = document.getElementById("affiliate");
-//     if (affiliateInput) {
-//         affiliateInput.value = affiliateId;
-//     }
-// }
+// const user = {
+//     "id" : 1,
+//     "username":"Rong",
+//     "password": "123123",
+//     "isRememberMe": true
+// };
+
+// console.log(user);
+
+
+// Retrieve 'fid' from the URL
+const affiliateId = getQueryParam("fid");
+if (affiliateId) {
+    const affiliateInput = document.getElementById("affiliate");
+    if (affiliateInput) {
+        affiliateInput.value = affiliateId;
+    }
+}
 
 // From validation
 registerForm.onsubmit = (e) => {

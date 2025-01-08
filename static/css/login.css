@@ -353,18 +353,6 @@ body::before {
     gap: 5px;
 }
 
-.main .contents .container .box-wrapper .login-box .form-login .loginError {
-    background: var(--bg-linear);
-    color: red;
-    text-align: center;
-    vertical-align: middle;
-    border-radius: 5px;
-    font-weight: 600;
-    font-size: 18px;
-    margin-top: 1rem;
-    padding: 4px 0;
-}
-
 .main .contents .container .box-wrapper .login-box .form-login .input-control {
     display: flex;
     flex-direction: column;

@@ -103,24 +103,33 @@ const validateInputs = () => {
         clearError(password, passErrorMsg);
     }
 
-    // Login Logic
-    if (isValid) {
-        // check user password if valid login success
-        if (usernameValue === userStore.username && passwordValue === userStore.password) {
-            loginForm.reset();
-            console.table(`username : ${usernameValue}\npassword : ${passwordValue}`);
-        } 
-        // if invalid show error message
-        else {
-            loginStatus.setAttribute("data-i18n", "loginError");
-            loginStatus.innerHTML = i18next.t("loginError");
-            loginStatus.className = "loginError";
-        }
-    } else {
-        loginStatus.innerHTML = "";
+    // Checkbox
+    const isRemember = rememberMe.checked;
+
+    const user = {
+        id: 1,
+        username: `${usernameValue}`,
+        password: `${passwordValue}`,
+        isRemember: `${isRemember}`,
     }
 
-    // Checkbox
-    const isChecked = rememberMe.checked;
-    console.log(`Remember Me: ${isChecked}`); 
+    // Login Logic
+    if (isValid) {
+        if (usernameValue !== userStore.username && passwordValue !== userStore.password) {
+            setError(username, "incorrectUsername", userErrorMsg);
+            setError(password, "incorrectPassword", passErrorMsg);
+            console.log(user);
+        }
+        else if (usernameValue !== userStore.username) {
+            setError(username, "incorrectUsername", userErrorMsg);
+        }
+        else if (passwordValue !== userStore.password) {
+            setError(password, "incorrectPassword", passErrorMsg);
+            console.log(user);
+        }
+        else {
+            loginForm.reset();
+            console.log(user);
+        }
+    }
 };

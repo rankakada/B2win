@@ -421,7 +421,7 @@ body::before {
     width: 60%;
 }
 
-.main .contents .container .box-wrapper .register-box .form-register .input-control .code-control .code-random {
+.main .contents .container .box-wrapper .register-box .form-register .input-control .code-control .code-random:disabled {
     background: var(--white-color) !important;
     color: var(--black-color);
     width: 40%;

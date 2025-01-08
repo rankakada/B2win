@@ -177,8 +177,9 @@ i18next.init({
                 affiliateInvalid: "ឈ្មោះអ្នកណែនាំមិនត្រឹមត្រូវ",
                 codeEmpty: "សូមបំពេញលេខកូដសម្ងាត់",
                 codeInvalid: "លេខកូដសម្ងាត់មិនត្រឹមត្រូវ",
-                registerSuccess: "ការបង្កើតគណនីទទួលបានជោគជ័យ",
-                loginError: "ឈ្មោះអ្នកប្រើប្រាស់ ឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ"
+                incorrectUsername: "ឈ្មោះអ្នកប្រើប្រាស់មិនត្រឹមត្រូវ!",
+                incorrectPassword: "ពាក្យសម្ងាត់មិនត្រឹមត្រូវ!",
+                registerSuccess: "ការបង្កើតគណនីទទួលបានជោគជ័យ!",
             }
         },
         en: {
@@ -225,8 +226,9 @@ i18next.init({
                 affiliateInvalid: "The affiliate is incorrect!",
                 codeEmpty: "Please enter the verify code",
                 codeInvalid: "The verify code is incorrect!",
+                incorrectUsername: "Username is incorrect!",
+                incorrectPassword: "Password is incorrect!",            
                 registerSuccess: "Account creation was successful!",
-                loginError: "Invalid username or password!"
             }
         }
     }
@@ -274,23 +276,4 @@ document.querySelector(".toggle-language").addEventListener("click", () => {
     localStorage.setItem("icon", iconPath);
     icon.src = iconPath;
 
-});
-
-document.addEventListener("DOMContentLoaded", () => {
-    function getQueryParam(param) {
-        const urlParams = new URLSearchParams(window.location.search);
-        return urlParams.get(param);
-    }
-
-    const affiliateId = getQueryParam("fid");
-    if (affiliateId) {
-        const affiliateInput = document.getElementById("affiliate");
-        if (affiliateInput) {
-            affiliateInput.value = affiliateId;
-        } else {
-            console.log("Affiliate input field not found on the page.");
-        }
-    } else {
-        console.log("No 'fid' parameter found in the URL.");
-    }
 });
