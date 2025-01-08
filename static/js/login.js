@@ -39,14 +39,32 @@ const validateInputs = () => {
     // Set error messages
     const setError = (element, errorMsgKey, errorContainer) => {
         element.classList.add("error");
+        errorContainer.setAttribute('data-i18n-error', errorMsgKey);
         errorContainer.innerHTML = i18next.t(errorMsgKey);
     };
 
     // Clear error messages
     const clearError = (element, errorContainer) => {
         element.classList.remove("error");
+        errorContainer.removeAttribute('data-i18n-error'); 
         errorContainer.innerHTML = "";
     };
+
+    // Re-translate error messages on language change
+    i18next.on('languageChanged', () => {
+        document.querySelectorAll("[data-i18n]").forEach((element) => {
+            const i18nKey = element.getAttribute("data-i18n");
+            if (i18nKey) {
+                element.innerHTML = i18next.t(i18nKey);
+            }
+        });
+        document.querySelectorAll('[data-i18n-error]').forEach((element) => {
+            const errorKey = element.getAttribute('data-i18n-error');
+            if (errorKey) {
+                element.innerHTML = i18next.t(errorKey);
+            }
+        });
+    });
 
     // check valid value
     let isValid = true;
@@ -55,25 +73,20 @@ const validateInputs = () => {
     if (usernameValue === "") {
         setError(username, "usernameEmpty", userErrorMsg);
         isValid = false;
-        console.log("Please enter your username.");
     } else if (usernameValue.length < 6) {
         setError(username, "usernameMin", userErrorMsg);
         isValid = false;
-        console.log("The username must contain at least 6 characters.");
     } else if (usernameValue.length > 16) {
         setError(username, "usernameMax", userErrorMsg);
         isValid = false;
-        console.log("The username must contain a maximum of 16 characters.")
     } else if (!textRegex.test(usernameValue)) {
         setError(username, "usernameInvalid", userErrorMsg);
         isValid = false;
     } else if (numberRegex.test(usernameValue)) {
         setError(username, "usernameStartsWithNumber", userErrorMsg);
         isValid = false;
-        console.log("The username must contain only letters and numbers.");
     } else {
         clearError(username, userErrorMsg);
-        console.log("The username is valid.")
     }
 
     // Password Validation
@@ -83,30 +96,31 @@ const validateInputs = () => {
     } else if (passwordValue.length < 6) {
         setError(password, "passwordMin", passErrorMsg);
         isValid = false;
-        console.log("The password must contain at least 6 characters.");
     } else if (passwordValue.length > 16) {
         setError(password, "passwordMax", passErrorMsg);
         isValid = false;
-        console.log("The password must contain a maximum of 16 characters.");
     } else {
         clearError(password, passErrorMsg);
-        console.log("The password is valid");
     }
 
     // Login Logic
     if (isValid) {
         // check user password if valid login success
         if (usernameValue === userStore.username && passwordValue === userStore.password) {
-            loginStatus.innerHTML = i18next.t("loginSuccess");
-            loginStatus.className = "loginSuccess";
             loginForm.reset();
+            console.table(`username : ${usernameValue}\npassword : ${passwordValue}`);
         } 
         // if invalid show error message
         else {
+            loginStatus.setAttribute("data-i18n", "loginError");
             loginStatus.innerHTML = i18next.t("loginError");
             loginStatus.className = "loginError";
         }
     } else {
         loginStatus.innerHTML = "";
     }
+
+    // Checkbox
+    const isChecked = rememberMe.checked;
+    console.log(`Remember Me: ${isChecked}`); 
 };

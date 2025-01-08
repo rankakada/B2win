@@ -117,6 +117,45 @@ const newsData = [
         
         គិត​ត្រឹម​ពេល​នេះ​គេ​បាន​ចូល​លេង​ឲ្យ​ក្រុម​ Barcelona ​បាន​ចំនួន​៥៤​ប្រកួត​ហើយ​ និង​រក​បាន​១០​គ្រាប់​​ថែម​ទៀ​ត​ផង​។ ចំណែក​ជា​មួយ​ជម្រើស​ជាតិ​​វិញ​គេ​បាន​ចូល​លេង​បាន​​១៧​ប្រកួត ពោល​ក៏​រក​បា​ន​៣​គ្រាប់​ផង​ដែរ​​៕`,
     },
+    {
+        id: 10,
+        img: "static/assets/images/news/news1.png",
+        title: "Lamine Yamal ចង់​ឈ្នះ​​​ពាន​១​ក្នុង​ចំណោម​ពីរ​នេះ​ឲ្យ​បាន​សិន​មុន​ឈាន​ដល់ Ballon d'Or",
+        date: "2025-01-01",
+        url: "newsDetail.html",
+        description: `«​មុន​ពេល​ខ្ញុំ​អាច​ឈ្នះ​ពាន Ballon d'Or ខ្ញុំ​ចង់​ឈ្នះ​ពាន​ Champions League ជាមួយ Barcelona ឬ​ក៏​ឈ្នះ​​ពាន World Cup ជាមួយ​ប្រទេស​អេស្ប៉ាញ​របស់​ខ្ញុំ​ឲ្យ​បាន​១​សិន​»។
+        នេះ​ជា​សម្ដី​របស់​ Lamine Yamal ប្រាប់​ទៅ​កាន់​កាសែត​ Marca ។
+        
+        Yamal គឺ​ជា​យុវជន​​ម្នាក់​ដែល​មាន​ភាព​លេចធ្លោ​ខ្លាំង​ក្រោយ​​​ពេល​​រូប​គេ​​បង្ហាញ​សមត្ថភាព​ដ៏​អស្ចារ្យ​ក្នុង​ព្រឹត្តិការណ៍ UERO 2024 ហើយ​បាន​ជួយ​អេស្ប៉ាញ​លើក​ពាន​​ធំ​ប្រាំ​ទ្វីប​​អឺរ៉ុប​មួយ​នេះ​។ មិន​ត្រឹម​ប៉ុណ្ណោះ​ពេល​នេះ​គេ​ជា​កម្លាំង​ស្នូល​មួយ​ដ៏​សំខាន់​របស់ Barcelona ក្នុង​ការ​ជួយ​ក្រុម​ឲ្យ​យក​ឈ្នះ​ទៅ​លើ​ក្រុម​ធំ​ៗ​ជា​ច្រើន​នៅ​អឺរ៉ុប​ដូច​ជា​ការ​យក​ឈ្នះ Real Madrid និង Bayern Munich ជា​​​ដើម​។
+        
+        គិត​ត្រឹម​ពេល​នេះ​គេ​បាន​ចូល​លេង​ឲ្យ​ក្រុម​ Barcelona ​បាន​ចំនួន​៥៤​ប្រកួត​ហើយ​ និង​រក​បាន​១០​គ្រាប់​​ថែម​ទៀ​ត​ផង​។ ចំណែក​ជា​មួយ​ជម្រើស​ជាតិ​​វិញ​គេ​បាន​ចូល​លេង​បាន​​១៧​ប្រកួត ពោល​ក៏​រក​បា​ន​៣​គ្រាប់​ផង​ដែរ​​៕`,
+    },
+    {
+        id: 11,
+        img: "static/assets/images/news/news1.png",
+        title: "Lamine Yamal ចង់​ឈ្នះ​​​ពាន​១​ក្នុង​ចំណោម​ពីរ​នេះ​ឲ្យ​បាន​សិន​មុន​ឈាន​ដល់ Ballon d'Or",
+        date: "2025-01-01",
+        url: "newsDetail.html",
+        description: `«​មុន​ពេល​ខ្ញុំ​អាច​ឈ្នះ​ពាន Ballon d'Or ខ្ញុំ​ចង់​ឈ្នះ​ពាន​ Champions League ជាមួយ Barcelona ឬ​ក៏​ឈ្នះ​​ពាន World Cup ជាមួយ​ប្រទេស​អេស្ប៉ាញ​របស់​ខ្ញុំ​ឲ្យ​បាន​១​សិន​»។
+        នេះ​ជា​សម្ដី​របស់​ Lamine Yamal ប្រាប់​ទៅ​កាន់​កាសែត​ Marca ។
+        
+        Yamal គឺ​ជា​យុវជន​​ម្នាក់​ដែល​មាន​ភាព​លេចធ្លោ​ខ្លាំង​ក្រោយ​​​ពេល​​រូប​គេ​​បង្ហាញ​សមត្ថភាព​ដ៏​អស្ចារ្យ​ក្នុង​ព្រឹត្តិការណ៍ UERO 2024 ហើយ​បាន​ជួយ​អេស្ប៉ាញ​លើក​ពាន​​ធំ​ប្រាំ​ទ្វីប​​អឺរ៉ុប​មួយ​នេះ​។ មិន​ត្រឹម​ប៉ុណ្ណោះ​ពេល​នេះ​គេ​ជា​កម្លាំង​ស្នូល​មួយ​ដ៏​សំខាន់​របស់ Barcelona ក្នុង​ការ​ជួយ​ក្រុម​ឲ្យ​យក​ឈ្នះ​ទៅ​លើ​ក្រុម​ធំ​ៗ​ជា​ច្រើន​នៅ​អឺរ៉ុប​ដូច​ជា​ការ​យក​ឈ្នះ Real Madrid និង Bayern Munich ជា​​​ដើម​។
+        
+        គិត​ត្រឹម​ពេល​នេះ​គេ​បាន​ចូល​លេង​ឲ្យ​ក្រុម​ Barcelona ​បាន​ចំនួន​៥៤​ប្រកួត​ហើយ​ និង​រក​បាន​១០​គ្រាប់​​ថែម​ទៀ​ត​ផង​។ ចំណែក​ជា​មួយ​ជម្រើស​ជាតិ​​វិញ​គេ​បាន​ចូល​លេង​បាន​​១៧​ប្រកួត ពោល​ក៏​រក​បា​ន​៣​គ្រាប់​ផង​ដែរ​​៕`,
+    },
+    {
+        id: 12,
+        img: "static/assets/images/news/news1.png",
+        title: "Lamine Yamal ចង់​ឈ្នះ​​​ពាន​១​ក្នុង​ចំណោម​ពីរ​នេះ​ឲ្យ​បាន​សិន​មុន​ឈាន​ដល់ Ballon d'Or",
+        date: "2025-01-01",
+        url: "newsDetail.html",
+        description: `«​មុន​ពេល​ខ្ញុំ​អាច​ឈ្នះ​ពាន Ballon d'Or ខ្ញុំ​ចង់​ឈ្នះ​ពាន​ Champions League ជាមួយ Barcelona ឬ​ក៏​ឈ្នះ​​ពាន World Cup ជាមួយ​ប្រទេស​អេស្ប៉ាញ​របស់​ខ្ញុំ​ឲ្យ​បាន​១​សិន​»។
+        នេះ​ជា​សម្ដី​របស់​ Lamine Yamal ប្រាប់​ទៅ​កាន់​កាសែត​ Marca ។
+        
+        Yamal គឺ​ជា​យុវជន​​ម្នាក់​ដែល​មាន​ភាព​លេចធ្លោ​ខ្លាំង​ក្រោយ​​​ពេល​​រូប​គេ​​បង្ហាញ​សមត្ថភាព​ដ៏​អស្ចារ្យ​ក្នុង​ព្រឹត្តិការណ៍ UERO 2024 ហើយ​បាន​ជួយ​អេស្ប៉ាញ​លើក​ពាន​​ធំ​ប្រាំ​ទ្វីប​​អឺរ៉ុប​មួយ​នេះ​។ មិន​ត្រឹម​ប៉ុណ្ណោះ​ពេល​នេះ​គេ​ជា​កម្លាំង​ស្នូល​មួយ​ដ៏​សំខាន់​របស់ Barcelona ក្នុង​ការ​ជួយ​ក្រុម​ឲ្យ​យក​ឈ្នះ​ទៅ​លើ​ក្រុម​ធំ​ៗ​ជា​ច្រើន​នៅ​អឺរ៉ុប​ដូច​ជា​ការ​យក​ឈ្នះ Real Madrid និង Bayern Munich ជា​​​ដើម​។
+        
+        គិត​ត្រឹម​ពេល​នេះ​គេ​បាន​ចូល​លេង​ឲ្យ​ក្រុម​ Barcelona ​បាន​ចំនួន​៥៤​ប្រកួត​ហើយ​ និង​រក​បាន​១០​គ្រាប់​​ថែម​ទៀ​ត​ផង​។ ចំណែក​ជា​មួយ​ជម្រើស​ជាតិ​​វិញ​គេ​បាន​ចូល​លេង​បាន​​១៧​ប្រកួត ពោល​ក៏​រក​បា​ន​៣​គ្រាប់​ផង​ដែរ​​៕`,
+    },
     
 ];
 
@@ -160,8 +199,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // get element class news container 
 const newsContainer = document.querySelector('.news-container');
+const itemsPerPage = 9;
+let currentPage = 1;
 // Render news list
-const renderNewsList = () => {
+const renderNewsList = (page) => {
+    const start = (page - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const currentNews = newsData.slice(start, end);
+
     const urlSearchParams = new URLSearchParams(window.location.search);
     urlSearchParams.delete("id");
     history.replaceState(null, "", `?${urlSearchParams.toString()}`);
@@ -192,6 +237,27 @@ const renderNewsList = () => {
         </div>
     `;
 };
+
+
+
+function renderPagination() {
+    const totalPages = Math.ceil(newsData.length / itemsPerPage);
+    const pagination = document.getElementById('pagination');
+    pagination.innerHTML = '';
+
+    for (let i = 1; i <= totalPages; i++) {
+        const button = document.createElement('button');
+        button.innerText = i;
+        button.className = i === currentPage ? 'active' : '';
+        button.onclick = () => {
+            currentPage = i;
+            renderNews(currentPage);
+            renderPagination();
+        };
+        pagination.appendChild(button);
+    }
+}
+
 
 // Render news and latest news
 const renderNews = (news) => {

@@ -78,7 +78,7 @@ const data = {
           name: "Crystal Palace",
           logo: "./static/assets/images/matches/CrystalPalace.png"
         },
-        league: "./Premier League",
+        league: "Premier League",
         date: "22 Dec 2024"
       },
       {
@@ -132,29 +132,23 @@ const data = {
 };
 
 // Welcome modal
-
 const welcomeModal = document.querySelector('.welcome-modal');
 const btnCloseWelcomeModal = document.querySelector('.btn-close-welcomeModal');
-const REAPPEAR_TIME = 1 * 60 * 60 * 1000; // 1h
-const lastShownTime = localStorage.getItem("lastModalShown");
+const expired_time = 1 * 60 * 60 * 1000;  // 1h
+// const expired_time = 10 * 1000;
+const lastShownTime = localStorage.getItem("welcomeModal");
 const currentTime = new Date().getTime();
 
 // Load modal
-if (!lastShownTime || currentTime - lastShownTime > REAPPEAR_TIME) {
+if (!lastShownTime || currentTime - lastShownTime > expired_time) {
     welcomeModal.style.display = "flex";
-    localStorage.setItem("lastModalShown", currentTime);
+    localStorage.removeItem("welcomeModal");
 }
 
 //Button for Closing modal 
 btnCloseWelcomeModal.addEventListener('click', () => {
     welcomeModal.style.display = 'none';
-});
-
-// Close modal when click outside of conntent
-welcomeModal.addEventListener('click', (e) => {
-    if (e.target === welcomeModal) {
-    welcomeModal.style.display = 'none';
-    }
+    localStorage.setItem("welcomeModal", currentTime);
 });
 
 // inititial variables
@@ -186,8 +180,6 @@ const createBannerSlides = (banners, wrapper) => {
 // Render desktop and mobile banners
 createBannerSlides(data.desktopBanners, desktopBannerWrapper);
 createBannerSlides(data.mobileBanners, mobileBannerWrapper);
-console.table(data.desktopBanners);
-console.table(data.mobileBanners);
 
 // Render Games
 const renderGames = (games) => {
@@ -200,7 +192,6 @@ const renderGames = (games) => {
 };
 
 renderGames(data.games);
-console.table(data.games);
 
 //Render Matches
 const renderMatches = (matches) => {
@@ -230,7 +221,6 @@ const renderMatches = (matches) => {
 };
 
 renderMatches(data.matches);
-console.log(data.matches);
 
 //Render Promotions
 const renderPromotions = (promotions) => {
@@ -247,15 +237,12 @@ const renderPromotions = (promotions) => {
         promotionCard.addEventListener("click", () => {
             popupModal(promotionCard); // Popup modal with promotion data
             toggleModal(true); // Open modal
-
-            console.table(promotion);
         });
         promotionWrapper.appendChild(promotionCard);
     });
 };
 
 renderPromotions(data.promotions);
-console.table(data.promotions);
 
 // toggle modal visibility
 const toggleModal = (isVisible) => {

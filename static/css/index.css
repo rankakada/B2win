@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Battambang:wght@100;300;400;700;900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 *,
 *::before,
@@ -16,13 +16,42 @@
     --yellow-color: #f6d50d;
     --white-color: #fff;
     --black-color: #222;
-    --khmer-font: "Kantumruy Pro", serif;
-    --english-font: "Roboto", serif;
+    --bg-linear : linear-gradient(#fbe50a, #e5b022);
+    --bg-lightgreen: #0f787b;
+    --font-family: "Inter", "Battambang", serif;
 }
 
 html {
     scroll-behavior: smooth;
 }
+
+body {
+    position: relative;
+    width: 100%;
+    min-height: auto;
+    background-color: var(--green-color);
+    color: var(--white-color);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-family: var(--font-family);
+    line-height: 1.5; 
+}
+
+body::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url("../assets/images/pattern.png") no-repeat fixed center ;
+    background-color: white;
+    background-size: cover;
+    opacity: 0.1;
+    z-index: -1;
+}
+ 
 
 .header {
     height: 100px;
@@ -74,7 +103,6 @@ html {
     align-items: center;
     gap: .5rem;
     cursor: pointer;
-    font-family: var(--khmer-font);
     font-weight: 600;
     font-size: 18px;
     text-decoration: none;
@@ -101,9 +129,15 @@ html {
     gap: .5rem;
 }
 
-.header .nav .nav-right .btn {
-    padding: .5rem 1.5rem;
-    font-family: var(--khmer-font);
+.header .nav .nav-right .btn-auth-wrapper {
+    display: flex;
+    gap: .5rem;
+    align-items: center;
+}
+
+.header .nav .nav-right .btn-auth-wrapper .btn {
+    padding: 0 24px;
+    height: 32px;
     font-weight: 600;
     font-size: 18px;
     border: none;
@@ -112,34 +146,41 @@ html {
     cursor: pointer;
     transition: all ease .5s;
     text-decoration: none;
+    display: flex;
+    align-items: center;
 }
 
-.header .nav .nav-right .btn:hover{
+.header .nav .nav-right .btn-img-wrapper {
+    display: flex;
+    gap: .5rem;
+}
+
+.header .nav .nav-right .btn-auth-wrapper .btn:hover{
     background-color: var(--green-color);
     color: var(--white-color);
 }
 
-.header .nav .nav-right .btn-login {
+.header .nav .nav-right .btn-auth-wrapper .btn-login {
     background-color: var(--primary-color);
 }
-.header .nav .nav-right .btn-register {
+.header .nav .nav-right .btn-auth-wrapper .btn-register {
     background-color: var(--secondary-color);
 }
 
-.header .nav .nav-right .btn-image {
+.header .nav .nav-right .btn-img-wrapper .btn-image {
     height: 32px;
     width: 32px;
     padding: 0;
     background-color: transparent;
 }
 
-.header .nav .nav-right .btn-image img{
+.header .nav .nav-right .btn-img-wrapper .btn-image img{
     height: 100%;
     width: 100%;
     background-color: transparent;
 }
 
-.header .nav .nav-right .btn-image:hover {
+.header .nav .nav-right .btn-img-wrapper .btn-image:hover {
     background: none;
     transform: scale(1.1);
     transition: all ease 0.3s;
@@ -216,7 +257,6 @@ html {
     color: var(--white-color);
     text-decoration: none;
     gap: 8px;
-    font-family: var(--khmer-font);
     font-size: 18px;
     font-weight: 600;
 }
@@ -234,31 +274,6 @@ html {
     height: 24px;
 }
 
-body {
-    position: relative;
-    width: 100%;
-    min-height: 100vh;
-    background-color: var(--green-color);
-    color: var(--white-color);
-    font-family: var(--khmer-font);
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-body::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: url("../assets/images/pattern.png") no-repeat fixed center ;
-    background-size: cover;
-    opacity: .1;
-    z-index: -1;
-}
- 
 .main {
     width: 100%;
     margin: 0 auto;
@@ -289,7 +304,6 @@ body::before {
 
 .main .hero .announcement-wrapper .marquee-wrapper .message {
     font-size: 16px;
-    font-family: var(--khmer-font);
     font-weight: 500;
     animation: scroll 50s linear infinite;
     animation-play-state: running;
@@ -361,17 +375,18 @@ body::before {
 
 .main .contents .button-container .button {
     text-decoration: none;
-    text-align: center;
-    padding: 12px 0;
+    height: 50px;
     border-radius: 50px;
     border: none;
     cursor: pointer;
-    font-family: var(--khmer-font);
     font-size: 24px;
     font-weight: 600;
     color: var(--black-color);
     transition: all ease 0.5s;
-    flex-grow: 1;
+    display: flex;
+    flex: 50%;flex: 1 1 50%;
+    justify-content: center;
+    align-items: center;
 }
 
 .main .contents .button-container .btn-deposit {
@@ -398,9 +413,8 @@ body::before {
     position: relative;
     padding-left: 30px;
     display: inline-block;
-    font-family: var(--khmer-font);
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
     margin-bottom: 1.5rem;
 }
 
@@ -442,7 +456,6 @@ body::before {
 .main .contents .box-container .match-container {
     width: 100%;
     height: 100%;
-    font-family: var(--english-font);
     font-weight: 500;
     font-size: 16px;
 }
@@ -468,7 +481,6 @@ body::before {
 
 .main .contents .box-container .match-container .match-wrapper .match-card .team .team-name {
     font-size: 14px;
-    font-family: var(--english-font);
     text-align: center;
     margin-top: 10px;
 }
@@ -484,7 +496,6 @@ body::before {
     align-items: center;
     justify-content: center;
     text-align: center;
-    line-height: 1.5rem;
 }
 
 .main .contents .box-container .promotion-container{
@@ -555,7 +566,6 @@ body::before {
 
 .main .contents .box-container .promotion-modal .promotion-modal-content .top-content span {
     font-size: 20px;
-    font-family: var(--english-font);
     font-weight: 500;
 }
 
@@ -589,7 +599,6 @@ body::before {
 
 .main .contents .box-container .promotion-modal .promotion-modal-content .middle-content p {
     color: var(--black-color);
-    font-family: var(--khmer-font);
     font-weight: 500;
     font-size: 18px;
     margin-top: 1rem;
@@ -608,7 +617,6 @@ body::before {
     border-radius: 8px;
     background-color:#1956db;
     color: var(--white-color);
-    font-family: var(--english-font);
     font-weight: 500;
     font-size: 15px;
     transition: all ease .5s;
@@ -675,7 +683,6 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: var(--khmer-font);
     font-weight: 500;
     font-size: 18px;
     margin-top: 2rem;
@@ -825,14 +832,15 @@ body::before {
 }
 
 @media screen and (min-width: 320px) and (max-width: 639px) {
-    .header .nav .nav-right .btn {
-        padding: 4px 16px;
-        font-style: 1rem;
+    .header .nav .nav-right .btn-auth-wrapper .btn {
+        font-size: 14px;
+        height: 28px;
     }
-    .header .nav .nav-right .btn-image {
-        height: 32px;
-        width: 32px;
-        padding: 0;
+
+    .header .nav .nav-right, 
+    .header .nav .nav-right .btn-auth-wrapper, 
+    .header .nav .nav-right .btn-img-wrapper{
+        gap: 5px;
     }
 
     .main .hero .announcement-wrapper .marquee-wrapper .message {
@@ -845,8 +853,8 @@ body::before {
     }
 
     .main .contents .button-container .button {
+        height: 35px;
         font-size: 20px;
-        padding: 8px 0;
     }
 
     .main .contents .box-container .game-container {
@@ -869,10 +877,6 @@ body::before {
 
     .header .nav .desktop-logo {
         display: none;
-    }
-    
-    .header .nav .nav-right{
-        gap: 3px;
     }
 
     .btn-close-welcomeModal {

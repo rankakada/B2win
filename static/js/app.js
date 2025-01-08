@@ -175,9 +175,9 @@ i18next.init({
                 phoneNumberInvalidStart: "លេខទូរសព្ទត្រូវចាប់ផ្ដើមដោយ +855 ឬ លេខ 0",
                 phoneNumberInvalid: "លេខទូរសព្ទមិនត្រឹមត្រូវ​ សូមពិនិត្យម្ដងទៀត",
                 affiliateInvalid: "ឈ្មោះអ្នកណែនាំមិនត្រឹមត្រូវ",
+                codeEmpty: "សូមបំពេញលេខកូដសម្ងាត់",
                 codeInvalid: "លេខកូដសម្ងាត់មិនត្រឹមត្រូវ",
                 registerSuccess: "ការបង្កើតគណនីទទួលបានជោគជ័យ",
-                loginSuccess: "ការចូលប្រើប្រាស់បានជោគជ័យ!",
                 loginError: "ឈ្មោះអ្នកប្រើប្រាស់ ឬពាក្យសម្ងាត់មិនត្រឹមត្រូវ"
             }
         },
@@ -222,11 +222,11 @@ i18next.init({
                 phoneNumberEmpty: "Please enter your phone number.",
                 phoneNumberInvalidStart: "The phone number must start with +855 or the number 0.",
                 phoneNumberInvalid: "The phone number is invalid. Please check it again.",
-                affiliateInvalid: "The affiliate is incorrect.",
-                codeInvalid: "The verify code is incorrect.",
+                affiliateInvalid: "The affiliate is incorrect!",
+                codeEmpty: "Please enter the verify code",
+                codeInvalid: "The verify code is incorrect!",
                 registerSuccess: "Account creation was successful!",
-                loginSuccess: "Login successful!",
-                loginError: "Invalid username or password."
+                loginError: "Invalid username or password!"
             }
         }
     }
@@ -254,8 +254,6 @@ const savedLanguage = localStorage.getItem("language") || "kh";
 const savedIcon = localStorage.getItem("icon") || "static/assets/icons/kh.svg"; 
 const icon = document.querySelector('.toggle-language img');
 icon.src = savedIcon;
-console.log('saved language from storage: ',savedLanguage)
-console.log('saved icons from storage: ',savedIcon)
 
 // change language handle
 i18next.changeLanguage(savedLanguage, updateContent);
@@ -267,10 +265,8 @@ document.querySelector(".toggle-language").addEventListener("click", () => {
     let iconPath = '';
     if (currentLanguage === 'kh') {
         iconPath = 'static/assets/icons/kh.svg';  
-        console.log("You changed language to Khmer");
     } else {
         iconPath = 'static/assets/icons/en.svg'; 
-        console.log("You changed language to English");
     }
 
     i18next.changeLanguage(currentLanguage, updateContent);
@@ -278,4 +274,23 @@ document.querySelector(".toggle-language").addEventListener("click", () => {
     localStorage.setItem("icon", iconPath);
     icon.src = iconPath;
 
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    const affiliateId = getQueryParam("fid");
+    if (affiliateId) {
+        const affiliateInput = document.getElementById("affiliate");
+        if (affiliateInput) {
+            affiliateInput.value = affiliateId;
+        } else {
+            console.log("Affiliate input field not found on the page.");
+        }
+    } else {
+        console.log("No 'fid' parameter found in the URL.");
+    }
 });
