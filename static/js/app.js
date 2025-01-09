@@ -114,7 +114,6 @@ const Menu = () => {
 
 Menu();
 
-
 // active menu
 const navLinks = document.querySelectorAll('.nav-list'); 
 const currentUrl = window.location.pathname;

@@ -17,7 +17,6 @@ togglePassword.addEventListener("click", () => {
 
 
 // Generate a random 5-digit code
-
 const generateRandomCode = () => {
     return Math.floor(10000 + Math.random() * 90000);
 }
@@ -33,16 +32,6 @@ function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
 }
-
-// const user = {
-//     "id" : 1,
-//     "username":"Rong",
-//     "password": "123123",
-//     "isRememberMe": true
-// };
-
-// console.log(user);
-
 
 // Retrieve 'fid' from the URL
 const affiliateId = getQueryParam("fid");
@@ -159,14 +148,24 @@ const validateInputs = () => {
         clearError(phoneNumber, phoneErrorMsg);
     }
 
+    const user = {
+        id: 1,
+        username: `${usernameValue}`,
+        password: `${passwordValue}`,
+        phoneNumber: `${phoneNumberValue}`,
+        currency: `${currency.value}`,
+        affiliate: `${affiliateValue}`
+    }
+
     // affiliate validation 
     if(affiliateValue !== affiliateId && affiliateValue !== "") {
         setError(affiliate, "affiliateInvalid", affiliateErrorMsg);
         isValid = false;
+        console.log(user);
     } else {
         clearError(affiliate, affiliateErrorMsg);
     }
-    
+
     // Register Logic
     if (isValid) {
            // virify code validation 
@@ -182,9 +181,9 @@ const validateInputs = () => {
             registerStatus.innerHTML = i18next.t("registerSuccess");
             registerStatus.className = "registerSuccess";
             registerForm.reset();
-
-            console.table(`username : ${usernameValue}\npassword : ${passwordValue}\number phone : ${phoneNumberValue}\naffiliate : ${affiliateValue}`);
         }
+
+        console.log(user);
     } 
     else {
         registerStatus.innerHTML = "";

@@ -18,26 +18,31 @@ const data = {
   
     games: [
       {
+        id:1,
         "image": "./static/assets/images/games/game1.jpg",
         "alt": "Game 1",
         "link": "login.html"
       },
       {
+        id:2,
         "image": "./static/assets/images/games/game2.jpg",
         "alt": "Game 2",
         "link": "login.html"
       },
       {
+        id:3,
         "image": "./static/assets/images/games/game3.jpg",
         "alt": "Game 3",
         "link": "login.html"
       },
       {
+        id:4,
         "image": "./static/assets/images/games/game4.jpg",
         "alt": "Game 4",
         "link": "login.html"
       },
       {
+        id:5,
         "image": "./static/assets/images/games/game5.jpg",
         "alt": "Game 5",
         "link": "login.html"
