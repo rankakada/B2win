@@ -1,4 +1,4 @@
-// initial news data
+// declare news data
 const newsData = [
     {
         id: 1,
@@ -159,7 +159,7 @@ const newsData = [
     
 ];
 
-// initial banner data
+// declare banner data
 const bannerData = [
     {
         id: 1,
@@ -199,14 +199,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // get element class news container 
 const newsContainer = document.querySelector('.news-container');
-const itemsPerPage = 9;
-let currentPage = 1;
 // Render news list
-const renderNewsList = (page) => {
-    const start = (page - 1) * itemsPerPage;
-    const end = start + itemsPerPage;
-    const currentNews = newsData.slice(start, end);
-
+const renderNewsList = () => {
     const urlSearchParams = new URLSearchParams(window.location.search);
     urlSearchParams.delete("id");
     history.replaceState(null, "", `?${urlSearchParams.toString()}`);
@@ -222,7 +216,7 @@ const renderNewsList = (page) => {
                             <img src="${news.img}" alt="${news.title}">
                         </div>
                         <div class="title-wrapper">
-                            <p class="news-title">${news.title}</p>
+                            <p class="news-title">${news.title.slice(0, 70)}...</p>
                             <div class="date-wrapper">
                                 <img src="static/assets/icons/calendar.svg" alt="date" class="calendar-icon">
                                 <span class="news-date"> 
@@ -237,27 +231,6 @@ const renderNewsList = (page) => {
         </div>
     `;
 };
-
-
-
-function renderPagination() {
-    const totalPages = Math.ceil(newsData.length / itemsPerPage);
-    const pagination = document.getElementById('pagination');
-    pagination.innerHTML = '';
-
-    for (let i = 1; i <= totalPages; i++) {
-        const button = document.createElement('button');
-        button.innerText = i;
-        button.className = i === currentPage ? 'active' : '';
-        button.onclick = () => {
-            currentPage = i;
-            renderNews(currentPage);
-            renderPagination();
-        };
-        pagination.appendChild(button);
-    }
-}
-
 
 // Render news and latest news
 const renderNews = (news) => {
@@ -293,12 +266,11 @@ const renderNews = (news) => {
                         <div onclick="viewNewsArticle(${latestNews.id})" class="news-items">
                             <img src="${latestNews.img}" alt="${latestNews.title}">
                             <div>
-                                <p>${latestNews.title.slice(0, 25)}...</p>
+                                <p>${latestNews.title.slice(0, 30)}...</p>
                                 <div class="date-wrapper">
                                     <div class="calendar-icon"><img src="static/assets/icons/calendar.svg" alt="calendar-icon"></div>
                                     <span class="news-date"> 
                                         ${new Date(news.date).toLocaleDateString('en-GB', { day: '2-digit', month: 'short', year: 'numeric' })} 
-                                        ${new Date(news.date).toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: true })}
                                     </span>
                                 </div>
                             </div>
