@@ -329,12 +329,12 @@ const renderPaginationControls = (totalItems, currentPage) => {
 
     paginationContainer.innerHTML = `
        <div class="pagination">
-            <button onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}>
-               Previous
+            <button onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''} class="btn-change-page">
+               <i class="fa fa-angle-left"></i>
             </button>
             ${pageButtons.join('')}
-            <button onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}>
-                Next
+            <button onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''} class="btn-change-page">
+                <i class="fa fa-angle-right"></i>
             </button>
         </div>
     `;

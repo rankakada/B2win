@@ -433,36 +433,38 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 5px;
-    margin-top: 1.5rem;
+    gap: 8px;
+    margin-top: 2rem;
 }
 
 .main .contents .pagination-container .pagination button {
-    padding: 5px 10px;
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 5px;
     outline: none;
-    background-color: white;
+    background-color: var(--white-color);
+    color: var(--black-color);
     cursor: pointer;
-    padding: 8px 12px;
+    padding: 5px 10px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.main .contents .pagination-container .pagination .btn-change-page {
+    background-color: var(--darkgreen-color);
+    color: var(--white-color);
+    border: 1px solid transparent;
 }
 
 .main .contents .pagination-container .pagination button.active {
-    background-color: var(--black-color);
+    background-color: var(--darkgreen-color);
     color: var(--white-color);
     cursor: default;
-    border: 1px solid var(--black-color);
+    border: 1px solid var(--darkgreen-color);
 }
 
 .main .contents .pagination-container .pagination button[disabled] {
     opacity: 0.5;
     cursor: not-allowed;
-}
-
-.btnBackToNews {
-    display: block;
-    background-color: red;
-    z-index: 100000;
 }
 
 .footer {
@@ -596,6 +598,16 @@ body::before {
 
     .main .contents .news-container .news-wrapper:first-child .title-wrapper .news-title{
         font-size: 16px;
+    }
+
+    .main .contents .pagination-container .pagination {
+        gap: 4px;
+    }
+
+    .main .contents .pagination-container .pagination button {
+        padding: 3px 8px;
+        font-size: 12px;
+        font-weight: 400;
     }
 
     .footer {
