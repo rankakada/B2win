@@ -612,6 +612,14 @@ body::before {
         font-size: 16px;
     }
 
+    .main .contents .pagination-container .btn-change-page {
+        padding: 8px 16px;
+    }
+
+    .main .contents .pagination-container .active {
+        padding: 8px 12px;
+    }
+
     .footer {
         height: 120px;
         font-size: 16px;
