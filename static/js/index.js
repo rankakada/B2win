@@ -152,8 +152,16 @@ if (!lastShownTime || currentTime - lastShownTime > expired_time) {
 
 //Button for Closing modal 
 btnCloseWelcomeModal.addEventListener('click', () => {
+  welcomeModal.style.display = 'none';
+  localStorage.setItem("welcomeModal", currentTime);
+});
+
+// Close modal when clicking outside of the modal content
+welcomeModal.addEventListener("click", (e) => {
+  if (e.target === welcomeModal) {
     welcomeModal.style.display = 'none';
     localStorage.setItem("welcomeModal", currentTime);
+  }
 });
 
 // inititial variables
@@ -200,51 +208,51 @@ renderGames(data.games);
 
 //Render Matches
 const renderMatches = (matches) => {
-    matches.forEach(match => {
-        const matchCard = document.createElement('div');
-        matchCard.className = 'swiper-slide match-card';
+  matches.forEach(match => {
+    const matchCard = document.createElement('div');
+    matchCard.className = 'swiper-slide match-card';
 
-        matchCard.innerHTML = `
-            <div class="match">
-            <div class="team">
-                <img src="${match.homeTeam.logo}" alt="${match.homeTeam.name}" class="team-logo">
-                <span class="team-name">${match.homeTeam.name}</span>
-            </div>
-            <div class="match-details">
-                <span class="league">${match.league}</span>
-                <span class="date">${match.date}</span>
-            </div>
-            <div class="team">
-                <img src="${match.awayTeam.logo}" alt="${match.awayTeam.name}" class="team-logo">
-                <span class="team-name">${match.awayTeam.name}</span>
-            </div>
-            </div>
-        `;
+    matchCard.innerHTML = `
+        <div class="match">
+        <div class="team">
+            <img src="${match.homeTeam.logo}" alt="${match.homeTeam.name}" class="team-logo">
+            <span class="team-name">${match.homeTeam.name}</span>
+        </div>
+        <div class="match-details">
+            <span class="league">${match.league}</span>
+            <span class="date">${match.date}</span>
+        </div>
+        <div class="team">
+            <img src="${match.awayTeam.logo}" alt="${match.awayTeam.name}" class="team-logo">
+            <span class="team-name">${match.awayTeam.name}</span>
+        </div>
+        </div>
+    `;
 
-        matchWrapper.appendChild(matchCard);
-    });
+    matchWrapper.appendChild(matchCard);
+  });
 };
 
 renderMatches(data.matches);
 
 //Render Promotions
 const renderPromotions = (promotions) => {
-    promotions.forEach(promotion => {
-        const promotionCard = document.createElement('div');
-        promotionCard.className = 'swiper-slide promotion-card';
-        promotionCard.innerHTML = `<img src="${promotion.image}" alt="${promotion.title}">`;
+  promotions.forEach(promotion => {
+    const promotionCard = document.createElement('div');
+    promotionCard.className = 'swiper-slide promotion-card';
+    promotionCard.innerHTML = `<img src="${promotion.image}" alt="${promotion.title}">`;
 
-        promotionCard.dataset.title = promotion.title;
-        promotionCard.dataset.description = promotion.description;
-        promotionCard.dataset.image = promotion.image;
+    promotionCard.dataset.title = promotion.title;
+    promotionCard.dataset.description = promotion.description;
+    promotionCard.dataset.image = promotion.image;
 
-        // Open modal when clicked
-        promotionCard.addEventListener("click", () => {
-            popupModal(promotionCard); // Popup modal with promotion data
-            toggleModal(true); // Open modal
-        });
-        promotionWrapper.appendChild(promotionCard);
+    // Open modal when clicked
+    promotionCard.addEventListener("click", () => {
+        popupModal(promotionCard); // Popup modal with promotion data
+        toggleModal(true); // Open modal
     });
+    promotionWrapper.appendChild(promotionCard);
+  });
 };
 
 renderPromotions(data.promotions);

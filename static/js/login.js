@@ -118,14 +118,12 @@ const validateInputs = () => {
         if (usernameValue !== userStore.username && passwordValue !== userStore.password) {
             setError(username, "incorrectUsername", userErrorMsg);
             setError(password, "incorrectPassword", passErrorMsg);
-            console.log(user);
         }
         else if (usernameValue !== userStore.username) {
             setError(username, "incorrectUsername", userErrorMsg);
         }
         else if (passwordValue !== userStore.password) {
             setError(password, "incorrectPassword", passErrorMsg);
-            console.log(user);
         }
         else {
             loginForm.reset();

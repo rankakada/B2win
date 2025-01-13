@@ -429,42 +429,54 @@ body::before {
     margin-top: 0.5rem;
 }
 
-.main .contents .pagination-container .pagination {
+.main .contents .pagination-container {
     display: flex;
     justify-content: center;
-    align-items: center;
     gap: 8px;
     margin-top: 2rem;
 }
 
-.main .contents .pagination-container .pagination button {
-    border: 1px solid #ddd;
+
+.main .contents .pagination-container .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.main .contents .pagination-container .btn-change-page {
+    background-color: var(--darkgreen-color);
+    color: var(--white-color);
+    border: none;
+    padding: 12px 20px;
     border-radius: 5px;
-    outline: none;
-    background-color: var(--white-color);
-    color: var(--black-color);
     cursor: pointer;
-    padding: 5px 10px;
-    font-size: 14px;
-    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background 0.3s;
+    font-size: 16px;
 }
 
-.main .contents .pagination-container .pagination .btn-change-page {
-    background-color: var(--darkgreen-color);
-    color: var(--white-color);
-    border: 1px solid transparent;
+.main .contents .pagination-container .btn-change-page:disabled {
+    background-color: #00222390;
+    /* cursor: not-allowed; */
 }
 
-.main .contents .pagination-container .pagination button.active {
+.main .contents .pagination-container .active {
     background-color: var(--darkgreen-color);
     color: var(--white-color);
+    border: none;
+    border-radius: 5px;
+    padding: 12px 16px;
+    font-weight: bold;
     cursor: default;
-    border: 1px solid var(--darkgreen-color);
+    font-size: 16px;
 }
 
-.main .contents .pagination-container .pagination button[disabled] {
-    opacity: 0.5;
-    cursor: not-allowed;
+.main .contents .pagination-container .pagination .btn-change-page .fa {
+    font-size: 16px;
 }
 
 .footer {
@@ -598,16 +610,6 @@ body::before {
 
     .main .contents .news-container .news-wrapper:first-child .title-wrapper .news-title{
         font-size: 16px;
-    }
-
-    .main .contents .pagination-container .pagination {
-        gap: 4px;
-    }
-
-    .main .contents .pagination-container .pagination button {
-        padding: 3px 8px;
-        font-size: 12px;
-        font-weight: 400;
     }
 
     .footer {

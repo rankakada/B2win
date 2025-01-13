@@ -174,7 +174,6 @@ const validateInputs = () => {
     if(affiliateValue !== affiliateId && affiliateValue !== "") {
         setError(affiliate, "affiliateInvalid", affiliateErrorMsg);
         isValid = false;
-        console.log(user);
     } else {
         clearError(affiliate, affiliateErrorMsg);
     }
@@ -197,15 +196,8 @@ const validateInputs = () => {
 
             // Remove 'fid' from localStorage after use
             localStorage.removeItem('fid');
-
-            // Remove 'fid' from the URL
-            const currentUrlParams = new URLSearchParams(window.location.search);
-            currentUrlParams.delete('fid'); // Remove 'fid' parameter
-            const newUrl = `${window.location.pathname}?${currentUrlParams.toString()}`;
-            window.history.replaceState({}, '', newUrl);
+            console.log(user);
         }
-
-        console.log(user);
     } 
     else {
         registerStatus.innerHTML = "";
