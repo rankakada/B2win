@@ -334,3 +334,13 @@ document.addEventListener("DOMContentLoaded", () => {
         },
     });
 });
+
+// Get 'fid' from the URL
+const urlParams = new URLSearchParams(window.location.search);
+const fid = urlParams.get('fid');
+
+if (fid) {
+  // Store 'fid' in localStorage for future use
+  localStorage.setItem('fid', fid);
+  console.log(`FID: ${fid}`);
+}

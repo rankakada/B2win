@@ -27,10 +27,23 @@ randomCode.value = generateRandomCode();
 username.addEventListener("input", () => {
     username.value = username.value.toUpperCase();
 });
-    
+
+// Function to get a query parameter by name
 function getQueryParam(param) {
-    const urlParams = new URLSearchParams(window.location.search);
-    return urlParams.get(param);
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+// Retrieve 'fid' from URL or localStorage
+let fid = getQueryParam('fid') || localStorage.getItem('fid');
+
+if (fid) {
+  const currentUrlParams = new URLSearchParams(window.location.search);
+  if (!currentUrlParams.has('fid')) {
+    currentUrlParams.set('fid', fid);
+    const newUrl = `${window.location.pathname}?${currentUrlParams.toString()}`;
+    window.history.replaceState({}, '', newUrl);
+  }
 }
 
 // Retrieve 'fid' from the URL
@@ -40,7 +53,7 @@ if (affiliateId) {
     if (affiliateInput) {
         affiliateInput.value = affiliateId;
     }
-}
+} 
 
 // From validation
 registerForm.onsubmit = (e) => {
@@ -181,6 +194,15 @@ const validateInputs = () => {
             registerStatus.innerHTML = i18next.t("registerSuccess");
             registerStatus.className = "registerSuccess";
             registerForm.reset();
+
+            // Remove 'fid' from localStorage after use
+            localStorage.removeItem('fid');
+
+            // Remove 'fid' from the URL
+            const currentUrlParams = new URLSearchParams(window.location.search);
+            currentUrlParams.delete('fid'); // Remove 'fid' parameter
+            const newUrl = `${window.location.pathname}?${currentUrlParams.toString()}`;
+            window.history.replaceState({}, '', newUrl);
         }
 
         console.log(user);
