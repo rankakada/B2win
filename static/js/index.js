@@ -2,7 +2,7 @@
 const data = {
   message : "សូមស្វាគមន៍មកកាន់ B2Win វេបសាយទំនុកចិត្តបំផុត មានហ្គេមសម្បូរបែប ផ្ដល់ជូនបងប្អូននូវ សេវាកម្មដកដាក់ប្រាក់រហ័ស ប្រម៉ូសិនការផ្ដល់ជូនច្រើនសន្ធឹកសន្ធាប់ ឈ្នះច្រើនដកច្រើនគ្មានដែនកំណត់ សុវត្ថិភាពបំផុតជាងគេ!" ,
 
-  desktopBannersKh: [
+  desktopBanners: [
     {
       id: 1,
       "image": "./static/assets/images/banners/desktop-banner-kh1.jpg",
@@ -15,7 +15,7 @@ const data = {
     }
   ],
 
-  mobileBannersKh: [
+  mobileBanners: [
     {
       id: 1,
       "image": "./static/assets/images/banners/mobile-banner-kh1.jpg",
@@ -24,31 +24,6 @@ const data = {
     {
       id: 2,
       "image": "./static/assets/images/banners/mobile-banner-kh2.jpg",
-      "alt": "Banner"
-    }
-  ],
-  desktopBannersEn: [
-    {
-      id: 1,
-      "image": "./static/assets/images/banners/desktop-banner-en1.jpg",
-      "alt": "Banner"
-    },
-    {
-      id: 2,
-      "image": "./static/assets/images/banners/desktop-banner-en2.jpg",
-      "alt": "Banner"
-    }
-  ],
-
-  mobileBannersEn: [
-    {
-      id: 1,
-      "image": "./static/assets/images/banners/mobile-banner-en1.jpg",
-      "alt": "Banner"
-    },
-    {
-      id: 2,
-      "image": "./static/assets/images/banners/mobile-banner-en2.jpg",
       "alt": "Banner"
     }
   ],
@@ -233,8 +208,8 @@ const createBannerSlides = (banners, wrapper) => {
 
 // Function to update banners based on selected language
 const updateBanners = (language) => {
-  const desktopBanners = language === 'kh' ? data.desktopBannersKh : data.desktopBannersEn;
-  const mobileBanners = language === 'kh' ? data.mobileBannersKh : data.mobileBannersEn;
+  const desktopBanners = language === 'kh' ? data.desktopBanners : data.desktopBanners;
+  const mobileBanners = language === 'kh' ? data.mobileBanners : data.mobileBanners;
 
   // Update desktop and mobile banners
   createBannerSlides(desktopBanners, desktopBannerWrapper);
@@ -344,7 +319,7 @@ document.addEventListener("DOMContentLoaded", () => {
     new Swiper(".bannerSwiper", {
         slidesPerView: 1,
         spaceBetween: 16,
-        loop: true,
+        loop: false,
         autoplay: {
             delay: 5000,
         },
@@ -398,4 +373,19 @@ if (fid) {
   // Store 'fid' in localStorage for future use
   localStorage.setItem('fid', fid);
   console.log(`FID: ${fid}`);
+}
+
+function updateContent() {
+  document.querySelectorAll('[data-i18n]').forEach(function(element) {
+      const key = element.getAttribute('data-i18n');
+      element.innerText = i18next.t(key); 
+  });
+
+  document.querySelectorAll('[data-i18n-placeholder]').forEach(function(element) {
+      const key = element.getAttribute('data-i18n-placeholder');
+      element.setAttribute('placeholder', i18next.t(key)); // Translate the placeholder
+  });
+
+  // Update banners based on the current language
+  updateBanners(i18next.language);
 }

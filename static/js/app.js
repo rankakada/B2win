@@ -145,8 +145,6 @@ i18next.init({
                 popularGame: "ហ្គេមពេញនិយម",
                 matchOfWeek: "គូប្រកួតសប្ដាហ៍នេះ",
                 promotion: "ការផ្ដល់ជូនពិសេស",
-                privacy: "© 2024 B2WIN.com រក្សាសិទ្ធគ្រប់យ៉ាង ១៨+",
-                payment: "ទូទាត់ប្រាក់ជាមួយ",
                 username: "ឈ្មោះ​អ្នកប្រើប្រាស់",
                 password: "ពាក្យសម្ងាត់",
                 phoneNumber: "លេខទូរសព្ទ",
@@ -179,7 +177,16 @@ i18next.init({
                 incorrectUsername: "ឈ្មោះអ្នកប្រើប្រាស់មិនត្រឹមត្រូវ!",
                 incorrectPassword: "ពាក្យសម្ងាត់មិនត្រឹមត្រូវ!",
                 registerSuccess: "ការបង្កើតគណនីទទួលបានជោគជ័យ!",
-            }
+                footerText: "សូមស្វាគមន៍មកកាន់ B2WIN ដែលជាក្រុមហ៊ុនភ្នាល់ល្បែងតាមអ៊ិនធរណេតឈានមុខគេមួយនៅលើពិភពលោកផ្តល់ជូនសមាជិកពីគ្រប់ទិសទីនូវជម្រើសក្នុងការលេងកីឡាកីឡាអេឡិចត្រូនិកកាស៊ីណូបន្តផ្ទាល់ស្លតហ្គេមនិងភ្នាល់លើព្រឹត្តិការណ៍កីឡាផ្សេងៗ។",
+                quickLinks: "តំណ​ភ្ជាប់​រហ័ស",
+                aboutUs: "អំពីពួកយើង",
+                termsOfUse: "លក្ខខណ្ឌនៃការប្រើប្រាស់",
+                responsibleGaming: "ការទទួលខុសត្រូវហ្គេម",
+                infoCenter: "មជ្ឈមណ្ឌលព័ត៌មាន",
+                rewards: "រង្វាន់",
+                ContactUs: "ទាក់ទង​មក​ពួក​យើង",
+                privacy: "© 2024 B2WIN.com រក្សាសិទ្ធគ្រប់យ៉ាង ១៨+",
+                payment: "វិធី​សា​ស្រ្ត​ទូទាត់ប្រាក់",            }
         },
         en: {
             translation: {
@@ -194,8 +201,6 @@ i18next.init({
                 popularGame: "Popular Game",
                 matchOfWeek: "Match of the week",
                 promotion: "Promotion",
-                privacy: "© 2024 B2WIN.com All Rights Reserved 18+",
-                payment: "Payment Method",
                 username: "Username",
                 password: "Password",
                 phoneNumber: "Phone number",
@@ -228,6 +233,16 @@ i18next.init({
                 incorrectUsername: "Username is incorrect!",
                 incorrectPassword: "Password is incorrect!",            
                 registerSuccess: "Account creation was successful!",
+                footerText: "Welcome to B2WIN, one of the world’s leading online gambling brands, provides members from all over the world an option to play Sportsbook, eSports, Live Casino, Slots, lottery games and place their bets on various Sports events.",
+                quickLinks: "QUICK LINKS",
+                aboutUs: "About Us",
+                termsOfUse: "Terms Of Use",
+                responsibleGaming: "Responsible Gaming",
+                infoCenter: "Info Center",
+                rewards: "Rewards",
+                ContactUs: "Contact us",
+                privacy: "© 2024 B2WIN.com All Rights Reserved 18+",
+                payment: "Payment Method",
             }
         }
     }
@@ -251,7 +266,7 @@ function updateContent() {
     });
 
     // Update banners based on the current language
-    updateBanners(i18next.language);
+    // updateBanners(i18next.language);
 }
 // using localStorage to save language and icons
 const savedLanguage = localStorage.getItem("language") || "kh";
