@@ -249,6 +249,9 @@ function updateContent() {
         const key = element.getAttribute('data-i18n-placeholder');
         element.setAttribute('placeholder', i18next.t(key)); // Translate the placeholder
     });
+
+    // Update banners based on the current language
+    updateBanners(i18next.language);
 }
 // using localStorage to save language and icons
 const savedLanguage = localStorage.getItem("language") || "kh";

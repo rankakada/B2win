@@ -1,139 +1,176 @@
-// initial home page data
+// home page data
 const data = {
-    message : "សូមស្វាគមន៍មកកាន់ B2Win វេបសាយទំនុកចិត្តបំផុត មានហ្គេមសម្បូរបែប ផ្ដល់ជូនបងប្អូននូវ សេវាកម្មដកដាក់ប្រាក់រហ័ស ប្រម៉ូសិនការផ្ដល់ជូនច្រើនសន្ធឹកសន្ធាប់ ឈ្នះច្រើនដកច្រើនគ្មានដែនកំណត់ សុវត្ថិភាពបំផុតជាងគេ!" ,
-  
-    desktopBanners: [
-      {
-        "image": "./static/assets/images/banners/desktop-banner1.jpg",
-        "alt": "Banner"
-      }
-    ],
-  
-    mobileBanners: [
-      {
-        "image": "./static/assets/images/banners/mobile-banner1.jpg",
-        "alt": "Banner"
-      }
-    ],
-  
-    games: [
-      {
-        id:1,
-        "image": "./static/assets/images/games/game1.jpg",
-        "alt": "Game 1",
-        "link": "login.html"
+  message : "សូមស្វាគមន៍មកកាន់ B2Win វេបសាយទំនុកចិត្តបំផុត មានហ្គេមសម្បូរបែប ផ្ដល់ជូនបងប្អូននូវ សេវាកម្មដកដាក់ប្រាក់រហ័ស ប្រម៉ូសិនការផ្ដល់ជូនច្រើនសន្ធឹកសន្ធាប់ ឈ្នះច្រើនដកច្រើនគ្មានដែនកំណត់ សុវត្ថិភាពបំផុតជាងគេ!" ,
+
+  desktopBannersKh: [
+    {
+      id: 1,
+      "image": "./static/assets/images/banners/desktop-banner-kh1.jpg",
+      "alt": "Banner"
+    },
+    {
+      id: 2,
+      "image": "./static/assets/images/banners/desktop-banner-kh2.jpg",
+      "alt": "Banner"
+    }
+  ],
+
+  mobileBannersKh: [
+    {
+      id: 1,
+      "image": "./static/assets/images/banners/mobile-banner-kh1.jpg",
+      "alt": "Banner"
+    },
+    {
+      id: 2,
+      "image": "./static/assets/images/banners/mobile-banner-kh2.jpg",
+      "alt": "Banner"
+    }
+  ],
+  desktopBannersEn: [
+    {
+      id: 1,
+      "image": "./static/assets/images/banners/desktop-banner-en1.jpg",
+      "alt": "Banner"
+    },
+    {
+      id: 2,
+      "image": "./static/assets/images/banners/desktop-banner-en2.jpg",
+      "alt": "Banner"
+    }
+  ],
+
+  mobileBannersEn: [
+    {
+      id: 1,
+      "image": "./static/assets/images/banners/mobile-banner-en1.jpg",
+      "alt": "Banner"
+    },
+    {
+      id: 2,
+      "image": "./static/assets/images/banners/mobile-banner-en2.jpg",
+      "alt": "Banner"
+    }
+  ],
+
+  games: [
+    {
+      id:1,
+      "image": "./static/assets/images/games/game1.jpg",
+      "alt": "Game 1",
+      "link": "login.html"
+    },
+    {
+      id:2,
+      "image": "./static/assets/images/games/game2.jpg",
+      "alt": "Game 2",
+      "link": "login.html"
+    },
+    {
+      id:3,
+      "image": "./static/assets/images/games/game3.jpg",
+      "alt": "Game 3",
+      "link": "login.html"
+    },
+    {
+      id:4,
+      "image": "./static/assets/images/games/game4.jpg",
+      "alt": "Game 4",
+      "link": "login.html"
+    },
+    {
+      id:5,
+      "image": "./static/assets/images/games/game5.jpg",
+      "alt": "Game 5",
+      "link": "login.html"
+    }
+  ],
+
+  matches: [
+    {
+      homeTeam: {
+        name: "Barcelona",
+        logo: "./static/assets/images/matches/barcelona.png"
       },
-      {
-        id:2,
-        "image": "./static/assets/images/games/game2.jpg",
-        "alt": "Game 2",
-        "link": "login.html"
+      awayTeam: {
+        name: "Atletico Madrid",
+        logo: "./static/assets/images/matches/AtleticoMadrid.png"
       },
-      {
-        id:3,
-        "image": "./static/assets/images/games/game3.jpg",
-        "alt": "Game 3",
-        "link": "login.html"
+      league: "Laliga",
+      date: "22 Dec 2024"
+    },
+    {
+      homeTeam: {
+        name: "Manchester City",
+        logo: "./static/assets/images/matches/ManchesterCity.png"
       },
-      {
-        id:4,
-        "image": "./static/assets/images/games/game4.jpg",
-        "alt": "Game 4",
-        "link": "login.html"
+      awayTeam: {
+        name: "Manchester United",
+        logo: "static/assets/images/matches/ManchesterUnited.png"
       },
-      {
-        id:5,
-        "image": "./static/assets/images/games/game5.jpg",
-        "alt": "Game 5",
-        "link": "login.html"
-      }
-    ],
-  
-    matches: [
-      {
-        homeTeam: {
-          name: "Barcelona",
-          logo: "./static/assets/images/matches/barcelona.png"
-        },
-        awayTeam: {
-          name: "Atletico Madrid",
-          logo: "./static/assets/images/matches/AtleticoMadrid.png"
-        },
-        league: "Laliga",
-        date: "22 Dec 2024"
+      league: "Premier League",
+      date: "15 Dec 2024"
+    },
+    {
+      homeTeam: {
+        name: "Arsenal",
+        logo: "./static/assets/images/matches/Arsenal.png"
       },
-      {
-        homeTeam: {
-          name: "Manchester City",
-          logo: "./static/assets/images/matches/ManchesterCity.png"
-        },
-        awayTeam: {
-          name: "Manchester United",
-          logo: "static/assets/images/matches/ManchesterUnited.png"
-        },
-        league: "Premier League",
-        date: "15 Dec 2024"
+      awayTeam: {
+        name: "Crystal Palace",
+        logo: "./static/assets/images/matches/CrystalPalace.png"
       },
-      {
-        homeTeam: {
-          name: "Arsenal",
-          logo: "./static/assets/images/matches/Arsenal.png"
-        },
-        awayTeam: {
-          name: "Crystal Palace",
-          logo: "./static/assets/images/matches/CrystalPalace.png"
-        },
-        league: "Premier League",
-        date: "22 Dec 2024"
+      league: "Premier League",
+      date: "22 Dec 2024"
+    },
+    {
+      homeTeam: {
+        name: "Real Madrid",
+        logo: "./static/assets/images/matches/RealMadrid.webp"
       },
-      {
-        homeTeam: {
-          name: "Real Madrid",
-          logo: "./static/assets/images/matches/RealMadrid.webp"
-        },
-        awayTeam: {
-          name: "Sevilla",
-          logo: "./static/assets/images/matches/Sevilla.png"
-        },
-        league: "Laliga",
-        date: "22 Dec 2024"
+      awayTeam: {
+        name: "Sevilla",
+        logo: "./static/assets/images/matches/Sevilla.png"
       },
-      {
-        homeTeam: {
-          name: "Bayern",
-          logo: "./static/assets/images/matches/BayernMünchen.png"
-        },
-        awayTeam: {
-          name: "RB Leipzig",
-          logo: "./static/assets/images/matches/RBLeipzig.png"
-        },
-        league: "Bundesliga",
-        date: "22 Dec 2024"
-      }
-    ],
-  
-    promotions: [
-      {
-        "title": "Promotion #1",
-        "description": "លុយទឹកប្រចាំថ្ងៃ 2%",
-        "image": "./static/assets/images/promotions/promotion1.jpg"
+      league: "Laliga",
+      date: "22 Dec 2024"
+    },
+    {
+      homeTeam: {
+        name: "Bayern",
+        logo: "./static/assets/images/matches/BayernMünchen.png"
       },
-      {
-        "title": "Promotion #2",
-        "description": "សមាជិកថ្មីថែម 100%",
-        "image": "./static/assets/images/promotions/promotion2.jpg"
+      awayTeam: {
+        name: "RB Leipzig",
+        logo: "./static/assets/images/matches/RBLeipzig.png"
       },
-      {
-        "title": "Promotion #3",
-        "description": "ប្រាក់បង្វិលប្រចាំអាទិត្យ 5%",
-        "image": "./static/assets/images/promotions/promotion3.jpg"
-      },
-      {
-        "title": "Promotion #4",
-        "description": "ណែនាំសមាជិកថ្មីទទួលបាន 5% រៀងរាល់ថ្ងៃ",
-        "image": "./static/assets/images/promotions/promotion4.jpg"
-      }
-    ],
+      league: "Bundesliga",
+      date: "22 Dec 2024"
+    }
+  ],
+
+  promotions: [
+    {
+      "title": "Promotion #1",
+      "description": "លុយទឹកប្រចាំថ្ងៃ 2%",
+      "image": "./static/assets/images/promotions/promotion1.jpg"
+    },
+    {
+      "title": "Promotion #2",
+      "description": "សមាជិកថ្មីថែម 100%",
+      "image": "./static/assets/images/promotions/promotion2.jpg"
+    },
+    {
+      "title": "Promotion #3",
+      "description": "ប្រាក់បង្វិលប្រចាំអាទិត្យ 5%",
+      "image": "./static/assets/images/promotions/promotion3.jpg"
+    },
+    {
+      "title": "Promotion #4",
+      "description": "ណែនាំសមាជិកថ្មីទទួលបាន 5% រៀងរាល់ថ្ងៃ",
+      "image": "./static/assets/images/promotions/promotion4.jpg"
+    }
+  ],
 };
 
 // Welcome modal
@@ -180,19 +217,29 @@ messageMarquee.textContent = data.message;
 
 // Function to create slides
 const createBannerSlides = (banners, wrapper) => {
-    banners.forEach((banner) => {
-        const slide = document.createElement('div');
-        slide.className = 'swiper-slide slide';
-        slide.innerHTML = `
-            <img src="${banner.image}" alt="${banner.alt}" class="banner-image">
-        `;
-        wrapper.appendChild(slide);
-    });
+  // Clear existing slides
+  wrapper.innerHTML = '';
+
+  // Add new slides
+  banners.forEach((banner) => {
+      const slide = document.createElement('div');
+      slide.className = 'swiper-slide slide';
+      slide.innerHTML = `
+          <img src="${banner.image}" alt="${banner.alt}" class="banner-image">
+      `;
+      wrapper.appendChild(slide);
+  });
 };
 
-// Render desktop and mobile banners
-createBannerSlides(data.desktopBanners, desktopBannerWrapper);
-createBannerSlides(data.mobileBanners, mobileBannerWrapper);
+// Function to update banners based on selected language
+const updateBanners = (language) => {
+  const desktopBanners = language === 'kh' ? data.desktopBannersKh : data.desktopBannersEn;
+  const mobileBanners = language === 'kh' ? data.mobileBannersKh : data.mobileBannersEn;
+
+  // Update desktop and mobile banners
+  createBannerSlides(desktopBanners, desktopBannerWrapper);
+  createBannerSlides(mobileBanners, mobileBannerWrapper);
+};
 
 // Render Games
 const renderGames = (games) => {
@@ -297,7 +344,7 @@ document.addEventListener("DOMContentLoaded", () => {
     new Swiper(".bannerSwiper", {
         slidesPerView: 1,
         spaceBetween: 16,
-        loop: false,
+        loop: true,
         autoplay: {
             delay: 5000,
         },
