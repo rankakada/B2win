@@ -248,7 +248,7 @@ body::before {
     border-top: 1.5px solid var(--white-color);
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 12px;
 }
 
 .header .nav .mobile-menu .menu-modal .mobile-nav .nav-list {
@@ -257,8 +257,8 @@ body::before {
     color: var(--white-color);
     text-decoration: none;
     gap: 8px;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 .header .nav .mobile-menu .menu-modal .mobile-nav .nav-list.active {
@@ -270,8 +270,8 @@ body::before {
 }
 
 .header .nav .mobile-menu .menu-modal .mobile-nav .nav-list img {
-    width: 24px;
-    height: 24px;
+    width: 18px;
+    height: 18px;
 }
 
 .footer {
@@ -427,6 +427,9 @@ body::before {
     .header .nav .nav-right .btn-auth-wrapper, 
     .header .nav .nav-right .btn-img-wrapper{
         gap: 5px;
+    }
+    .footer {
+        font-size: 14px;
     }
 
     .footer .footer-container {

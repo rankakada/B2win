@@ -275,6 +275,10 @@
     .main .contents .pagination-container .active {
         padding: 8px 12px;
     }
+
+    .main .contents .news-container .news-detail-container .main-news-wrapper .news-description .btn-back {
+        padding: 8px 16px;
+    }
 }
 
 @media screen and (max-width: 424px) {
