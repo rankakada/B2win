@@ -403,9 +403,7 @@ document.addEventListener("DOMContentLoaded", () => {
             bannerWrapper.appendChild(bannerCard);
         });
     };
-
     renderBanners(bannerData);
-    console.table(bannerData);
 
     // Banner Swiper
     new Swiper(".bannerSwiper", {
@@ -464,6 +462,7 @@ const renderNewsList = (page = 1) => {
     `;
     
     // Render pagination controls
+    paginationContainer.style.display = "flex";
     renderPaginationControls(reverseNewsData.length, page);
 };
 
@@ -508,6 +507,7 @@ const renderNews = (news) => {
                 </div>
                 <div class="news-description">
                     ${news.description}
+                    <button class="btn-back" onclick="renderNewsList(currentPage)">Back</button>
                 </div>
             </div>
             <div class="latest-news-wrapper">
