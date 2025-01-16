@@ -135,7 +135,28 @@
     border-radius: 24px;
 }
 
-.main .contents .box-container .box-title {
+.main .contents .box-container .title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main .contents .box-container .title-wrapper .btn-viewAll {
+    text-decoration: none;
+    color: var(--black-color);
+    background-color: var(--primary-color);
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.main .contents .box-container .title-wrapper .btn-viewAll:hover {
+    background-color: var(--darkgreen-color);
+    color: var(--white-color);
+    transition: all 0.5s ease;
+}
+
+.main .contents .box-container .title-wrapper .box-title {
     position: relative;
     padding-left: 30px;
     display: inline-block;
@@ -144,7 +165,7 @@
     margin-bottom: 1.5rem;
 }
 
-.main .contents .box-container .box-title::before{
+.main .contents .box-container .title-wrapper .box-title::before{
     content: '';
     position: absolute;
     left: 0;
@@ -292,7 +313,7 @@
 
 .main .contents .box-container .promotion-modal .promotion-modal-content .top-content span {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
 }
 
 .main .contents .box-container .promotion-modal .promotion-modal-content .top-content .btn-x {

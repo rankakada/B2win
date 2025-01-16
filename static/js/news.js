@@ -507,7 +507,6 @@ const renderNews = (news) => {
                 </div>
                 <div class="news-description">
                     ${news.description}
-                    <button class="btn-back" onclick="renderNewsList(currentPage)">Back</button>
                 </div>
             </div>
             <div class="latest-news-wrapper">

@@ -303,6 +303,13 @@ body::before {
    font-weight: 600;
 }
 
+.footer .footer-container .footer-left {
+    display: block;
+}
+.footer .footer-container .footer-left .footer-logo img{
+    width: 160px;
+}
+
 .footer .footer-container .footer-mid .footer-link-list {
     display: flex;
     flex-wrap: wrap;
