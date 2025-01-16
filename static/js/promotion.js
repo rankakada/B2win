@@ -74,7 +74,7 @@ function renderPromotions(filteredPromotions) {
         
         promotionCard.addEventListener("click", () => {
             popupPromotionModal(promotionCard); // Popup modal with promotion data
-              toggleModal(true); // Open modal
+            toggleModal(true); // Open modal
           });
         promotionWrapper.appendChild(promotionCard);
     });
@@ -94,15 +94,6 @@ function filterPromotions(type) {
 // Initialize with all promotions
 renderPromotions(promotions);
 
-const promotionModal = document.querySelector('.promotion-modal');
-const btnCloseModal = document.querySelectorAll('.close-modal');
-
-
-// toggle modal visibility
-const toggleModal = (isVisible) => {
-    promotionModal.style.display = isVisible ? "block" : "none";
-};
-
 //Promotion Popup modal
 const popupPromotionModal = (card) => {
     const promotionId = document.querySelector('.promotion-id');
@@ -120,14 +111,22 @@ const popupPromotionModal = (card) => {
     promotionId.textContent = cardTitle;
 };
 
+const modal = document.querySelector('.modal');
+const btnCloseModal = document.querySelectorAll('.close-modal');
+
+// toggle modal visibility
+const toggleModal = (isVisible) => {
+    modal.style.display = isVisible ? "block" : "none";
+};
+
 // Buttons for closing modal
 btnCloseModal.forEach((btn) => {
     btn.addEventListener("click", () => toggleModal(false));
 });
 
 // Close modal when clicking outside of the modal content
-promotionModal.addEventListener("click", (e) => {
-    if (e.target === promotionModal) {
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
         toggleModal(false);
     }
 });

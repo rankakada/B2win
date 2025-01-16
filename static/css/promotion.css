@@ -149,11 +149,13 @@
 }
 
 .main .promotion-modal .promotion-modal-content .bottom-content {
+    display: flex;
+    justify-content: flex-end;
     border-top: .1px solid #999;
     padding: 1.5rem;
 }
 
-.main .promotion-modal .promotion-modal-content .bottom-content .btn-close {
+.main .promotion-modal .promotion-modal-content .bottom-content .btn-apply {
     padding: .8rem 1.5rem;
     border: none;
     outline: none;
@@ -166,7 +168,7 @@
     transition: all ease .5s;
 }
 
-.main .promotion-modal .promotion-modal-content .bottom-content .btn-close:hover {
+.main .promotion-modal .promotion-modal-content .bottom-content .btn-apply:hover {
     background-color: #24499a;
 }
 

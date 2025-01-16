@@ -311,7 +311,7 @@
     padding: 1.5rem;
 }
 
-.main .contents .box-container .promotion-modal .promotion-modal-content .top-content span {
+.main .contents .box-container .promotion-modal .promotion-modal-content .top-content .promotion-title {
     font-size: 20px;
     font-weight: 600;
 }

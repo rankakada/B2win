@@ -217,9 +217,6 @@ const gameContainer = document.querySelector('.game-container');
 const matchWrapper = document.querySelector('.match-wrapper');
 const promotionWrapper = document.querySelector('.promotion-wrapper');
 
-const promotionModal = document.querySelector('.promotion-modal');
-const btnCloseModal = document.querySelectorAll('.close-modal');
-
 //Render Message
 messageMarquee.textContent = data.message;
 
@@ -284,7 +281,7 @@ renderMatches(data.matches);
 const renderPromotions = (promotions) => {
   promotions.forEach(promotion => {
     const promotionCard = document.createElement('div');
-    promotionCard.className = 'swiper-slide promotion-card';
+    promotionCard.className = 'swiper-slide promotion-card openModal';
     promotionCard.innerHTML = `<img src="${promotion.image}" alt="${promotion.title}">`;
 
     promotionCard.dataset.title = promotion.title;
@@ -302,14 +299,9 @@ const renderPromotions = (promotions) => {
 
 renderPromotions(data.promotions);
 
-// toggle modal visibility
-const toggleModal = (isVisible) => {
-    promotionModal.style.display = isVisible ? "block" : "none";
-};
-
 //Promotion Popup modal
 const popupPromotionModal = (card) => {
-    const promotionId = document.querySelector('.promotion-id');
+    const promotionTitle = document.querySelector('.promotion-title');
     const promotionImage = document.querySelector('.promotion-image');
     const promotionDescription = document.querySelector('.promotion-description');
 
@@ -321,7 +313,15 @@ const popupPromotionModal = (card) => {
     // Set modal content
     promotionImage.src = cardImage;
     promotionDescription.textContent = cardDescription;
-    promotionId.textContent = cardTitle;
+    promotionTitle.textContent = cardTitle;
+};
+
+const modal = document.querySelector('.modal');
+const btnCloseModal = document.querySelectorAll('.close-modal');
+
+// toggle modal visibility
+const toggleModal = (isVisible) => {
+    modal.style.display = isVisible ? "block" : "none";
 };
 
 // Buttons for closing modal
@@ -330,8 +330,8 @@ btnCloseModal.forEach((btn) => {
 });
 
 // Close modal when clicking outside of the modal content
-promotionModal.addEventListener("click", (e) => {
-    if (e.target === promotionModal) {
+modal.addEventListener("click", (e) => {
+    if (e.target === modal) {
         toggleModal(false);
     }
 });

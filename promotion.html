@@ -92,16 +92,16 @@
     <main class="main">
         <div class="promotion-container">
             <ul class="promotion-menu-wrapper">
-                <li class="promotion-menu active" onclick="filterPromotions('all')">ទាំងអស់</li>
-                <li class="promotion-menu" onclick="filterPromotions('sport')">កីឡា</li>
-                <li class="promotion-menu" onclick="filterPromotions('cock')">មាន់ជល់</li>
-                <li class="promotion-menu" onclick="filterPromotions('keno')">គីណូ</li>
-                <li class="promotion-menu" onclick="filterPromotions('casino')">កាស៊ីណូ</li>
+                <li class="promotion-menu active" onclick="filterPromotions('all')" data-i18n="all">ទាំងអស់</li>
+                <li class="promotion-menu" onclick="filterPromotions('sport')" data-i18n="sport">កីឡា</li>
+                <li class="promotion-menu" onclick="filterPromotions('cock')" data-i18n="cock">មាន់ជល់</li>
+                <li class="promotion-menu" onclick="filterPromotions('keno')" data-i18n="keno">គីណូ</li>
+                <li class="promotion-menu" onclick="filterPromotions('casino')" data-i18n="casino">កាស៊ីណូ</li>
             </ul>
             <div class="promotion-wrapper" id="promotionWrapper"></div>
         </div>
         <!-- Modal of promotion -->
-        <div class="promotion-modal">
+        <div class="modal promotion-modal">
             <div class="promotion-modal-content">
                 <div class="top-content">
                     <span class="promotion-id"></span>
@@ -112,7 +112,7 @@
                     <p class="promotion-description"></p>
                 </div>
                 <div class="bottom-content">
-                    <button class="btn-close close-modal">Close</button>
+                    <button class="btn-apply">Apply</button>
                 </div>
             </div>
         </div>
@@ -142,12 +142,6 @@
                 <div class="payment-wrapper">
                     <h3 data-i18n="payment">វិធី​សា​ស្រ្ត​ទូទាត់ប្រាក់</h3>
                     <ul class="bank-wrapper">
-                        <li class="bank"><img src="static/assets/icons/bank/aba.png" alt="ABA"></li>
-                        <li class="bank"><img src="static/assets/icons/bank/wing.png" alt="Wing"></li>
-                        <li class="bank"><img src="static/assets/icons/bank/acleda.jpeg" alt="Acleda"></li>
-                        <li class="bank"><img src="static/assets/icons/bank/truemoney.png" alt="TrueMoney"></li>
-                        <li class="bank"><img src="static/assets/icons/bank/pipay.png" alt="PiPay"></li>
-                        <li class="bank"><img src="static/assets/icons/bank/usdt.png" alt="Ustd"></li>
                     </ul>
                 </div>
                 <div class="contact-wrapper">
@@ -161,6 +155,18 @@
         </div>
         <div class="privicy-wrapper">
             <span data-i18n="privacy">©២០២៤ B2WIN.com រក្សាសិទ្ធគ្រប់យ៉ាង ១៨+</span>
+        </div>
+
+        <div class="bank-modal">
+            <div class="bank-modal-content">
+                <div class="top-content">
+                    <span class="modal-title" data-i18n="modalTitle">របៀបដាក់ប្រាក់</span>
+                    <button class="btn-x close-bankModal"> &times; </button>
+                </div>
+                <div class="modal-content">
+                    <img src="static/assets/images/How_to_deposit.png" alt="How_to_deposit">
+                </div>
+            </div>
         </div>
     </footer>
 

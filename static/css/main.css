@@ -389,6 +389,88 @@ body::before {
     font-weight: 600;
 }
 
+.footer .bank-modal {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    overflow: auto;
+    top: 0; 
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+}
+
+.footer .bank-modal .bank-modal-content {
+    width: 650px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--darkgreen-color);
+    border-radius: 8px;
+    animation: fadeIn 0.3s ease;
+    -webkit-animation: fadeIn 0.3s ease; 
+}
+
+.footer .bank-modal .bank-modal-content .top-content {
+    display: flex;
+    justify-content: space-between;
+    color: var(--white-color);
+    border-bottom: .1px solid #999;
+    padding: 16px 16px 8px;
+}
+
+.footer .bank-modal .bank-modal-content .top-content .btn-x {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #999;
+    font-size: 24px;
+    width: 32px;
+    height: 32px;
+    border-radius: 5px;
+    transition: all ease .5s;
+}
+
+.footer .bank-modal .bank-modal-content .top-content .btn-x:hover {
+    background-color: #9999993d;
+}
+
+.footer .bank-modal .bank-modal-content .top-content .modal-title {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.footer .bank-modal .bank-modal-content .modal-content {
+    width: 100%;
+    padding: 16px 16px 4px 16px;
+}
+
+.footer .bank-modal .bank-modal-content .modal-content img{
+    width: 100%;
+    border-radius: 8px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /* Responsive */
 @media screen and (max-width: 1279px) {
     .header {
@@ -421,6 +503,15 @@ body::before {
     .footer .footer-container {
         grid-template-columns: auto;
         gap: 1rem;
+    }
+
+    .footer .bank-modal .bank-modal-content {
+        width: 90%;
+    }
+
+    .footer .bank-modal .bank-modal-content .top-content,
+    .footer .bank-modal .bank-modal-content .modal-content  {
+        padding: 1rem;
     }
 }
 

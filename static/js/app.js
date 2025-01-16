@@ -34,6 +34,56 @@ navLinks.forEach(link => {
     }
 });
 
+// Define bank information
+const banks = [
+    {id:1, name: "ABA", icon: "static/assets/icons/bank/aba.png" },
+    {id:2, name: "Wing", icon: "static/assets/icons/bank/wing.png" },
+    {id:3, name: "Acleda", icon: "static/assets/icons/bank/acleda.jpeg" },
+    {id:4, name: "TrueMoney", icon: "static/assets/icons/bank/truemoney.png" },
+    {id:5, name: "PiPay", icon: "static/assets/icons/bank/pipay.png" },
+    {id:6, name: "USDT", icon: "static/assets/icons/bank/usdt.png" }
+];
+
+// Select the bank-wrapper element
+const bankWrapper = document.querySelector('.bank-wrapper');
+
+// Dynamically populate the bank logos
+banks.forEach(bank => {
+    const bankElement = document.createElement('li');
+    bankElement.classList.add('bank');
+
+    const imgElement = document.createElement('img');
+    imgElement.src = bank.icon;
+    imgElement.alt = bank.name; // Generate alt text from the bank name
+
+    bankElement.appendChild(imgElement);
+    bankWrapper.appendChild(bankElement);
+});
+
+const bankModal = document.querySelector('.bank-modal');
+const closeBankModal = document.querySelector('.close-bankModal');
+const openBankModal = document.querySelectorAll('.bank');
+
+// toggle modal visibility
+const toggleBankModal = (isVisible) => {
+    bankModal.style.display = isVisible ? "block" : "none";
+};
+
+// Buttons for open modal
+openBankModal.forEach((btn) => {
+    btn.addEventListener("click", () => toggleBankModal(true));
+})
+
+// Buttons for closing modal
+closeBankModal.addEventListener("click", () => toggleBankModal(false));
+
+// Close modal when clicking outside of the modal content
+bankModal.addEventListener("click", (e) => {
+    if (e.target === bankModal) {
+        toggleBankModal(false);
+    }
+});
+
 // translation handler
 i18next.init({
     lng: 'kh', // Default language
@@ -92,7 +142,13 @@ i18next.init({
                 rewards: "រង្វាន់",
                 ContactUs: "ទាក់ទង​មក​ពួក​យើង",
                 privacy: "© 2024 B2WIN.com រក្សាសិទ្ធគ្រប់យ៉ាង ១៨+",
-                payment: "វិធី​សា​ស្រ្ត​ទូទាត់ប្រាក់",            
+                payment: "វិធី​សា​ស្រ្ត​ទូទាត់ប្រាក់", 
+                modalTitle: "របៀបដាក់ប្រាក់",   
+                all: "ទាំងអស់",
+                sport: "កីឡា",
+                cock: "មាន់ជល់",
+                keno: "គីណូ",
+                casino: "កាស៊ីណូ",        
             }
         },
         en: {
@@ -150,6 +206,12 @@ i18next.init({
                 ContactUs: "Contact us",
                 privacy: "© 2024 B2WIN.com All Rights Reserved 18+",
                 payment: "Payment Method",
+                modalTitle: "How To Deposit",
+                all: "All",
+                sport: "Sport",
+                cock: "Cock",
+                keno: "Keno",
+                casino: "Casino", 
             }
         }
     }
