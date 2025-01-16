@@ -60,33 +60,33 @@ const data = {
   games: [
     {
       id:1,
-      "image": "./static/assets/images/games/game1.jpg",
-      "alt": "Game 1",
-      "link": "login.html"
+      type: "joker",
+      name: "Slot",
+      image: "./static/assets/images/games/game1.jpg",
     },
     {
       id:2,
-      "image": "./static/assets/images/games/game2.jpg",
-      "alt": "Game 2",
-      "link": "login.html"
+      type: "casino",
+      name: "Sexy Casino",
+      image: "./static/assets/images/games/game2.jpg",
     },
     {
       id:3,
-      "image": "./static/assets/images/games/game3.jpg",
-      "alt": "Game 3",
-      "link": "login.html"
+      type: "casino",
+      name: "K99 Casino",
+      image: "./static/assets/images/games/game3.jpg",
     },
     {
       id:4,
-      "image": "./static/assets/images/games/game4.jpg",
-      "alt": "Game 4",
-      "link": "login.html"
+      type: "sport",
+      name: "Sport3",
+      image: "./static/assets/images/games/game4.jpg",
     },
     {
       id:5,
-      "image": "./static/assets/images/games/game5.jpg",
-      "alt": "Game 5",
-      "link": "login.html"
+      type: "sport",
+      name: "Sport",
+      image: "./static/assets/images/games/game5.jpg",
     }
   ],
 
@@ -241,7 +241,12 @@ const renderGames = (games) => {
     games.forEach((game) => {
         const gameCard = document.createElement('div');
         gameCard.className = 'game-card';
-        gameCard.innerHTML = `<a href="${game.link}" class="game-link"><img src="${game.image}" alt="${game.alt}" class="game-image"></a>`;
+        const alt = game.name;
+        gameCard.innerHTML = `
+          <a href="login.html" class="game-link">
+              <img src="${game.image}" alt="${alt}" class="game-image">
+          </a>
+        `;
         gameContainer.appendChild(gameCard);
     });
 };

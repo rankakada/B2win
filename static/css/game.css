@@ -57,6 +57,7 @@
     width: 100%;
 }
 
+
 .main .promotion-modal {
     display: none;
     width: 100%;
@@ -145,8 +146,6 @@
     font-weight: 500;
     font-size: 18px;
     margin-top: 1rem;
-    line-height: 2;
-    white-space: pre-line;
 }
 
 .main .promotion-modal .promotion-modal-content .bottom-content {
@@ -164,10 +163,9 @@
     border-radius: 8px;
     background-color:#1956db;
     color: var(--white-color);
-    font-weight: 600;
+    font-weight: 500;
     font-size: 15px;
     transition: all ease .5s;
-    text-decoration: none;
 }
 
 .main .promotion-modal .promotion-modal-content .bottom-content .btn-apply:hover {

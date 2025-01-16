@@ -123,7 +123,10 @@
             </div>
             <!-- Section Game -->
             <div class="box-container">
-                <h1 class="box-title" data-i18n="popularGame">ហ្គេមពេញនិយម</h1>
+                <div class="title-wrapper">
+                    <h1 class="box-title" data-i18n="popularGame">ហ្គេមពេញនិយម</h1>
+                    <a href="game.html" class="btn-viewAll" data-i18n="viewAll">មើលទាំងអស់</a>
+                </div>
                 <div class="game-container"></div>
             </div>
                 <!-- Section match -->
@@ -138,7 +141,7 @@
             <div class="box-container">
                 <div class="title-wrapper">
                     <h1 class="box-title" data-i18n="promotion">ការផ្ដល់ជូនពិសេស</h1>
-                    <a href="promotion.html" class="btn-viewAll">មើលទាំងអស់</a>
+                    <a href="promotion.html" class="btn-viewAll" data-i18n="viewAll">មើលទាំងអស់</a>
                 </div>
                 <div class="swiper promotionSwiper promotion-container">
                     <div class="swiper-wrapper promotion-wrapper"></div>
@@ -164,9 +167,11 @@
     </main>
 
     <div class="welcome-modal">
-        <div class="welcome-modal-content">
-            <img src="static/assets/images/condition.jpg" alt="condition">
-            <button class="btn-close-welcomeModal"> &times; </button>
+        <div class="welcome-modal-wrapper">
+            <div class="welcome-modal-content">
+                <button class="btn-close-welcomeModal"> &times; </button>
+                <img src="static/assets/images/condition.jpg" alt="condition">
+            </div>
         </div>
     </div>
     <!-- Footer -->
@@ -182,7 +187,7 @@
                 <h3 data-i18n="quickLinks">តំណ​ភ្ជាប់​រហ័ស</h3>
                 <ul class="footer-link-list">
                     <li><a href="#" class="footer-link" data-i18n="aboutUs">អំពី​ពួក​យើង</a></li>
-                    <li><a href="#" class="footer-link" data-i18n="termsOfUse">លក្ខខណ្ឌនៃការប្រើប្រាស់</a></li>
+                    <li><a href="condition.html" class="footer-link" data-i18n="termsOfUse">លក្ខខណ្ឌនៃការប្រើប្រាស់</a></li>
                     <li><a href="#" class="footer-link" data-i18n="responsibleGaming">ការទទួលខុសត្រូវហ្គេម</a></li>
                     <li><a href="#" class="footer-link" data-i18n="infoCenter">មជ្ឈមណ្ឌលព័ត៌មាន</a></li>
                     <li><a href="#" class="footer-link" data-i18n="rewards">រង្វាន់</a></li>
