@@ -381,7 +381,7 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
     z-index: 100;
-    display: none;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -413,10 +413,11 @@
     position: absolute;
     top: 25px;
     right: 25px;
-    padding: 2px 8px;
     background: var(--yellow-color);
     color: var(--black-color); 
-    font-size: 24px; 
+    font-size: 32px;
+    width: 32px;
+    height: 32px; 
     border: none;
     outline: none;
     cursor: pointer;
@@ -498,6 +499,14 @@
     .main .contents .box-container .promotion-modal .promotion-modal-content .middle-content,
     .main .contents .box-container .promotion-modal .promotion-modal-content .bottom-content {
         padding: 1rem;
+    }
+
+    .btn-close-welcomeModal {
+        top: 15px;
+        right: 15px;
+        font-size: 24px;
+        width: 24px;
+        height: 24px;
     }
 }
 
