@@ -26,7 +26,7 @@
 .main .game-container .game-menu-wrapper .game-menu {
     background: var(--white-color);
     color: var(--black-color);
-    padding: 4px 12px;
+    padding: 2px 12px;
     border-radius: 5px;
     font-size: 18px;
     font-weight: 600;
@@ -101,4 +101,20 @@
 .main .game-container .game-wrapper .game:hover .game-content .play-modal .btn-play {
     transform: translateY(0); 
     transition: transform 0.5s ease;
+}
+
+@media screen and (max-width: 1279px) {
+    .main .game-container .game-wrapper {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media screen and (max-width: 767px){
+    .main .game-container .game-menu-wrapper .game-menu {
+        padding: 2px 12px;
+        font-size: 14px;
+    }
+    .main .game-container .game-wrapper {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

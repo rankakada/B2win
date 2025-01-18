@@ -481,12 +481,12 @@
         display: block;
     }
 
-    .main .contents .box-container .box-title {
+    .main .contents .box-container .title-wrapper .box-title {
         font-size: 20px;
         padding-left: 20px;
     }
 
-    .main .contents .box-container .box-title::before{
+    .main .contents .box-container .title-wrapper .box-title::before{
         width: 12px;
         height: 12px;
     }
@@ -527,5 +527,11 @@
 
     .main .contents .box-container .game-container {
         grid-template-columns: repeat(3, 1fr);
+    }
+    .main .contents .box-container .title-wrapper .btn-viewAll {
+        padding: 4px 12px;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 600;
     }
 }

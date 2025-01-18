@@ -550,6 +550,12 @@ body::before {
 }
 
 @media screen and (max-width : 767px) {
+    .pagination-container .btn-change-page,
+    .pagination-container .active  {
+        padding: 4px 10px;
+        font-size: 14px;
+    }
+
     .footer .footer-container {
         grid-template-columns: auto;
         gap: 1rem;
@@ -575,14 +581,6 @@ body::before {
     .header .nav .nav-right .btn-auth-wrapper, 
     .header .nav .nav-right .btn-img-wrapper{
         gap: 5px;
-    }
-
-    .pagination-container .btn-change-page {
-        padding: 8px 16px;
-    }
-
-    .pagination-container .active {
-        padding: 8px 12px;
     }
 
     .footer {
