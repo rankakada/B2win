@@ -563,6 +563,10 @@ body::before {
         gap: 1rem;
     }
 
+    .footer .footer-container .footer-left .footer-logo img{
+        width: 100px;
+    }
+
     .footer .bank-modal .bank-modal-content {
         width: 90%;
     }
