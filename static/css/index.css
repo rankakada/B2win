@@ -101,7 +101,7 @@
 
 .main .contents .button-container .button {
     text-decoration: none;
-    height: 50px;
+    padding: 8px;
     border-radius: 50px;
     border: none;
     cursor: pointer;
@@ -482,13 +482,18 @@
     }
 
     .main .contents .box-container .title-wrapper .box-title {
-        font-size: 20px;
-        padding-left: 20px;
+        font-size: 18px;
+        padding-left: 16px;
     }
 
     .main .contents .box-container .title-wrapper .box-title::before{
-        width: 12px;
-        height: 12px;
+        width: 10px;
+        height: 10px;
+    }
+
+    .main .contents .button-container .button {
+        font-size: 18px;
+        padding: 5px;
     }
 
     .main .contents .box-container .promotion-modal .promotion-modal-content {
@@ -518,11 +523,6 @@
     .main .contents {
         width: 100%;
         padding: 0 12px;
-    }
-
-    .main .contents .button-container .button {
-        height: 35px;
-        font-size: 20px;
     }
 
     .main .contents .box-container .game-container {
