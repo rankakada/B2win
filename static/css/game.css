@@ -19,14 +19,19 @@
     display: flex;
     gap: 8px;
     list-style: none;
-    overflow-x: scroll;
     white-space: nowrap;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+.main .game-container .game-menu-wrapper::-webkit-scrollbar {
+    display: none;
 }
 
 .main .game-container .game-menu-wrapper .game-menu {
     background: var(--white-color);
     color: var(--black-color);
-    padding: 2px 12px;
+    padding: 2px 8px;
     border-radius: 5px;
     font-size: 18px;
     font-weight: 600;
