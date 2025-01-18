@@ -31,7 +31,7 @@
 .main .game-container .game-menu-wrapper .game-menu {
     background: var(--white-color);
     color: var(--black-color);
-    padding: 2px 8px;
+    padding: 2px 12px;
     border-radius: 5px;
     font-size: 18px;
     font-weight: 600;
@@ -114,12 +114,34 @@
     }
 }
 
+@media screen and (max-width: 1023px) {
+    .main .game-container .game-wrapper .game .game-content .play-modal .btn-play {
+        padding: 5px 32px;
+    }
+}
+
 @media screen and (max-width: 767px){
+    .main .game-container {
+        width: 100%;
+        padding: 0 20px;
+    }
+
     .main .game-container .game-menu-wrapper .game-menu {
-        padding: 2px 12px;
+        padding: 2px 8px;
         font-size: 14px;
     }
     .main .game-container .game-wrapper {
         grid-template-columns: repeat(3, 1fr);
+    }
+
+    .main .game-container .game-wrapper .game .game-content .play-modal .btn-play {
+        padding: 4px 24px;
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 424px) {
+    .main .game-container .game-wrapper .game .game-content .play-modal .btn-play {
+        padding: 2px 16px;
     }
 }

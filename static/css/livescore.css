@@ -15,3 +15,10 @@
     width: 100%;
     min-height: 860px;
 }
+
+@media screen and (max-width: 767px) {
+    .main .contents {
+        width: 100%;
+        padding: 0 20px;
+    }
+}
