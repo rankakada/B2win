@@ -510,7 +510,7 @@ const renderNews = (news) => {
                 </div>
             </div>
             <div class="latest-news-wrapper">
-                <span class="title">អត្ថបទចុងក្រោយ</span>
+                <span class="title" data-i18n="latestNews">អត្ថបទចុងក្រោយ</span>
                 <div class="latest-news-item-wrapper">
                     ${newsData
                         .slice(-5)

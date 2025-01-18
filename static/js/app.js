@@ -145,11 +145,13 @@ i18next.init({
                 payment: "វិធី​សា​ស្រ្ត​ទូទាត់ប្រាក់", 
                 viewAll: "មើលទាំងអស់",
                 modalTitle: "របៀបដាក់ប្រាក់",   
+                latestNews: "អត្ថបទចុងក្រោយ",
                 all: "ទាំងអស់",
                 sport: "កីឡា",
                 cock: "មាន់ជល់",
                 keno: "គីណូ",
-                casino: "កាស៊ីណូ",        
+                casino: "កាស៊ីណូ",  
+                play: "លេង",      
             }
         },
         en: {
@@ -209,11 +211,13 @@ i18next.init({
                 payment: "Payment Method",
                 viewAll: "View All",
                 modalTitle: "How To Deposit",
+                latestNews: "Latest News",
                 all: "All",
                 sport: "Sport",
                 cock: "Cock",
                 keno: "Keno",
                 casino: "Casino", 
+                play: "Play",
             }
         }
     }

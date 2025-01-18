@@ -91,7 +91,7 @@ const paginationContainer = document.querySelector('.pagination-container');
 let currentPage = 1;
 const itemsPerPage = 9;
 
-let currentFilteredPromotions = []; // Initially, this will hold all promotions
+let currentFilteredPromotions = []; 
 
 const renderPaginationControls = (totalItems) => {
   const totalPages = Math.ceil(totalItems / itemsPerPage);
@@ -166,7 +166,7 @@ function filterPromotions(type) {
 }
 
 // Initialize with all promotions
-currentFilteredPromotions = promotions; // Start with all promotions
+currentFilteredPromotions = promotions;
 renderPromotions(currentFilteredPromotions);
 
 //Promotion Popup modal

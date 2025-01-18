@@ -138,8 +138,8 @@
 .main .contents .news-container .news-detail-container .latest-news-wrapper .title {
     display: inline-block;
     margin-bottom: 0.5rem;
-    font-size: 18px;
-    font-weight: 500;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 .main .contents .news-container .news-detail-container .latest-news-wrapper .latest-news-item-wrapper .news-items{
@@ -153,6 +153,10 @@
     display: flex;
     gap: 0.5rem;
     margin-top: 0.5rem;
+}
+
+.pagination-container {
+    margin-top: 2rem;
 }
 
 /* Responsive */

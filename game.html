@@ -90,31 +90,16 @@
     </header>
     <!-- main contents -->
     <main class="main">
-        <div class="promotion-container">
-            <ul class="promotion-menu-wrapper">
-                <li class="promotion-menu active" onclick="filterPromotions('all')" data-i18n="all">ទាំងអស់</li>
-                <li class="promotion-menu" onclick="filterPromotions('sport')" data-i18n="sport">កីឡា</li>
-                <li class="promotion-menu" onclick="filterPromotions('cock')" data-i18n="cock">មាន់ជល់</li>
-                <li class="promotion-menu" onclick="filterPromotions('keno')" data-i18n="keno">គីណូ</li>
-                <li class="promotion-menu" onclick="filterPromotions('casino')" data-i18n="casino">កាស៊ីណូ</li>
+        <div class="game-container">
+            <ul class="game-menu-wrapper">
+                <li class="game-menu active" onclick="filterGames('all')" data-i18n="all">ទាំងអស់</li>
+                <li class="game-menu" onclick="filterGames('sport')" data-i18n="sport">កីឡា</li>
+                <li class="game-menu" onclick="filterGames('cock')" data-i18n="cock">មាន់ជល់</li>
+                <li class="game-menu" onclick="filterGames('keno')" data-i18n="keno">គីណូ</li>
+                <li class="game-menu" onclick="filterGames('casino')" data-i18n="casino">កាស៊ីណូ</li>
             </ul>
-            <div class="promotion-wrapper" id="promotionWrapper"></div>
-        </div>
-        <!-- Modal of promotion -->
-        <div class="modal promotion-modal">
-            <div class="promotion-modal-content">
-                <div class="top-content">
-                    <span class="promotion-id"></span>
-                    <button class="btn-x close-modal"> &times; </button>
-                </div>
-                <div class="middle-content">
-                    <img src="" alt="promotion" class="promotion-image">
-                    <p class="promotion-description"></p>
-                </div>
-                <div class="bottom-content">
-                    <button class="btn-apply">Apply</button>
-                </div>
-            </div>
+            <div class="game-wrapper"></div>
+            <div class="pagination-container"></div>
         </div>
     </main>
 

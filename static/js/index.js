@@ -181,46 +181,28 @@ const data = {
   ],
 };
 
-// Welcome modal
+// Selectors
 const welcomeModal = document.querySelector('.welcome-modal');
 const btnCloseWelcomeModal = document.querySelector('.btn-close-welcomeModal');
-const expired_time = 1 * 60 * 60 * 1000;  // 1h
-// const expired_time = 10 * 1000;
-const lastShownTime = localStorage.getItem("welcomeModal");
-const currentTime = new Date().getTime();
-
-// Load modal
-if (!lastShownTime || currentTime - lastShownTime > expired_time) {
-    welcomeModal.style.display = "flex";
-    localStorage.removeItem("welcomeModal");
-}
-
-//Button for Closing modal 
-btnCloseWelcomeModal.addEventListener('click', () => {
-  welcomeModal.style.display = 'none';
-  localStorage.setItem("welcomeModal", currentTime);
-});
-
-// Close modal when clicking outside of the modal content
-welcomeModal.addEventListener("click", (e) => {
-  if (e.target === welcomeModal) {
-    welcomeModal.style.display = 'none';
-    localStorage.setItem("welcomeModal", currentTime);
-  }
-});
-
-// inititial variables
 const messageMarquee = document.querySelector('.message');
 const desktopBannerWrapper = document.querySelector('.desktop-banner-wrapper');
 const mobileBannerWrapper = document.querySelector('.mobile-banner-wrapper');
 const gameContainer = document.querySelector('.game-container');
 const matchWrapper = document.querySelector('.match-wrapper');
 const promotionWrapper = document.querySelector('.promotion-wrapper');
+const modal = document.querySelector('.modal');
+const btnCloseModal = document.querySelectorAll('.close-modal');
 
-//Render Message
-messageMarquee.textContent = data.message;
+// Constants
+const expired_time = 1 * 60 * 60 * 1000;  // 1h
+const lastShownTime = localStorage.getItem("welcomeModal");
+const currentTime = new Date().getTime();
 
-// Function to create slides
+// Utility Functions
+const toggleModal = (isVisible) => {
+  modal.style.display = isVisible ? "block" : "none";
+};
+
 const createBannerSlides = (banners, wrapper) => {
   // Clear existing slides
   wrapper.innerHTML = '';
@@ -236,7 +218,6 @@ const createBannerSlides = (banners, wrapper) => {
   });
 };
 
-// Render Games
 const renderGames = (games) => {
     games.forEach((game) => {
         const gameCard = document.createElement('div');
@@ -251,9 +232,6 @@ const renderGames = (games) => {
     });
 };
 
-renderGames(data.games);
-
-//Render Matches
 const renderMatches = (matches) => {
   matches.forEach(match => {
     const matchCard = document.createElement('div');
@@ -280,9 +258,6 @@ const renderMatches = (matches) => {
   });
 };
 
-renderMatches(data.matches);
-
-//Render Promotions
 const renderPromotions = (promotions) => {
   promotions.forEach(promotion => {
     const promotionCard = document.createElement('div');
@@ -293,18 +268,15 @@ const renderPromotions = (promotions) => {
     promotionCard.dataset.description = promotion.description;
     promotionCard.dataset.image = promotion.image;
 
-    // Open modal when clicked
     promotionCard.addEventListener("click", () => {
-      popupPromotionModal(promotionCard); // Popup modal with promotion data
-        toggleModal(true); // Open modal
+      popupPromotionModal(promotionCard);
+      toggleModal(true);
     });
     promotionWrapper.appendChild(promotionCard);
   });
 };
 
-renderPromotions(data.promotions);
 
-//Promotion Popup modal
 const popupPromotionModal = (card) => {
     const promotionTitle = document.querySelector('.promotion-title');
     const promotionImage = document.querySelector('.promotion-image');
@@ -321,25 +293,37 @@ const popupPromotionModal = (card) => {
     promotionTitle.textContent = cardTitle;
 };
 
-const modal = document.querySelector('.modal');
-const btnCloseModal = document.querySelectorAll('.close-modal');
+// Modal Handlers
+if (!localStorage.getItem("welcomeModal") || currentTime - localStorage.getItem("welcomeModal") > expired_time) {
+  welcomeModal.style.display = "flex";
+  localStorage.removeItem("welcomeModal");
+}
 
-// toggle modal visibility
-const toggleModal = (isVisible) => {
-    modal.style.display = isVisible ? "block" : "none";
-};
+btnCloseWelcomeModal.addEventListener('click', () => {
+  welcomeModal.style.display = 'none';
+  localStorage.setItem("welcomeModal", currentTime);
+});
 
-// Buttons for closing modal
+welcomeModal.addEventListener("click", (e) => {
+  if (e.target === welcomeModal) {
+    welcomeModal.style.display = 'none';
+    localStorage.setItem("welcomeModal", currentTime);
+  }
+});
+
 btnCloseModal.forEach((btn) => {
-    btn.addEventListener("click", () => toggleModal(false));
+  btn.addEventListener("click", () => toggleModal(false));
 });
 
-// Close modal when clicking outside of the modal content
 modal.addEventListener("click", (e) => {
-    if (e.target === modal) {
-        toggleModal(false);
-    }
+  if (e.target === modal) toggleModal(false);
 });
+
+// Data Rendering
+messageMarquee.textContent = data.message;
+renderGames(data.games);
+renderMatches(data.matches);
+renderPromotions(data.promotions);
 
 // Swiper Handler
 document.addEventListener("DOMContentLoaded", () => {
@@ -393,12 +377,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Get 'fid' from the URL
+// URL Parameter Handling
 const urlParams = new URLSearchParams(window.location.search);
 const fid = urlParams.get('fid');
-
-if (fid) {
-  // Store 'fid' in localStorage for future use
-  localStorage.setItem('fid', fid);
-  console.log(`FID: ${fid}`);
-}
+if (fid) localStorage.setItem('fid', fid);

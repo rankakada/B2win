@@ -138,7 +138,7 @@
 .main .contents .box-container .title-wrapper {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 .main .contents .box-container .title-wrapper .btn-viewAll {
     text-decoration: none;
@@ -381,7 +381,7 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.7);
     z-index: 100;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
 }
